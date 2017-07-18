@@ -13,6 +13,6 @@ module.exports = function collectSameElements(collectionA, objectB) {
       }
     }
   }
-  
+
   return same_elements;
 }
