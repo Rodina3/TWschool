@@ -77,33 +77,34 @@ function complexTag(string) {
 }
 
 
-function clarifyItem(itemsArray) {
-    let itemCountArray = {};
-
-    for (let i = 0; i < itemArray.length; i++) {
-        find(itemsArray, itemCountArray);
-
+function gatherItem(itemList)
+{
+    let itemRecord = [];
+    for(let i=0;i<itemList.length;i++)
+    {
+        countItem(itemList[i],itemRecord);
     }
-    return itemCountArray;
+    return itemRecord;
+
 }
 
-function find(item, itemCountArray) {
-    let obj = {};
-    for (let i = 0; i < itemCountArray.length; i++) {
-        if (item === itemCountArray[i]) {
-            itemCountArray[i].count++;
+function countItem(obj,itemRecord)
+{
+    for(let i=0;i<itemRecord.length;i++)
+    {
+        if(obj.barcode == itemRecord[i].barcode)
+        {
+            itemRecord[i].count += obj.count;
             return;
         }
     }
-    itemCountArray.push({item, count: 1})
+    itemRecord.push(obj);
+    return;
 }
 
-function getPromotion(itemCountArray) {
-    return itemIncludePromotionArray;
+
+
+function caculatePrice()
+{
+
 }
-
-function getReceipt(itemIncludePromotionArray) {
-
-    return itemReceipt;
-}
-
