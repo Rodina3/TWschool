@@ -119,4 +119,10 @@ describe('pos', () => {
 
 
 
+    it('process with promotion',() => {
+        const obj = {barcode:'ITEM000001',name:'雪碧',unit:'瓶',price:3,count:5,sumPrice:15};
+        const result= {barcode:'ITEM000001',name:'雪碧',unit:'瓶',price:3,count:5,sumPrice:12,discount:3};
+        expect((promotionRule(obj))).toEqual(result);
+    })
+
 });
