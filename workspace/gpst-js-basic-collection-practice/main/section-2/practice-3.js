@@ -3,10 +3,9 @@
 module.exports = function countSameElements(collection) {
     var count_same_ele = [];
 
-    for(var i=0;i<collection.length;i++)
-    {
+    for (var i = 0; i < collection.length; i++) {
         var index;
-        if(collection[i].length == 1) {
+        if (collection[i].length == 1) {
             index = Find(collection[i], count_same_ele);
             if (index == -1) {
                 count_same_ele.push({name: collection[i], summary: 1});
@@ -15,14 +14,13 @@ module.exports = function countSameElements(collection) {
                 count_same_ele[index].summary++;
             }
         }
-        else
-        {
-            var letter,number=0;
-            letter=LetterInStr(collection[i]);
-            number=NumInStr(collection[i]);
+        else {
+            var letter, number = 0;
+            letter = LetterInStr(collection[i]);
+            number = NumInStr(collection[i]);
             index = Find(letter, count_same_ele);
             console.log('2------');
-            console.log(letter,number);
+            console.log(letter, number);
             if (index == -1) {
                 count_same_ele.push({name: letter, summary: number});
             }
@@ -37,50 +35,39 @@ module.exports = function countSameElements(collection) {
     return count_same_ele;
 }
 
-function Find(ele,arr)
-{
+function Find(ele, arr) {
 
-    for(var j=0;j<arr.length;j++)
-    {
-        if(ele == arr[j].name)
-        {
+    for (var j = 0; j < arr.length; j++) {
+        if (ele == arr[j].name) {
             return j;
         }
     }
     return -1;
 }
 
-function LetterInStr(str)
-{
-    for(let i=0;i<str.length;i++)
-    {
-        if((str[i]>='a' && str[i]<='z') || (str[i]>='A')&&(str[i]<='Z'))
-        {
+function LetterInStr(str) {
+    for (let i = 0; i < str.length; i++) {
+        if ((str[i] >= 'a' && str[i] <= 'z') || (str[i] >= 'A') && (str[i] <= 'Z')) {
             return str[i];
         }
     }
     return false;
 }
-function NumInStr(str)
-{
-    var number=0
-    for(let i=0;i<str.length;i++)
-    {
-        if(IsNumber(str[i]))
-        {
-            number = str[i]- '0';
+function NumInStr(str) {
+    var number = 0
+    for (let i = 0; i < str.length; i++) {
+        if (IsNumber(str[i])) {
+            number = str[i] - '0';
             console.log('3----------');
             console.log(number);
-            for(let j=i+1;i<str.length;j++)
-            {
-              if(IsNumber(str[j]))
-              {
-                number = number*10 + (str[j]-'0')
-                  console.log('3----------');
-                  console.log(number);
-              }
-              else
-                break;
+            for (let j = i + 1; i < str.length; j++) {
+                if (IsNumber(str[j])) {
+                    number = number * 10 + (str[j] - '0')
+                    console.log('3----------');
+                    console.log(number);
+                }
+                else
+                    break;
             }
             break;
         }
@@ -88,10 +75,9 @@ function NumInStr(str)
     return number;
 }
 
-function IsNumber(character)
-{
-    if((character >= '0')&&(character <='9'))
-      return true;
+function IsNumber(character) {
+    if ((character >= '0') && (character <= '9'))
+        return true;
 
     return false;
 }
