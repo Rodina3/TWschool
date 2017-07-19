@@ -32,16 +32,29 @@ describe('pos', () => {
   });
 
 
-  it('tags to single item',() => {
-    const tags =[
-        'ITEM000001',
-        'ITEM000001',
-        'ITEM000005',
-    ];
-      const result=[{barcode:'ITEM000001',name:'雪碧',unit:'瓶',price:3,count:1},
-          {barcode:'ITEM000001',name:'雪碧',unit:'瓶',price:3,count:1},
-          {barcode:'ITEM000005',name:'方便面',unit:'袋',price:4.5,count:1}];
-      expect(tag2Item(tags)).toEqual(result);
-  })
+
+    it('tags to single item',() => {
+        const tags =[
+            'ITEM000001',
+            'ITEM000001',
+            'ITEM000005',
+        ];
+        const result=[{barcode:'ITEM000001',name:'雪碧',unit:'瓶',price:3,count:1},
+            {barcode:'ITEM000001',name:'雪碧',unit:'瓶',price:3,count:1},
+            {barcode:'ITEM000005',name:'方便面',unit:'袋',price:4.5,count:1}];
+        expect(tag2Item(tags)).toEqual(result);
+    })
+
+
+    it('tags to complex item',() => {
+        const tags =[
+            'ITEM000003-2.5',
+            'ITEM000005-2',
+        ];
+        const result=[{barcode:'ITEM000003',name:'荔枝',unit:'斤',price:15,count:2.5},
+            {barcode:'ITEM000005',name:'方便面',unit:'袋',price:4.5,count:2}];
+        expect(tag2Item(tags)).toEqual(result);
+    })
+
 
 });

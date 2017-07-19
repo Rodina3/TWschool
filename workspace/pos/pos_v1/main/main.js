@@ -57,14 +57,21 @@ function simpleTag(string) {
 }
 
 function complexTag(string) {
-    let itemInof = loadAllItems();
+    let obj ={};
+    let itemInfo = loadAllItems();
+
+    let itemCode = '';
+    let itemCount ='';
+    itemCode = string.split('-')[0];
+    itemCount = string.split('-')[1];
+
     for (let j = 0; j < itemInfo.length; j++) {
-        // let obj = tagsArray[i].slice(0,10);
-        console.log(tagsArray[i]);
-        let obj = tagsArray[i];
-        if (obj == itemInfo[j].barcodes) {
-            item.push(itemInfo[j]);
-            break;
+
+
+        if (itemCode == itemInfo[j].barcode) {
+            obj = itemInfo[j];
+            obj.count = parseFloat(itemCount);
+            return obj;
         }
     }
 }
