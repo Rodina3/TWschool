@@ -84,6 +84,11 @@ function gatherItem(itemList)
     {
         countItem(itemList[i],itemRecord);
     }
+
+    for(let i=0;i<itemList.length;i++)
+    {
+        itemList[i].sumPrice = itemList[i].count * itemList[i].price;
+    }
     return itemRecord;
 
 }
@@ -104,7 +109,4 @@ function countItem(obj,itemRecord)
 
 
 
-function caculatePrice()
-{
 
-}
