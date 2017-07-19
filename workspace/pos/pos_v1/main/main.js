@@ -57,11 +57,11 @@ function simpleTag(string) {
 }
 
 function complexTag(string) {
-    let obj ={};
+    let obj = {};
     let itemInfo = loadAllItems();
 
     let itemCode = '';
-    let itemCount ='';
+    let itemCount = '';
     itemCode = string.split('-')[0];
     itemCount = string.split('-')[1];
 
@@ -77,34 +77,61 @@ function complexTag(string) {
 }
 
 
-function gatherItem(itemList)
-{
+function gatherItem(itemList) {
     let itemRecord = [];
-    for(let i=0;i<itemList.length;i++)
-    {
-        countItem(itemList[i],itemRecord);
+    for (let i = 0; i < itemList.length; i++) {
+        countItem(itemList[i], itemRecord);
     }
 
-    for(let i=0;i<itemList.length;i++)
-    {
+    for (let i = 0; i < itemList.length; i++) {
         itemList[i].sumPrice = itemList[i].count * itemList[i].price;
     }
     return itemRecord;
 
 }
 
-function countItem(obj,itemRecord)
-{
-    for(let i=0;i<itemRecord.length;i++)
-    {
-        if(obj.barcode == itemRecord[i].barcode)
-        {
+function countItem(obj, itemRecord) {
+    for (let i = 0; i < itemRecord.length; i++) {
+        if (obj.barcode == itemRecord[i].barcode) {
             itemRecord[i].count += obj.count;
             return;
         }
     }
     itemRecord.push(obj);
     return;
+}
+
+function promotion(itemBeforeDiscount) {
+    let itemAfterDiscount = itemBeforeDiscount;
+    for (let i = 0; i < itemBeforeDiscount.length; i++) {
+        if (isPromtionItem(itemBeforeDiscount[i])) {
+            itemAfterDiscount[i].discount = promotionRule(itemBeforeDiscount[i]);
+        }
+        else {
+            itemAfterDiscount[i].discount = 0;
+        }
+
+    }
+
+    return itemAfterDiscount;
+}
+
+function isPromtionItem(obj) {
+    let promotionItem = loadPromotions();
+    let promotionArr =promotionItem[0].barcodes;
+
+    for (let i = 0; i < promotionArr.length; i++) {
+        if (obj.barcode == promotionArr[i]) {
+            return true;
+        }
+    }
+    return false;
+}
+
+function promotionRule(obj) {
+
+    // add the discount
+
 }
 
 

@@ -111,4 +111,12 @@ describe('pos', () => {
         expect((gatherItem(itemList))).toEqual(result);
     })
 
+    it('judge whether is a promotional item',() => {
+        const obj = {barcode:'ITEM000001',name:'雪碧',unit:'瓶',price:3,count:5,sumPrice:15};
+        const result= true;
+        expect((isPromtionItem(obj))).toEqual(result);
+    })
+
+
+
 });
