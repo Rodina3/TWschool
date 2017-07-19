@@ -30,4 +30,16 @@ describe('pos', () => {
 
     expect(console.log).toHaveBeenCalledWith(expectText);
   });
+
+
+  it('tags to single item',() => {
+    const tags =[
+        'ITEM000001',
+        'ITEM000001',
+        'ITEM000005',
+    ];
+      const result=[{barcode:'ITEM000001',name:'雪碧',unit:'瓶',price:3},{barcode:'ITEM000001',name:'雪碧',unit:'瓶',price:3},{barcode:'ITEM000005',name:'方便面',unit:'袋',price:4.5}];
+      expect(tag2Item(tags)).toEqual(result);
+  })
+
 });
