@@ -5,7 +5,7 @@ module.exports = function countSameElements(collection) {
 
     for (var i = 0; i < collection.length; i++) {
         var index;
-        index = IsExist(collection[i], count_same_ele);
+        index = findEle(collection[i], count_same_ele);
         if (index == -1) {
             count_same_ele.push({key: collection[i], count: 1});
         }
@@ -16,7 +16,7 @@ module.exports = function countSameElements(collection) {
     return count_same_ele;
 }
 
-function IsExist(ele, arr) {
+function findEle(ele, arr) {
 
     for (var j = 0; j < arr.length; j++) {
         if (ele == arr[j].key) {

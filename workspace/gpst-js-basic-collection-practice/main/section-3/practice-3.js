@@ -50,11 +50,5 @@ function Find(ele, collection) {
 
 
 function process3sub1(num) {
-    var loop_count = num;
-    for (let i = 1; i <= loop_count; i++) {
-        if (i % 3 == 0) {
-            num--;
-        }
-    }
-    return num;
+    return (num - parseInt(num / 3));
 }

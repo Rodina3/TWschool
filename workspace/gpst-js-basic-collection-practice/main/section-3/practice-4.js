@@ -5,12 +5,12 @@ module.exports = function createUpdatedCollection(collectionA, objectB) {
     let collectionC = [];
 
     collectionC = countSameEle(collectionA);
-    console.log('----3-4:1------');
-    console.log(collectionC);
+    //console.log('----3-4:1------');
+    //console.log(collectionC);
 
     collectionC = subSameEle(collectionC, objectB);
-    console.log('----3-4:2------');
-    console.log(collectionC);
+    //console.log('----3-4:2------');
+    //console.log(collectionC);
 
     return collectionC;
 }
@@ -89,7 +89,6 @@ function subSameEle(arr1, arr2) {
 }
 
 function process3sub1(num) {
-    num = num - parseInt(num / 3);
-    return num;
+    return (num - parseInt(num / 3));
 }
 
