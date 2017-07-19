@@ -125,4 +125,17 @@ describe('pos', () => {
         expect((promotionRule(obj))).toEqual(result);
     })
 
+    it('process with promotion',() => {
+        const itemBeforePromotion = [
+            {barcode:'ITEM000001',name:'雪碧',unit:'瓶',price:3,count:5,sumPrice:15},
+            {barcode:'ITEM000003',name:'荔枝',unit:'斤',price:15,count:2.5,sumPrice:37.5},
+            {barcode:'ITEM000005',name:'方便面',unit:'袋',price:4.5,count:3,sumPrice:13.5}];
+
+        const result=[
+            {barcode:'ITEM000001',name:'雪碧',unit:'瓶',price:3,count:5,sumPrice:12,discount:3},
+            {barcode:'ITEM000003',name:'荔枝',unit:'斤',price:15,count:2.5,sumPrice:37.5,discount:0},
+            {barcode:'ITEM000005',name:'方便面',unit:'袋',price:4.5,count:3,sumPrice:9,discount:4.5}];
+        expect((promotion(itemBeforePromotion))).toEqual(result);
+    })
+
 });

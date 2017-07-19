@@ -103,10 +103,14 @@ function countItem(obj, itemRecord) {
 
 function promotion(itemBeforeDiscount) {
     let itemAfterDiscount = itemBeforeDiscount;
+    let obj;
     for (let i = 0; i < itemBeforeDiscount.length; i++) {
 
         if (isPromtionItem(itemBeforeDiscount[i])) {
-            itemAfterDiscount[i].discount = promotionRule(itemBeforeDiscount[i]);
+
+            obj=promotionRule(itemBeforeDiscount[i]);
+            itemAfterDiscount[i].discount = obj.discount;
+            itemAfterDiscount[i].sumPrice=obj.sumPrice;
         }
         else {
             itemAfterDiscount[i].discount = 0;
