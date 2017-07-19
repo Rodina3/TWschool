@@ -3,22 +3,26 @@
 
 //TODO: 请在该文件中实现练习要求并删除此注释
 function printReceipt(tagArray) {
-    /*let items = tag2Item(tagArray);
-     let itemList = clarifyItem(items);
-     let itemDiscount  = getPromotion(itemList);
-     let itemsReceipt=getReceipt(itemDiscount);
+    let itemArray = tag2Item(tagArray);
+    let itemList = gatherItem(itemArray);
+    let itemAfterDiscount = promotion(itemList);
 
-     let prefix = '***<没钱赚商店>收据***';
-     let sum=0;
-     console.log(prefix);
-     for(let i=0;i<itemsReceipt.length;i++)
-     {
-     console('名称：'+itemsReceipt[i].name + '，数量：'+itemsReceipt[i].count+'，单价：'+itemsReceipt[i].price+'(元)'+itemsReceipt[i].unit+'，小计：'+itemsReceipt.sum+'（元）')
-     sum += itemsReceipt[i].sum;
-     }
-     console.log('----------------------\n总计：'+sum+'(元)\n'+'节省：'+'(元)\n'+ '**********************');
+    let outputString = '';
+    let str = '';
+    let prefix = '***<没钱赚商店>收据***\n';
+    outputString += prefix;
 
-     // return string;*/
+    let totalPrice = 0, totalDiscount = 0;
+    for (let i = 0; i < itemAfterDiscount.length; i++) {
+        str = itemDetailString(itemAfterDiscount[i]);
+        outputString = outputString + str + '\n';
+        totalDiscount += itemAfterDiscount[i].discount;
+        totalPrice += itemAfterDiscount[i].sumPrice;
+    }
+    let suffix = '----------------------\n总计：' + totalPrice.toFixed(2) + '(元)\n' + '节省：' + totalDiscount.toFixed(2) + '(元)\n' + '**********************';
+    outputString += suffix;
+    console.log(outputString);
+    // return string;*/
 }
 
 
@@ -149,7 +153,7 @@ function itemDetailString(obj) {
     let str = '';
     let strPrice = obj.price.toFixed(2);
     let strSumPrice = obj.sumPrice.toFixed(2);
-    str = '名称：' + obj.name + '，数量：' + obj.count + obj.unit + '，单价：' + strPrice + '(元)，小计：' + strSumPrice+'(元)';
+    str = '名称：' + obj.name + '，数量：' + obj.count + obj.unit + '，单价：' + strPrice + '(元)，小计：' + strSumPrice + '(元)';
     return str;
 }
 
