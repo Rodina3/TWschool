@@ -33,7 +33,8 @@ function tag2Item(tagsArray) {
             item.push(obj);
         }
         else {
-
+            obj = complexTag(tagsArray[i]);
+            item.push(obj);
         }
 
 
@@ -49,7 +50,7 @@ function simpleTag(string) {
 
         if (string == itemInfo[j].barcode) {
             obj = itemInfo[j];
-            //obj.count = 1;
+            obj.count = 1;
             return obj;
         }
     }
