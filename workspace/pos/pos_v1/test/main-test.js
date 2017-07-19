@@ -138,4 +138,11 @@ describe('pos', () => {
         expect((promotion(itemBeforePromotion))).toEqual(result);
     })
 
+
+    it('should change item details in string',() => {
+        const obj = {barcode:'ITEM000001',name:'雪碧',unit:'瓶',price:3,count:5,sumPrice:12,discount:3};
+        const result= '名称：雪碧，数量：5瓶，单价：3.00(元)，小计：12.00(元)';
+        expect((itemDetailString(obj))).toEqual(result);
+    })
+
 });

@@ -108,9 +108,9 @@ function promotion(itemBeforeDiscount) {
 
         if (isPromtionItem(itemBeforeDiscount[i])) {
 
-            obj=promotionRule(itemBeforeDiscount[i]);
+            obj = promotionRule(itemBeforeDiscount[i]);
             itemAfterDiscount[i].discount = obj.discount;
-            itemAfterDiscount[i].sumPrice=obj.sumPrice;
+            itemAfterDiscount[i].sumPrice = obj.sumPrice;
         }
         else {
             itemAfterDiscount[i].discount = 0;
@@ -123,7 +123,7 @@ function promotion(itemBeforeDiscount) {
 
 function isPromtionItem(obj) {
     let promotionItem = loadPromotions();
-    let promotionArr =promotionItem[0].barcodes;
+    let promotionArr = promotionItem[0].barcodes;
 
     for (let i = 0; i < promotionArr.length; i++) {
         if (obj.barcode == promotionArr[i]) {
@@ -136,8 +136,7 @@ function isPromtionItem(obj) {
 function promotionRule(obj) {
 
     let quantity = obj.count;
-    if(quantity>3)
-    {
+    if (quantity > 3) {
         quantity--;
     }
     obj.discount = obj.price;
@@ -145,6 +144,13 @@ function promotionRule(obj) {
 
     return obj;
 
+}
+function itemDetailString(obj) {
+    let str = '';
+    let strPrice = obj.price.toFixed(2);
+    let strSumPrice = obj.sumPrice.toFixed(2);
+    str = '名称：' + obj.name + '，数量：' + obj.count + obj.unit + '，单价：' + strPrice + '(元)，小计：' + strSumPrice+'(元)';
+    return str;
 }
 
 
