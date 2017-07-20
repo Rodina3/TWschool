@@ -77,4 +77,26 @@ describe('pos', () => {
         expect(countCartItem(stdTags)).toEqual(result);
     })
 
+
+    it('unit test:isPromotionItem',() => {
+
+        expect(isPromtionItem('ITEM000005')).toEqual(true);
+        expect(isPromtionItem('ITEM000003')).toEqual(false);
+
+    })
+
+    it('should promote',() => {
+        const beforePromtion =[
+            { barcode: 'ITEM000001', name: '雪碧', unit: '瓶', price: 3, count: 5,subTotal:15 },
+            { barcode: 'ITEM000003', name: '荔枝', unit: '斤', price: 15, count: 2.5,subTotal:37.5 },
+            { barcode: 'ITEM000005', name: '方便面', unit: '袋', price: 4.5, count: 3 ,subTotal:13.5}
+        ];
+        const result=[
+            { barcode: 'ITEM000001', name: '雪碧', unit: '瓶', price: 3, count: 5,subTotal:12 ,saving:3},
+            { barcode: 'ITEM000003', name: '荔枝', unit: '斤', price: 15, count: 2.5,subTotal:37.5,saving:0},
+            { barcode: 'ITEM000005', name: '方便面', unit: '袋', price: 4.5, count: 3 ,subTotal:9,saving:4.5}
+        ];
+        expect(promote(beforePromtion)).toEqual(result);
+    })
+
 });

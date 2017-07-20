@@ -2,7 +2,7 @@
 
 //TODO: 请在该文件中实现练习要求并删除此注释
 const itemInfo = Item.all();
-const promoteInfo = Promotion.all();
+const promoteInfo = Promotion.all()[0].barcodes;
 
 function printReceipt(tags) {
     buildCart();
@@ -73,8 +73,33 @@ function find(barcode,count,cartList)
 
 }
 
-function promote() {
+function promote(cartList) {
+    for(let i=0;i<cartList.length;i++)
+    {
+        if(isPromtionItem((cartList[i].barcode)))
+        {
+            let freeItemCount =(cartList[i].count > 2)?1: 0;
+            cartList[i].saving = cartList[i].price * freeItemCount;
+        }
+        else
+        {
+            cartList[i].saving = 0;
+        }
 
+        cartList[i].subTotal -= cartList[i].saving;
+    }
+
+    return cartList;
+}
+
+function isPromtionItem(barcode)
+{
+    for(let i=0;i<promoteInfo.length;i++)
+    {
+        if(barcode === promoteInfo[i])
+            return true;
+    }
+    return false;
 }
 
 function getReceipt() {
