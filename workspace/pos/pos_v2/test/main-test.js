@@ -99,4 +99,20 @@ describe('pos', () => {
         expect(promote(beforePromtion)).toEqual(result);
     })
 
+    it('unit test:getReceipt',() => {
+        const cart =[
+            { barcode: 'ITEM000001', name: '雪碧', unit: '瓶', price: 3, count: 5,subTotal:12 ,saving:3},
+            { barcode: 'ITEM000003', name: '荔枝', unit: '斤', price: 15, count: 2.5,subTotal:37.5,saving:0},
+            { barcode: 'ITEM000005', name: '方便面', unit: '袋', price: 4.5, count: 3 ,subTotal:9,saving:4.5}
+        ];
+        const result= {
+            cart: [{barcode: 'ITEM000001', name: '雪碧', unit: '瓶', price: 3, count: 5, subTotal: 12, saving: 3},
+                {barcode: 'ITEM000003', name: '荔枝', unit: '斤', price: 15, count: 2.5, subTotal: 37.5, saving: 0},
+                {barcode: 'ITEM000005', name: '方便面', unit: '袋', price: 4.5, count: 3, subTotal: 9, saving: 4.5}],
+            totalPrice:58.5,
+            totalSaving:7.5
+        }
+        expect(getReceipt(cart)).toEqual(result);
+    })
+
 });
