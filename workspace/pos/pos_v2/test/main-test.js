@@ -43,4 +43,19 @@ describe('pos', () => {
 
     expect(console.log).toHaveBeenCalledWith(expectText);
   });
+
+    it('unit test:formatTags()',() => {
+        const tags =[
+            'ITEM000003',
+            'ITEM000003-2.5',
+            'ITEM000005-2',
+        ];
+        const result=[
+            'ITEM000003-1',
+            'ITEM000003-2.5',
+            'ITEM000005-2',
+        ];
+        expect(formatTag(tags)).toEqual(result);
+    })
+
 });
