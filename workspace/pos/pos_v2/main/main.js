@@ -13,9 +13,10 @@ function printReceipt(tags) {
 
 function buildCart(tags) {
     let stdTags = formatTag(tags);
-    countCartItem();
-    promote();
-    getReceipt();
+    let cartList = countCartItem(stdTags);
+    let promotedCartList = promote(cartList);
+    let receipt = getReceipt(promotedCartList);
+    return receipt;
 }
 
 function buildReceiptText(tags) {
