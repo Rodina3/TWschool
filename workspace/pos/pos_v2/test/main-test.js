@@ -133,7 +133,7 @@ describe('pos', () => {
             totalPrice:58.5,
             totalSaving:7.5
         }
-        expect(buildCart(tags)).toEqual(result);
+        expect(buildReceipt(tags)).toEqual(result);
     })
 
 

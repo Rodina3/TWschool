@@ -5,14 +5,14 @@ const itemInfo = Item.all();
 const promoteInfo = Promotion.all()[0].barcodes;
 
 function printReceipt(tags) {
-    let receipt = buildCart(tags);
+    let receipt = buildReceipt(tags);
     let receiptText = getReceiptText(receipt);
 
     console.log(receiptText);
 
 }
 
-function buildCart(tags) {
+function buildReceipt(tags) {
     let stdTags = formatTag(tags);
     let cartList = countCartItem(stdTags);
     let promotedCartList = promote(cartList);
