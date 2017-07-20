@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="00a52363-c95b-49b4-b60d-239ec5a19e56" name="Default" comment="" />
+    <list default="true" id="366aadf3-9c6f-4251-ae60-dc26c6be9bdb" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -12,64 +12,23 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pos_v1/main/main.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="21" column="114" lean-forward="false" selection-start-line="21" selection-start-column="114" selection-end-line="21" selection-end-column="114" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pos_v1/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SECOND">
-              <first_editor relative-caret-position="705">
-                <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
-                <folding>
-                  <marker date="1500448421000" expanded="true" signature="345:493" ph="[...]" />
-                  <marker date="1500448421000" expanded="true" signature="1142:1232" ph="{...}" />
-                  <marker date="1500448421000" expanded="true" signature="1326:1590" ph="[...]" />
-                  <marker date="1500448421000" expanded="true" signature="1334:1458" ph="{&quot;type&quot;: 'BUY_TWO_GET_ONE_FREE'...}" />
-                  <marker date="1500448421000" expanded="true" signature="1392:1450" ph="[...]" />
-                  <marker date="1500448421000" expanded="true" signature="1466:1585" ph="{&quot;type&quot;: 'OTHER_PROMOTION'...}" />
-                  <marker date="1500448421000" expanded="true" signature="1519:1577" ph="[...]" />
-                </folding>
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="main-test.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pos_v1/test/main-test.js">
+        <entry file="file://$PROJECT_DIR$/pos_v2/test/main-test.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="335">
-              <caret line="62" column="25" lean-forward="true" selection-start-line="62" selection-start-column="25" selection-end-line="62" selection-end-column="25" />
+            <state relative-caret-position="170">
+              <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
               <folding>
-                <marker date="1500481315000" expanded="true" signature="354:536" ph="..." />
+                <marker date="1487693750000" expanded="true" signature="895:1128" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="run.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/pos_v1/run.html">
+        <entry file="file://$PROJECT_DIR$/pos_v2/run.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="81" lean-forward="true" selection-start-line="7" selection-start-column="81" selection-end-line="7" selection-end-column="81" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="fixtures.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pos_v1/test/fixtures.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="32" column="17" lean-forward="false" selection-start-line="32" selection-start-column="17" selection-end-line="32" selection-end-column="17" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -125,6 +84,7 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -135,10 +95,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="pos" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pos_v1" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -152,7 +108,21 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="pos_v1" />
+              <option name="myItemId" value="pos_v2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pos" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pos" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pos_v2" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -170,7 +140,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="pos_v1" />
+              <option name="myItemId" value="pos_v2" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -178,19 +148,8 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pos" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pos" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -213,8 +172,11 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.run.html">
+  <component name="RunManager" selected="JavaScript Debug.run.html (1)">
     <configuration default="false" name="run.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/pos/pos_v1/run.html">
+      <method />
+    </configuration>
+    <configuration default="false" name="run.html (1)" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/pos/pos_v2/run.html">
       <method />
     </configuration>
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
@@ -604,12 +566,14 @@
     <configuration default="true" type="osgi.bnd.run" factoryName="Test Launcher (JUnit)">
       <method />
     </configuration>
-    <list size="1">
+    <list size="2">
       <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.run.html" />
+      <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.run.html (1)" />
     </list>
     <recent_temporary>
-      <list size="1">
-        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.run.html" />
+      <list size="2">
+        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.run.html (1)" />
+        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.run.html" />
       </list>
     </recent_temporary>
   </component>
@@ -618,7 +582,7 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="00a52363-c95b-49b4-b60d-239ec5a19e56" name="Default" comment="" />
+      <changelist id="366aadf3-9c6f-4251-ae60-dc26c6be9bdb" name="Default" comment="" />
       <created>1500452852806</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -626,15 +590,16 @@
       <workItem from="1500452854041" duration="8224000" />
       <workItem from="1500467285103" duration="11961000" />
       <workItem from="1500511967739" duration="710000" />
+      <workItem from="1500544508932" duration="120000" />
+      <workItem from="1500544774360" duration="14000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20895000" />
+    <option name="totallyTimeSpent" value="21102000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="40" y="58" width="1400" height="770" extended-state="1" />
-    <editor active="true" />
+    <frame x="40" y="58" width="1400" height="770" extended-state="0" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -650,7 +615,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32890856" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2569956" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26435935" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -679,11 +644,41 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/pos_v2/test/main-test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1487693750000" expanded="true" signature="895:1128" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pos_v2/main/model/promotion.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pos_v2/main/model/item.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pos_v2/main/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="1" lean-forward="true" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/pos_v1/main/main.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
           <caret line="21" column="114" lean-forward="false" selection-start-line="21" selection-start-column="114" selection-end-line="21" selection-end-column="114" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -692,15 +687,6 @@
         <state split_layout="SECOND">
           <first_editor relative-caret-position="705">
             <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
-            <folding>
-              <marker date="1500448421000" expanded="true" signature="345:493" ph="[...]" />
-              <marker date="1500448421000" expanded="true" signature="1142:1232" ph="{...}" />
-              <marker date="1500448421000" expanded="true" signature="1326:1590" ph="[...]" />
-              <marker date="1500448421000" expanded="true" signature="1334:1458" ph="{&quot;type&quot;: 'BUY_TWO_GET_ONE_FREE'...}" />
-              <marker date="1500448421000" expanded="true" signature="1392:1450" ph="[...]" />
-              <marker date="1500448421000" expanded="true" signature="1466:1585" ph="{&quot;type&quot;: 'OTHER_PROMOTION'...}" />
-              <marker date="1500448421000" expanded="true" signature="1519:1577" ph="[...]" />
-            </folding>
           </first_editor>
           <second_editor />
         </state>
@@ -710,7 +696,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="480">
           <caret line="32" column="17" lean-forward="true" selection-start-line="32" selection-start-column="17" selection-end-line="32" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -718,9 +703,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1215">
           <caret line="81" column="0" lean-forward="false" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
-          <folding>
-            <marker date="1500481315000" expanded="true" signature="354:536" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -728,7 +710,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="855">
           <caret line="57" column="0" lean-forward="true" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -737,15 +718,6 @@
         <state split_layout="SECOND">
           <first_editor relative-caret-position="705">
             <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
-            <folding>
-              <marker date="1500448421000" expanded="true" signature="345:493" ph="[...]" />
-              <marker date="1500448421000" expanded="true" signature="1142:1232" ph="{...}" />
-              <marker date="1500448421000" expanded="true" signature="1326:1590" ph="[...]" />
-              <marker date="1500448421000" expanded="true" signature="1334:1458" ph="{&quot;type&quot;: 'BUY_TWO_GET_ONE_FREE'...}" />
-              <marker date="1500448421000" expanded="true" signature="1392:1450" ph="[...]" />
-              <marker date="1500448421000" expanded="true" signature="1466:1585" ph="{&quot;type&quot;: 'OTHER_PROMOTION'...}" />
-              <marker date="1500448421000" expanded="true" signature="1519:1577" ph="[...]" />
-            </folding>
           </first_editor>
           <second_editor />
         </state>
@@ -755,7 +727,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -763,9 +734,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="8" column="19" lean-forward="true" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
-          <folding>
-            <marker date="1500481315000" expanded="true" signature="354:536" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -774,15 +742,6 @@
         <state split_layout="SECOND">
           <first_editor relative-caret-position="705">
             <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
-            <folding>
-              <marker date="1500448421000" expanded="true" signature="345:493" ph="[...]" />
-              <marker date="1500448421000" expanded="true" signature="1142:1232" ph="{...}" />
-              <marker date="1500448421000" expanded="true" signature="1326:1590" ph="[...]" />
-              <marker date="1500448421000" expanded="true" signature="1334:1458" ph="{&quot;type&quot;: 'BUY_TWO_GET_ONE_FREE'...}" />
-              <marker date="1500448421000" expanded="true" signature="1392:1450" ph="[...]" />
-              <marker date="1500448421000" expanded="true" signature="1466:1585" ph="{&quot;type&quot;: 'OTHER_PROMOTION'...}" />
-              <marker date="1500448421000" expanded="true" signature="1519:1577" ph="[...]" />
-            </folding>
           </first_editor>
           <second_editor />
         </state>
@@ -792,7 +751,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="480">
           <caret line="32" column="17" lean-forward="false" selection-start-line="32" selection-start-column="17" selection-end-line="32" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -800,7 +758,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
           <caret line="21" column="114" lean-forward="false" selection-start-line="21" selection-start-column="114" selection-end-line="21" selection-end-column="114" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -808,9 +765,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="335">
           <caret line="62" column="25" lean-forward="true" selection-start-line="62" selection-start-column="25" selection-end-line="62" selection-end-column="25" />
-          <folding>
-            <marker date="1500481315000" expanded="true" signature="354:536" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -818,6 +772,23 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="7" column="81" lean-forward="true" selection-start-line="7" selection-start-column="81" selection-end-line="7" selection-end-column="81" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pos_v2/test/main-test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding>
+            <marker date="1487693750000" expanded="true" signature="895:1128" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pos_v2/run.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
