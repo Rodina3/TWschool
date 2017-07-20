@@ -5,9 +5,10 @@ const itemInfo = Item.all();
 const promoteInfo = Promotion.all()[0].barcodes;
 
 function printReceipt(tags) {
-    buildCart();
-    buildReceiptText();
-    console.log('');
+    let receipt = buildCart(tags);
+    let receiptText = getReceiptText(receipt);
+
+    console.log(receiptText);
 
 }
 
@@ -19,8 +20,41 @@ function buildCart(tags) {
     return receipt;
 }
 
-function buildReceiptText(tags) {
+function getReceiptText(receipt) {
+    let receiptText = '';
+    let storeName = '***<没钱赚商店>收据***\n';
+    let itemInfoText = '';
+    let items = receipt.cart;
+    for (let i = 0; i < items.length; i++) {
+        itemInfoText += '名称：' + items[i].name + '，数量：' + items[i].count + items[i].unit +
+            '，单价：' + items[i].price.toFixed(2) + '(元)，小计：' + items[i].subTotal.toFixed(2) + '(元)\n';
+    }
+    let priceText = '总计：' + receipt.totalPrice.toFixed(2) + '(元)\n';
+    let savingText = '节省：' + receipt.totalSaving.toFixed(2) + '(元)\n';
 
+    const dateDigitToString = num => (num < 10 ? `0${num}` : num);
+
+    const currentDate = new Date(),
+        year = dateDigitToString(currentDate.getFullYear()),
+        month = dateDigitToString(currentDate.getMonth() + 1),
+        date = dateDigitToString(currentDate.getDate()),
+        hour = dateDigitToString(currentDate.getHours()),
+        minute = dateDigitToString(currentDate.getMinutes()),
+        second = dateDigitToString(currentDate.getSeconds()),
+        formattedDateString = `${year}年${month}月${date}日 ${hour}:${minute}:${second}`;
+
+    let printTime = `打印时间：${formattedDateString}\n`;
+
+    receiptText = storeName
+        + printTime
+        + '----------------------\n'
+        + itemInfoText
+        + '----------------------\n'
+        + priceText
+        + savingText
+        + '**********************';
+
+    return receiptText;
 }
 
 function formatTag(tags) {
@@ -101,3 +135,6 @@ function getReceipt(promotedCart) {
     return {cart: promotedCart, totalPrice: totalPrice, totalSaving: totalSaving};
 
 }
+
+
+

@@ -15,10 +15,17 @@
       <file leaf-file-name="main-test.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pos_v2/test/main-test.js">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="560">
               <caret line="139" column="0" lean-forward="true" selection-start-line="139" selection-start-column="0" selection-end-line="139" selection-end-column="0" />
               <folding>
                 <marker date="1500559456000" expanded="true" signature="895:1128" ph="..." />
+=======
+            <state relative-caret-position="564">
+              <caret line="114" column="29" lean-forward="true" selection-start-line="114" selection-start-column="29" selection-end-line="114" selection-end-column="29" />
+              <folding>
+                <marker date="1500558604000" expanded="true" signature="895:1128" ph="..." />
+>>>>>>> b6cfc51812d628939558a3dc1990bb14901019fb
               </folding>
             </state>
           </provider>
@@ -27,8 +34,13 @@
       <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pos_v2/main/main.js">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="227">
               <caret line="17" column="47" lean-forward="true" selection-start-line="17" selection-start-column="47" selection-end-line="17" selection-end-column="47" />
+=======
+            <state relative-caret-position="560">
+              <caret line="101" column="1" lean-forward="false" selection-start-line="101" selection-start-column="1" selection-end-line="101" selection-end-column="1" />
+>>>>>>> b6cfc51812d628939558a3dc1990bb14901019fb
               <folding />
             </state>
           </provider>
@@ -67,8 +79,8 @@
         <option value="$PROJECT_DIR$/pos_v1/test/fixtures.js" />
         <option value="$PROJECT_DIR$/pos_v1/main/main.js" />
         <option value="$PROJECT_DIR$/pos_v1/test/main-test.js" />
-        <option value="$PROJECT_DIR$/pos_v2/main/main.js" />
         <option value="$PROJECT_DIR$/pos_v2/test/main-test.js" />
+        <option value="$PROJECT_DIR$/pos_v2/main/main.js" />
       </list>
     </option>
   </component>
@@ -636,12 +648,20 @@
       <workItem from="1500511967739" duration="710000" />
       <workItem from="1500544508932" duration="120000" />
       <workItem from="1500544774360" duration="2605000" />
+<<<<<<< HEAD
       <workItem from="1500554746518" duration="4016000" />
+=======
+      <workItem from="1500554746518" duration="3273000" />
+>>>>>>> b6cfc51812d628939558a3dc1990bb14901019fb
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="27709000" />
+=======
+    <option name="totallyTimeSpent" value="26966000" />
+>>>>>>> b6cfc51812d628939558a3dc1990bb14901019fb
   </component>
   <component name="ToolWindowManager">
     <frame x="7" y="65" width="1400" height="770" extended-state="0" />
@@ -699,7 +719,11 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+<<<<<<< HEAD
             <marker date="1500559456000" expanded="true" signature="895:1128" ph="..." />
+=======
+            <marker date="1500558604000" expanded="true" signature="895:1128" ph="..." />
+>>>>>>> b6cfc51812d628939558a3dc1990bb14901019fb
           </folding>
         </state>
       </provider>
@@ -733,7 +757,11 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+<<<<<<< HEAD
             <marker date="1500559456000" expanded="true" signature="895:1128" ph="..." />
+=======
+            <marker date="1500558604000" expanded="true" signature="895:1128" ph="..." />
+>>>>>>> b6cfc51812d628939558a3dc1990bb14901019fb
           </folding>
         </state>
       </provider>
@@ -870,19 +898,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pos_v2/main/main.js">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="227">
           <caret line="17" column="47" lean-forward="true" selection-start-line="17" selection-start-column="47" selection-end-line="17" selection-end-column="47" />
           <folding />
+=======
+        <state relative-caret-position="564">
+          <caret line="114" column="29" lean-forward="true" selection-start-line="114" selection-start-column="29" selection-end-line="114" selection-end-column="29" />
+          <folding>
+            <marker date="1500558604000" expanded="true" signature="895:1128" ph="..." />
+          </folding>
+>>>>>>> b6cfc51812d628939558a3dc1990bb14901019fb
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pos_v2/test/main-test.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="560">
+<<<<<<< HEAD
           <caret line="139" column="0" lean-forward="true" selection-start-line="139" selection-start-column="0" selection-end-line="139" selection-end-column="0" />
           <folding>
             <marker date="1500559456000" expanded="true" signature="895:1128" ph="..." />
           </folding>
+=======
+          <caret line="101" column="1" lean-forward="false" selection-start-line="101" selection-start-column="1" selection-end-line="101" selection-end-column="1" />
+          <folding />
+>>>>>>> b6cfc51812d628939558a3dc1990bb14901019fb
         </state>
       </provider>
     </entry>
