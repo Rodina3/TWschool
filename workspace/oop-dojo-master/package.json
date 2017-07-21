@@ -1,0 +1,26 @@
+{
+  "name": "js-online-quiz-template",
+  "version": "1.0.0",
+  "description": "Powered by ZJX",
+  "main": "app.js",
+  "scripts": {
+    "start": "babel-node app.js",
+    "test": "babel-node run-tests.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zjx-immersion/jasmine-tdd-base.git"
+  },
+  "author": "ZJX",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/zjx-immersion/jasmine-tdd-base/issues"
+  },
+  "homepage": "https://school.thoughtworks.cn",
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-preset-es2015": "^6.24.1",
+    "jasmine": "^2.6.0",
+    "jasmine-console-reporter": "^1.2.7"
+  }
+}
