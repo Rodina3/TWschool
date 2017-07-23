@@ -15,6 +15,7 @@ describe("OO入门", function () {
 
         const sJerry = new Student(102, 'Jerry', 21,c3);
         expect(c2.assignLeader(sJerry)).toEqual('It is not one of us.');
+        expect(sJerry.introduce()).toEqual('My name is Jerry. I am 21 years old. I am a Student. I am at Class 3.');
 
     });
 });
