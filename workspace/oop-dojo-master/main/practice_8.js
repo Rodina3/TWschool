@@ -13,10 +13,21 @@ class Person {
     }
 }
 
+class Class{
+    constructor(num)
+    {
+        this._class=num;
+    }
+    get class()
+    {
+        return this._class;
+    }
+}
+
 class Student extends Person {
     constructor(name, age, myclass) {
         super(name, age);
-        this._class = myclass;
+        this._class = myclass.class;
     }
 
     introduce() {
@@ -31,7 +42,7 @@ class Student extends Person {
 class Teacher extends Person {
     constructor(name, age, myclass) {
         super(name, age);
-        this._class = myclass;
+        this._class = myclass.class;
     }
 
     introduce() {
@@ -51,4 +62,4 @@ class Teacher extends Person {
     }
 }
 
-export {Person, Student, Teacher}
+export {Person, Student, Teacher,Class}
