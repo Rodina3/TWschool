@@ -1,6 +1,9 @@
 import frequencyWordsPackage.FrequencyWords;
 import org.junit.Test;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
@@ -22,5 +25,28 @@ public class FrequencyWordsTest {
         //Then
         assertThat(words, is(results));
 
+    }
+
+    @Test
+    public void should_count_word_frequency() throws Exception {
+
+        //Given
+        FrequencyWords fq = new FrequencyWords();
+        String[] words = {"my", "name", "my", "a", "hello", "my", "a", "teacher"};
+        Map<String, Integer> resultMap = new HashMap<String, Integer>();
+
+        for (String s : words) {
+            if (resultMap.containsKey(s)) {
+                resultMap.put(s, resultMap.get(s) + 1);
+            } else {
+                resultMap.put(s, 1);
+            }
+        }
+
+        //When
+        Map<String, Integer> wordsMap = fq.countWordsFrequency(words);
+
+        //Then
+        assertThat(wordsMap, is(resultMap));
     }
 }
