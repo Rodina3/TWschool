@@ -59,7 +59,7 @@ public class FrequencyWordsTest {
     @Test
     public void should_sort_words_according_to_its_frequency() throws Exception {
         //Given
-        FrequencyWords fq =new FrequencyWords();
+        FrequencyWords fq = new FrequencyWords();
 
         Map<String, Integer> wordsMap = new HashMap<String, Integer>();
         wordsMap.put("my", 3);
@@ -68,19 +68,19 @@ public class FrequencyWordsTest {
         wordsMap.put("hello", 1);
         wordsMap.put("teacher", 1);
 
-        Map<String,Integer> result =new HashMap<String,Integer>();
-        result.put("my",3);
-        result.put("a",2);
-        result.put("name",1);
-        result.put("hello",1);
-        result.put("teacher",1);
+        Map<String, Integer> result = new HashMap<String, Integer>();
+        result.put("my", 3);
+        result.put("a", 2);
+        result.put("name", 1);
+        result.put("hello", 1);
+        result.put("teacher", 1);
 
         //When
-        Map<String,Integer> sortedWordMap = fq.sortWords(wordsMap);
+        Map<String, Integer> sortedWordMap = fq.sortWords(wordsMap);
 
 
         //Then
-        assertThat(sortedWordMap,is(result));
+        assertThat(sortedWordMap, is(result));
     }
 
 
@@ -88,12 +88,12 @@ public class FrequencyWordsTest {
     public void should_print_words_in_frequence() throws Exception {
         //Given
         FrequencyWords fq = new FrequencyWords();
-        Map<String,Integer> sortedWordMap = new LinkedHashMap<String,Integer>();
-        sortedWordMap.put("my",3);
-        sortedWordMap.put("a",2);
-        sortedWordMap.put("name",1);
-        sortedWordMap.put("hello",1);
-        sortedWordMap.put("teacher",1);
+        Map<String, Integer> sortedWordMap = new LinkedHashMap<String, Integer>();
+        sortedWordMap.put("my", 3);
+        sortedWordMap.put("a", 2);
+        sortedWordMap.put("name", 1);
+        sortedWordMap.put("hello", 1);
+        sortedWordMap.put("teacher", 1);
 
         String result = "my3\n"
                 + "a2\n"
@@ -105,7 +105,22 @@ public class FrequencyWordsTest {
         String printStr = fq.printWordFrequency(sortedWordMap);
 
         //Then
-        assertThat(printStr,is(result));
+        assertThat(printStr, is(result));
 
+    }
+
+    @Test
+    public void should_load_TXT_to_String() throws Exception {
+        //Given
+        FrequencyWords fq = new FrequencyWords();
+        String contentTXT = "";
+        String result = "my name is tom     i am a teacher";
+        String filePath = "./res/wordsTXT.txt";
+
+        //When
+        contentTXT = fq.loadTXT(filePath);
+
+        //Then
+        assertThat(contentTXT, is(result));
     }
 }

@@ -1,5 +1,6 @@
 package frequencyWordsPackage;
 
+import java.io.*;
 import java.util.*;
 
 /**
@@ -40,5 +41,26 @@ public class FrequencyWords {
 
         //return printString.toString();
         return printString;
+    }
+
+    public String loadTXT(String filePath) {
+
+        StringBuilder content = new StringBuilder();
+
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader(filePath));
+
+            String line = reader.readLine();
+            while (line != null) {
+                content.append(line);
+                //content.append("\n");
+
+                line = reader.readLine();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return content.toString();
     }
 }
