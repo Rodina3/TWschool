@@ -26,11 +26,19 @@ public class FrequencyWords {
         return wordsMap;
     }
 
-    public Map<String,Integer> sortWords(Map<String, Integer> wordsMap) {
-        MapUtil sorting = new MapUtil();
-        Map<String,Integer> wordsSorted =sorting.sortByValue(wordsMap);
-        return wordsSorted;
-
+    public Map<String, Integer> sortWords(Map<String, Integer> wordsMap) {
+        return MapUtil.sortByValue(wordsMap);
     }
 
+    public String printWordFrequency(Map<String, Integer> sortedWordMap) {
+        //StringBuilder printString = new StringBuilder(" ");
+        String printString = "";
+        for (Map.Entry<String, Integer> entry : sortedWordMap.entrySet()) {
+            //printString.append(entry.getKey()).append(entry.getValue()).append("\n");
+            printString += entry.getKey() + entry.getValue() + "\n";
+        }
+
+        //return printString.toString();
+        return printString;
+    }
 }

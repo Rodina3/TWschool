@@ -2,6 +2,7 @@ import frequencyWordsPackage.FrequencyWords;
 import org.junit.Test;
 
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 import static org.hamcrest.core.Is.is;
@@ -75,12 +76,36 @@ public class FrequencyWordsTest {
         result.put("teacher",1);
 
         //When
-        Map<String,Integer> wordsSorted = fq.sortWords(wordsMap);
+        Map<String,Integer> sortedWordMap = fq.sortWords(wordsMap);
 
 
         //Then
-        assertThat(wordsSorted,is(result));
+        assertThat(sortedWordMap,is(result));
     }
 
 
+    @Test
+    public void should_print_words_in_frequence() throws Exception {
+        //Given
+        FrequencyWords fq = new FrequencyWords();
+        Map<String,Integer> sortedWordMap = new LinkedHashMap<String,Integer>();
+        sortedWordMap.put("my",3);
+        sortedWordMap.put("a",2);
+        sortedWordMap.put("name",1);
+        sortedWordMap.put("hello",1);
+        sortedWordMap.put("teacher",1);
+
+        String result = "my3\n"
+                + "a2\n"
+                + "name1\n"
+                + "hello1\n"
+                + "teacher1\n";
+
+        //When
+        String printStr = fq.printWordFrequency(sortedWordMap);
+
+        //Then
+        assertThat(printStr,is(result));
+
+    }
 }
