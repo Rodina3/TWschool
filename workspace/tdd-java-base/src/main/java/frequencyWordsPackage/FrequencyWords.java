@@ -1,7 +1,6 @@
 package frequencyWordsPackage;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Created by rzhou on 25/07/2017.
@@ -26,4 +25,12 @@ public class FrequencyWords {
         }
         return wordsMap;
     }
+
+    public Map<String,Integer> sortWords(Map<String, Integer> wordsMap) {
+        MapUtil sorting = new MapUtil();
+        Map<String,Integer> wordsSorted =sorting.sortByValue(wordsMap);
+        return wordsSorted;
+
+    }
+
 }
