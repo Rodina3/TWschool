@@ -36,13 +36,6 @@ public class FrequencyWordsTest {
         String[] words = {"my", "name", "my", "a", "hello", "my", "a", "teacher"};
         Map<String, Integer> resultMap = new HashMap<String, Integer>();
 
-        /*for (String s : words) {
-            if (resultMap.containsKey(s)) {
-                resultMap.put(s, resultMap.get(s) + 1);
-            } else {
-                resultMap.put(s, 1);
-            }
-        }*/
         resultMap.put("my", 3);
         resultMap.put("name", 1);
         resultMap.put("a", 2);
@@ -62,17 +55,13 @@ public class FrequencyWordsTest {
         FrequencyWords fq = new FrequencyWords();
 
         Map<String, Integer> wordsMap = new HashMap<String, Integer>();
-        wordsMap.put("my", 3);
-        wordsMap.put("name", 1);
-        wordsMap.put("a", 2);
-        wordsMap.put("hello", 1);
         wordsMap.put("teacher", 1);
+        wordsMap.put("a", 2);
+        wordsMap.put("my", 3);
 
-        Map<String, Integer> result = new HashMap<String, Integer>();
+        Map<String, Integer> result = new LinkedHashMap<>();
         result.put("my", 3);
         result.put("a", 2);
-        result.put("name", 1);
-        result.put("hello", 1);
         result.put("teacher", 1);
 
         //When
