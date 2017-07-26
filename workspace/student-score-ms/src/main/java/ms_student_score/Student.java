@@ -7,23 +7,27 @@ import java.util.regex.Pattern;
  */
 public class Student {
 
+    private String name;
+    private String studentNumber;
+    private int math;
+    private int chinese;
+    private int english;
+    private int coding;
+    private float average;
+    private int totalScore;
+
+
     public boolean isIllegal(String input) {
         String[] str = input.split(" ");
         boolean legalStudent = (str.length == 6)
-                && (isStudentNumberLegal(str[1]))
                 && (isLeagalScore(str[2]))
                 && (isLeagalScore(str[3]))
                 && (isLeagalScore(str[4]))
                 && (isLeagalScore(str[5]));
 
-         return legalStudent;
+        return legalStudent;
     }
 
-
-    private boolean isStudentNumberLegal(String str) {
-        return (isDigit(str));
-
-    }
 
     private boolean isLeagalScore(String str) {
         return (isDigit(str) && Integer.parseInt(str) <= 100) && (Integer.parseInt(str) >= 0);
@@ -38,4 +42,37 @@ public class Student {
     }
 
 
+    public void appendScore(String input) {
+        String[] str = input.split(" ");
+
+        this.name = str[0];
+        this.studentNumber = str[1];
+        this.math = Integer.parseInt(str[2]);
+        this.chinese = Integer.parseInt(str[3]);
+        this.english = Integer.parseInt(str[4]);
+        this.coding = Integer.parseInt(str[5]);
+        this.totalScore = this.math + this.coding + this.chinese + this.english;
+        this.average = (float) (totalScore / 4.0);
+
+    }
+
+    public String getName() {
+        return this.name;
+    }
+
+    public String getStudentNumber() {
+        return this.studentNumber;
+    }
+
+    public int getEnglish() {
+        return this.english;
+    }
+
+    public int getTotalScore() {
+        return this.totalScore;
+    }
+
+    public float getAverage() {
+        return this.average;
+    }
 }

@@ -52,4 +52,24 @@ public class StudentTest {
         assertThat(student.isIllegal(input), is(true));
 
     }
+
+    @Test
+    public void should_add_student_object() throws Exception {
+        //given
+        String input = "张三 000 90 89 87 100";
+        int total = 90 + 89 + 87 + 100;
+        float average = (float) (total/4.0);
+        Student result = new Student();
+
+        //when
+        student.appendScore(input);
+
+        //then
+        assertThat(student.getName(), is("张三"));
+        assertThat(student.getStudentNumber(), is("000"));
+        assertThat(student.getEnglish(), is(87));
+        assertThat(student.getTotalScore(),is(total));
+        assertThat(student.getAverage(), is(average));
+
+    }
 }
