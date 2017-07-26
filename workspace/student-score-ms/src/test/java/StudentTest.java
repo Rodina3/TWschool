@@ -1,5 +1,4 @@
 import ms_student_score.Student;
-import org.junit.Before;
 import org.junit.Test;
 
 import static org.hamcrest.core.Is.is;
@@ -17,7 +16,7 @@ public class StudentTest {
         //given
         String input = "张三 000";
 
-        assertThat(student.isIllegal(input), is(false));
+        assertThat(student.isLegalInput(input), is(false));
     }
 
     @Test
@@ -25,7 +24,7 @@ public class StudentTest {
         //given
         String input = "张三 000 a";
 
-        assertThat(student.isIllegal(input), is(false));
+        assertThat(student.isLegalInput(input), is(false));
     }
 
 
@@ -33,7 +32,7 @@ public class StudentTest {
     public void should_return_false_when_input_redundant() throws Exception {
         //given
         String input = "张三 000 90 89 87 100 22";
-        assertThat(student.isIllegal(input), is(false));
+        assertThat(student.isLegalInput(input), is(false));
     }
 
     @Test
@@ -41,7 +40,7 @@ public class StudentTest {
         //given
         String input = "张三 000 90 89 87 120";
 
-        assertThat(student.isIllegal(input), is(false));
+        assertThat(student.isLegalInput(input), is(false));
     }
 
     @Test
@@ -49,7 +48,7 @@ public class StudentTest {
         //given
         String input = "张三 000 90 89 87 100";
 
-        assertThat(student.isIllegal(input), is(true));
+        assertThat(student.isLegalInput(input), is(true));
 
     }
 
@@ -58,7 +57,7 @@ public class StudentTest {
         //given
         String input = "张三 000 90 89 87 100";
         int total = 90 + 89 + 87 + 100;
-        float average = (float) (total/4.0);
+        float average = (float) (total / 4.0);
         Student result = new Student();
 
         //when
@@ -68,7 +67,7 @@ public class StudentTest {
         assertThat(student.getName(), is("张三"));
         assertThat(student.getStudentNumber(), is("000"));
         assertThat(student.getEnglish(), is(87));
-        assertThat(student.getTotalScore(),is(total));
+        assertThat(student.getTotalScore(), is(total));
         assertThat(student.getAverage(), is(average));
 
     }

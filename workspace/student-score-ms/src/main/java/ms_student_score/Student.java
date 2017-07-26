@@ -17,7 +17,39 @@ public class Student {
     private int totalScore;
 
 
-    public boolean isIllegal(String input) {
+    public String getName() {
+        return this.name;
+    }
+
+    public String getStudentNumber() {
+        return this.studentNumber;
+    }
+
+    public int getMath() {
+        return this.math;
+    }
+
+    public int getChinese() {
+        return this.chinese;
+    }
+
+    public int getCoding() {
+        return this.coding;
+    }
+
+    public int getEnglish() {
+        return this.english;
+    }
+
+    public int getTotalScore() {
+        return this.totalScore;
+    }
+
+    public float getAverage() {
+        return this.average;
+    }
+
+    public boolean isLegalInput(String input) {
         String[] str = input.split(" ");
         boolean legalStudent = (str.length == 6)
                 && (isLeagalScore(str[2]))
@@ -56,23 +88,4 @@ public class Student {
 
     }
 
-    public String getName() {
-        return this.name;
-    }
-
-    public String getStudentNumber() {
-        return this.studentNumber;
-    }
-
-    public int getEnglish() {
-        return this.english;
-    }
-
-    public int getTotalScore() {
-        return this.totalScore;
-    }
-
-    public float getAverage() {
-        return this.average;
-    }
 }
