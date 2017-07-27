@@ -9,4 +9,7 @@ public class ManageScore {
     Klass klass =new Klass();
 
 
+
+
+
 }
