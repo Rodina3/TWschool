@@ -31,13 +31,13 @@ public class Transcript {
                 continue;
             }
 
-            studentItem.append(klass.getKlassScores().get(i).getName()).append("|")
-                    .append(klass.getKlassScores().get(i).getMath()).append("|")
-                    .append(klass.getKlassScores().get(i).getChinese()).append("|")
-                    .append(klass.getKlassScores().get(i).getEnglish()).append("|")
-                    .append(klass.getKlassScores().get(i).getCoding()).append("|")
-                    .append(klass.getKlassScores().get(i).getAverage()).append("|")
-                    .append(klass.getKlassScores().get(i).getTotalScore()).append("\n");
+            studentItem.append(klass.getKlassScores().get(index).getName()).append("|")
+                    .append(klass.getKlassScores().get(index).getMath()).append("|")
+                    .append(klass.getKlassScores().get(index).getChinese()).append("|")
+                    .append(klass.getKlassScores().get(index).getEnglish()).append("|")
+                    .append(klass.getKlassScores().get(index).getCoding()).append("|")
+                    .append(klass.getKlassScores().get(index).getAverage()).append("|")
+                    .append(klass.getKlassScores().get(index).getTotalScore()).append("\n");
 
         }
         this.studentScoresItem += studentItem.toString();
