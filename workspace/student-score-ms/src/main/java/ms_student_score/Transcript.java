@@ -22,7 +22,7 @@ public class Transcript {
         this.klass = klass;
     }
 
-    public String buildStudentItems(List<String> studentIDs) {
+    private void buildStudentItems(List<String> studentIDs) {
         StringBuilder studentItem = new StringBuilder();
 
         for (int i = 0; i < studentIDs.size(); i++) {
@@ -41,9 +41,7 @@ public class Transcript {
                     .append(klass.getKlassScores().get(index).getTotalScore()).append("\n");
 
         }
-        this.studentScoresItem += studentItem.toString();
-
-        return studentItem.toString();
+        this.studentScoresItem = studentItem.toString();
 
     }
 
@@ -62,15 +60,16 @@ public class Transcript {
     public String buildTranscript(List<String> studentIDs) {
         buildStudentItems(studentIDs);
         buildAverageScore();
-        String transcriptString = this.transcriptBegin
+
+        String transcriptString = transcriptBegin
                                 + this.studentScoresItem
-                                + this.transcripteEnding
+                                + transcripteEnding
                                 + this.klassAverageString;
         return transcriptString;
     }
 
     private void buildAverageScore() {
-        this.klassAverageString += this.klass.getKlassAverage() + "\n";
+        this.klassAverageString += this.klass.getKlassAverage()+ "\n";
     }
 
     private void buildM() {

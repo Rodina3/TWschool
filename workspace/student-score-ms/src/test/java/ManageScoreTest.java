@@ -21,7 +21,9 @@ public class ManageScoreTest {
         Student stu = new Student("张三", "000", 89, 78, 90, 84);
         List<Student> stuList = Arrays.asList(stu);
 
-        Klass klass = new Klass(stuList);
+        Klass klass = new Klass();
+        klass.addStudent(stuList);
+
 
         assertThat(klass.getKlassScores().get(0).getName(), is("张三"));
         assertThat(klass.getKlassScores().get(0).getID(), is("000"));
@@ -41,82 +43,100 @@ public class ManageScoreTest {
         Student stu2 = new Student("李四", "001", 69, 79, 60, 74);
         List<Student> stuList = Arrays.asList(stu1, stu2);
 
-        Klass klass = new Klass(stuList);
+        Klass klass = new Klass();
+        klass.addStudent(stuList);
+
         assertThat(klass.getKlassScores().size(), is(2));
         assertThat(klass.getKlassScores().get(0).getCoding(), is(84));
         assertThat(klass.getKlassScores().get(1).getID(), is("001"));
     }
 
     @Test
-    public void should_build_one_student_Item_of_transcript() throws Exception {
+    public void should_build_transcript_include_one_student() throws Exception {
         //given
         List<Student> students = Arrays.asList(new Student("张三", "000", 89, 78, 90, 84),
                 new Student("李四", "001", 69, 79, 60, 74));
-        Klass klass = new Klass(students);
+
+        Klass klass = new Klass();
+        klass.addStudent(students);
+
+
         List<String> studentsIDs = Collections.singletonList("000");
         Transcript transcript = new Transcript(klass);
 
         //when
-        String result = transcript.buildStudentItems(studentsIDs);
+        String result = transcript.buildTranscript(studentsIDs);
         //then
-        assertThat(result, is("张三|89|78|90|84|85.25|341\n"));
-    }
-
-    @Test
-    public void should_build_two_student_items_of_transcript() throws Exception {
-        //given
-        List<Student> students = Arrays.asList(new Student("张三", "000", 89, 78, 90, 84),
-                new Student("李四", "001", 69, 79, 60, 74));
-        Klass klass = new Klass(students);
-        List<String> studentsIDs = Arrays.asList("000", "001");
-        Transcript transcript = new Transcript(klass);
-
-        assertThat(transcript.buildStudentItems(studentsIDs), is("张三|89|78|90|84|85.25|341\n"
-                + "李四|69|79|60|74|70.5|282\n"));
-
-    }
-
-    @Test
-    public void should_build_no_student_items_when_student_is_not_in() throws Exception {
-        //given
-        List<Student> students = Arrays.asList(new Student("张三", "000", 89, 78, 90, 84),
-                new Student("李四", "001", 69, 79, 60, 74));
-        Klass klass = new Klass(students);
-        List<String> studentsIDs = Collections.singletonList("003");
-        Transcript transcript = new Transcript(klass);
-
-        assertThat(transcript.buildStudentItems(studentsIDs), is(""));
-    }
-
-    @Test
-    public void should_build_one_student_item_when_give_one_exist_and_one_not_exist() throws Exception {
-        //given
-        List<Student> students = Arrays.asList(new Student("张三", "000", 89, 78, 90, 84),
-                new Student("李四", "001", 69, 79, 60, 74));
-        Klass klass = new Klass(students);
-        List<String> studentsIDs = Arrays.asList("001", "002");
-        Transcript transcript = new Transcript(klass);
-
-        assertThat(transcript.buildStudentItems(studentsIDs), is("李四|69|79|60|74|70.5|282\n"));
-    }
-
-    @Test
-    public void build_transcript_include_one_student() throws Exception {
-        //given
-        List<Student> students = Arrays.asList(new Student("张三", "000", 89, 78, 90, 84),
-                new Student("李四", "001", 69, 79, 60, 74));
-        Klass klass = new Klass(students);
-        List<String> studentsIDs = Collections.singletonList("000");
-        Transcript transcript = new Transcript(klass);
-
-        String expectedResult = "成绩单\n"
+        assertThat(result, is("成绩单\n"
                 + "姓名|数学|语文|英语|编程|平均分|总分 \n"
                 + "========================\n"
                 + "张三|89|78|90|84|85.25|341\n"
                 + "========================\n"
-                + "全班总平均分：77.875\n";
-                //+ "全班总分中位数：xxx";
-
-        assertThat(transcript.buildTranscript(studentsIDs), is(expectedResult));
+                + "全班总平均分：77.875\n"));
     }
+
+    @Test
+    public void should_build_transcript_include_two_students() throws Exception {
+        //given
+        List<Student> students = Arrays.asList(new Student("张三", "000", 89, 78, 90, 84),
+                new Student("李四", "001", 69, 79, 60, 74));
+
+        Klass klass = new Klass();
+        klass.addStudent(students);
+
+        List<String> studentsIDs = Arrays.asList("000", "001");
+        Transcript transcript = new Transcript(klass);
+
+        assertThat(transcript.buildTranscript(studentsIDs), is(
+                "成绩单\n"
+                        + "姓名|数学|语文|英语|编程|平均分|总分 \n"
+                        + "========================\n"
+                        + "张三|89|78|90|84|85.25|341\n"
+                        + "李四|69|79|60|74|70.5|282\n"
+                        + "========================\n"
+                        + "全班总平均分：77.875\n"
+        ));
+
+    }
+
+    @Test
+    public void should_not_build_transcript_when_student_is_not_exist() throws Exception {
+        //given
+        List<Student> students = Arrays.asList(new Student("张三", "000", 89, 78, 90, 84),
+                new Student("李四", "001", 69, 79, 60, 74));
+
+        Klass klass = new Klass();
+        klass.addStudent(students);
+
+        List<String> studentsIDs = Collections.singletonList("003");
+        Transcript transcript = new Transcript(klass);
+
+        assertThat(transcript.buildTranscript(studentsIDs), is("成绩单\n"
+                + "姓名|数学|语文|英语|编程|平均分|总分 \n"
+                + "========================\n"
+                + "========================\n"
+                + "全班总平均分：77.875\n"));
+    }
+
+    @Test
+    public void should_only_build_transcript_include_exist_student() throws Exception {
+        //given
+        List<Student> students = Arrays.asList(new Student("张三", "000", 89, 78, 90, 84),
+                new Student("李四", "001", 69, 79, 60, 74));
+
+        Klass klass = new Klass();
+        klass.addStudent(students);
+
+        List<String> studentsIDs = Arrays.asList("001", "002");
+        Transcript transcript = new Transcript(klass);
+
+        assertThat(transcript.buildTranscript(studentsIDs), is("成绩单\n"
+                + "姓名|数学|语文|英语|编程|平均分|总分 \n"
+                + "========================\n"
+                + "李四|69|79|60|74|70.5|282\n"
+                + "========================\n"
+                + "全班总平均分：77.875\n"));
+    }
+
+
 }
