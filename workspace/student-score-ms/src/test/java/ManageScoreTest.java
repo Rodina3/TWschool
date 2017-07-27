@@ -59,6 +59,54 @@ public class ManageScoreTest {
         //when
         String result = transcript.buildStudentItems(studentsIDs);
         //then
-        assertThat(result, is("张三|89|78|90|84|85.25|341"));
+        assertThat(result, is("张三|89|78|90|84|85.25|341\n"));
+    }
+
+    @Test
+    public void should_build_two_student_items_of_transcript() throws Exception {
+        //given
+        List<Student> students = Arrays.asList(new Student("张三", "000", 89, 78, 90, 84),
+                new Student("李四", "001", 69, 79, 60, 74));
+        Klass klass = new Klass(students);
+        List<String> studentsIDs = Arrays.asList("000", "001");
+        Transcript transcript = new Transcript(klass);
+
+        assertThat(transcript.buildStudentItems(studentsIDs), is("张三|89|78|90|84|85.25|341\n"
+                + "李四|69|79|60|74|70.5|282\n"));
+
+    }
+
+    @Test
+    public void should_build_no_student_items_when_student_is_not_in() throws Exception {
+        //given
+        List<Student> students = Arrays.asList(new Student("张三", "000", 89, 78, 90, 84),
+                new Student("李四", "001", 69, 79, 60, 74));
+        Klass klass = new Klass(students);
+        List<String> studentsIDs = Collections.singletonList("003");
+        Transcript transcript = new Transcript(klass);
+
+        assertThat(transcript.buildStudentItems(studentsIDs), is(""));
+    }
+
+    //增加测试！一个存在一个不存在
+
+    @Test
+    public void build_transcript_include_one_student() throws Exception {
+        //given
+        List<Student> students = Arrays.asList(new Student("张三", "000", 89, 78, 90, 84),
+                new Student("李四", "001", 69, 79, 60, 74));
+        Klass klass = new Klass(students);
+        List<String> studentsIDs = Collections.singletonList("001");
+        Transcript transcript = new Transcript(klass);
+
+        String expectedResult = "成绩单\n"
+                + "姓名|数学|语文|英语|编程|平均分|总分 \n"
+                + "========================\n"
+                + "张三|89|78|90|84|85.25|341\n"
+                + "========================\n"
+                + "全班总平均分：xxx\n"
+                + "全班总分中位数：xxx";
+
+        assertThat(transcript.buildTranscript(studentsIDs), is(expectedResult));
     }
 }
