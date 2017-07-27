@@ -15,5 +15,8 @@ import static org.junit.Assert.assertThat;
  * Created by rzhou on 26/07/2017.
  */
 public class ManageScoreTest {
+    @Test
+    public void should_print_student() throws Exception {
 
+    }
 }
