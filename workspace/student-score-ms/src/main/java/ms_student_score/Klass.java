@@ -1,7 +1,6 @@
 package ms_student_score;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -9,17 +8,17 @@ import java.util.List;
  */
 public class Klass {
 
-    private List<Student> klass = new ArrayList<Student>();
+    private List<Student> klassScores = new ArrayList<Student>();
     private Student studentItem;
 
     public Klass(List<Student> students) {
         for (int i = 0; i < students.size(); i++) {
-             this.klass.add(students.get(i));
+             this.klassScores.add(students.get(i));
         }
     }
 
 
-    public List<Student> getStudentItem() {
-        return this.klass;
+    public List<Student> getKlassScores() {
+        return this.klassScores;
     }
 }
