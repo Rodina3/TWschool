@@ -1,23 +1,25 @@
 package ms_student_score;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 /**
  * Created by rzhou on 27/07/2017.
  */
 public class Klass {
 
-    private Student [] students;
+    private List<Student> klass = new ArrayList<Student>();
     private Student studentItem;
 
-    public Klass(String studentScore) {
-        String [] stuInfo=studentScore.split(" ");
-        this.studentItem = new Student(stuInfo[0],stuInfo[1],
-                Integer.parseInt(stuInfo[2]),
-                Integer.parseInt(stuInfo[3]),
-                Integer.parseInt(stuInfo[4]),
-                Integer.parseInt(stuInfo[5]));
+    public Klass(List<Student> students) {
+        for (int i = 0; i < students.size(); i++) {
+             this.klass.add(students.get(i));
+        }
     }
 
-    public Student getStudentItem() {
-        return studentItem;
+
+    public List<Student> getStudentItem() {
+        return this.klass;
     }
 }
