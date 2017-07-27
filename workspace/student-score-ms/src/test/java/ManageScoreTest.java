@@ -106,7 +106,7 @@ public class ManageScoreTest {
         List<Student> students = Arrays.asList(new Student("张三", "000", 89, 78, 90, 84),
                 new Student("李四", "001", 69, 79, 60, 74));
         Klass klass = new Klass(students);
-        List<String> studentsIDs = Collections.singletonList("001");
+        List<String> studentsIDs = Collections.singletonList("000");
         Transcript transcript = new Transcript(klass);
 
         String expectedResult = "成绩单\n"
@@ -114,8 +114,8 @@ public class ManageScoreTest {
                 + "========================\n"
                 + "张三|89|78|90|84|85.25|341\n"
                 + "========================\n"
-                + "全班总平均分：xxx\n"
-                + "全班总分中位数：xxx";
+                + "全班总平均分：77.875\n";
+                //+ "全班总分中位数：xxx";
 
         assertThat(transcript.buildTranscript(studentsIDs), is(expectedResult));
     }

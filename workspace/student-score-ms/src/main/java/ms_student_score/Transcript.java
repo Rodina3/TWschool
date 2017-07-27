@@ -10,12 +10,13 @@ public class Transcript {
             + "姓名|数学|语文|英语|编程|平均分|总分 \n"
             + "========================\n";
 
-    static String transcripteEnding = "========================\n"
-            + "全班总平均分：xxx\n"
-            + "全班总分中位数：xxx";
+    static String transcripteEnding = "========================\n";
 
-    private Klass klass =null;
+
+    private Klass klass = null;
     private String studentScoresItem = "";
+    private String klassAverageString = "全班总平均分：";
+    private String klassMString = " 全班总分中位数：";
 
     public Transcript(Klass klass) {
         this.klass = klass;
@@ -47,7 +48,7 @@ public class Transcript {
     }
 
     private int findStudent(String id) {
-        int index=-1;
+        int index = -1;
         for (int i = 0; i < klass.getKlassScores().size(); i++) {
             if (id == klass.getKlassScores().get(i).getID()) {
                 index = i;
@@ -58,10 +59,21 @@ public class Transcript {
         return index;
     }
 
-
     public String buildTranscript(List<String> studentIDs) {
         buildStudentItems(studentIDs);
-        String transcriptString = this.transcriptBegin + this.studentScoresItem + this.transcripteEnding;
+        buildAverageScore();
+        String transcriptString = this.transcriptBegin
+                                + this.studentScoresItem
+                                + this.transcripteEnding
+                                + this.klassAverageString;
         return transcriptString;
+    }
+
+    private void buildAverageScore() {
+        this.klassAverageString += this.klass.getKlassAverage() + "\n";
+    }
+
+    private void buildM() {
+
     }
 }
