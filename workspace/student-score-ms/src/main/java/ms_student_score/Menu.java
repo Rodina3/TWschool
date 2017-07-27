@@ -1,8 +1,7 @@
 package ms_student_score;
 
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Objects;
+import java.util.regex.Pattern;
 
 /**
  * Created by rzhou on 27/07/2017.
@@ -20,7 +19,7 @@ public class Menu {
     private static String printWaiting = "请输入要打印的学生的学号（格式： 学号, 学号,...），按回车提交：\n";
     private static String printFail = "请按正确的格式输入要打印的学生的学号（格式： 学号, 学号,...），按回车提交：\n";
 
-    private Integer mainM = 0;
+    private final Integer mainM = 0;
     private final Integer addM = 1;
     private final Integer addFailM = 2;
     private final Integer addSuccessM = 3;
@@ -63,23 +62,63 @@ public class Menu {
 
 
     private void menuManager(String input) {
-        if (Objects.equals(input, "1")) {
-            menuNow = addM;
-            //-->add student submenu
+        if (Objects.equals(menuNow, mainM) || Objects.equals(menuNow, addSuccessM)) {
+            if (Objects.equals(input, "1")) {
+                menuNow = addM;
+                //-->add student submenu
 
-        } else if (Objects.equals(input, "2")) {
-            menuNow = printM;
-            //-->print submenu
+            } else if (Objects.equals(input, "2")) {
+                menuNow = printM;
+                //-->print submenu
 
-        } else if (Objects.equals(input, "3")) {
+            } else if (Objects.equals(input, "3")) {
 
-            //-->quit
+                //-->quit
 
-        } else {
+            } else {
 
-            //do nothing
+                //do nothing
+            }
+        } else if (Objects.equals(menuNow, addM) || Objects.equals(menuNow, addFailM)) {
+            if (isLegalStudentInfo(input)) {
+                //add student
+                menuNow = addSuccessM;
+            } else {
+                menuNow = addFailM;
+            }
+
+        } else if (Objects.equals(menuNow, printM) || Objects.equals(menuNow, printFailM)) {
+            if (isLegalPrintRequest(input)) {
+                //print transcript
+                menuNow = mainM;
+            } else {
+                menuNow = printFailM;
+            }
+
+        }
+    }
+
+    private boolean isLegalStudentInfo(String input) {
+        boolean isLegal = false;
+        String[] studentInfo = input.split(", ");
+        if (studentInfo.length == 6) {
+            isLegal = isLegalScore(studentInfo[2])
+                    && isLegalScore(studentInfo[3])
+                    && isLegalScore(studentInfo[4])
+                    && isLegalScore(studentInfo[5]);
         }
 
-
+        return isLegal;
     }
+
+    private boolean isLegalScore(String str) {
+        Pattern legalScore = Pattern.compile("[0-9]{1,3}");
+        return legalScore.matcher(str).find() && Integer.parseInt(str) <= 100 && Integer.parseInt(str) >= 0;
+    }
+
+    private boolean isLegalPrintRequest(String str) {
+        Pattern legalID = Pattern.compile("[0-9]{3}");
+        return legalID.matcher(str).find();
+    }
+
 }
