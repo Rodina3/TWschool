@@ -28,6 +28,8 @@ public class ManageScoreTest {
         assertThat(klass.getStudentItem().get(0).getChinese(), is(78));
         assertThat(klass.getStudentItem().get(0).getEnglish(), is(90));
         assertThat(klass.getStudentItem().get(0).getCoding(), is(84));
+        assertThat(klass.getStudentItem().get(0).getTotalScore(),is(341));
+        assertThat(klass.getStudentItem().get(0).getAverage()-85.25<0.0001,is(true));
 
     }
 
@@ -43,4 +45,6 @@ public class ManageScoreTest {
         assertThat(klass.getStudentItem().get(0).getCoding(), is(84));
         assertThat(klass.getStudentItem().get(1).getID(), is("001"));
     }
+
+
 }
