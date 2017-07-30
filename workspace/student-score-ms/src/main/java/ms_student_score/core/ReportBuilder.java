@@ -15,7 +15,7 @@ public class ReportBuilder {
     private Klass klass = null;
     private String studentScoresItem = "";
     private String klassAverageString = "全班总平均分：%.3f\n";
-    private String klassMString = " 全班总分中位数：%d\n";
+    private String klassMedianString = "全班总分中位数：%.3f\n\n";
 
     public ReportBuilder(Klass klass) {
         this.klass = klass;
@@ -47,7 +47,7 @@ public class ReportBuilder {
     private int findStudent(String id) {
         int index = -1;
         for (int i = 0; i < klass.getStudentList().size(); i++) {
-            if (id .equals(klass.getStudentList().get(i).getID())) {
+            if (id.equals(klass.getStudentList().get(i).getID())) {
                 index = i;
                 break;
             }
@@ -59,19 +59,22 @@ public class ReportBuilder {
     public String buildReport(List<String> studentIDs) {
         buildStudentItems(studentIDs);
         buildAverageItem();
+        buildMedianItem();
 
         String report = reportPrefix
-                                + this.studentScoresItem
-                                + reportSuffix
-                                + this.klassAverageString;
+                + this.studentScoresItem
+                + reportSuffix
+                + this.klassAverageString
+                + this.klassMedianString;
         return report;
     }
 
     private void buildAverageItem() {
-        this.klassAverageString=String.format(this.klassAverageString,this.klass.getKlassAverage());
+        this.klassAverageString = String.format(this.klassAverageString, this.klass.getKlassAverage());
     }
 
-    private void buildM() {
+    private void buildMedianItem() {
+        this.klassMedianString = String.format(this.klassMedianString, this.klass.getKlassMedian());
 
     }
 }

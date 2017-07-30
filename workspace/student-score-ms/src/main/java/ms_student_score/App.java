@@ -1,6 +1,6 @@
 package ms_student_score;
 
-import ms_student_score.menu.Menu;
+import ms_student_score.menu.CommandManager;
 import ms_student_score.menu.MenuStatus;
 
 import java.util.Scanner;
@@ -13,13 +13,13 @@ public class App {
 
 
     public static void main(String[] args) {
-        Menu menu = new Menu();
+        CommandManager commandManager = new CommandManager();
 
         Scanner sc = new Scanner(System.in);
         while (sc.hasNext()) {
-            menu.chooseFunction(sc.nextLine());
+            commandManager.chooseFunction(sc.nextLine());
 
-            if (menu.getMenuNow() == MenuStatus.EXIT_PAGE) break;
+            if (commandManager.getMenuNow() == MenuStatus.EXIT_PAGE) break;
         }
         sc.close();
         System.exit(0);

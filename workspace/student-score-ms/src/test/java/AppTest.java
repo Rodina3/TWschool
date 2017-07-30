@@ -14,6 +14,5 @@ public class AppTest {
     @Test
     public void should_print_student() throws Exception {
 
-
     }
 }

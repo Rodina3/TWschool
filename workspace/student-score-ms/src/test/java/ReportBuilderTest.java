@@ -21,7 +21,9 @@ public class ReportBuilderTest {
             + "========================\n"
             + "%s"
             + "========================\n"
-            + "全班总平均分：77.875\n";
+            + "全班总平均分：77.875\n"
+            + "全班总分中位数：311.500\n\n";
+
     private String stuZS = "张三|89|78|90|84|85.25|341\n";
     private String stuLS = "李四|69|79|60|74|70.5|282\n";
     private Klass klass = new Klass();
@@ -51,7 +53,7 @@ public class ReportBuilderTest {
         List<String> studentsIDs = Arrays.asList("000", "001");
         ReportBuilder reportBuilder = new ReportBuilder(klass);
 
-        assertThat(reportBuilder.buildReport(studentsIDs), is(String.format(outputString,stuZS+stuLS)));
+        assertThat(reportBuilder.buildReport(studentsIDs), is(String.format(outputString, stuZS + stuLS)));
 
     }
 
@@ -62,7 +64,7 @@ public class ReportBuilderTest {
         List<String> studentsIDs = Collections.singletonList("003");
         ReportBuilder reportBuilder = new ReportBuilder(klass);
 
-        assertThat(reportBuilder.buildReport(studentsIDs), is(String.format(outputString,"")));
+        assertThat(reportBuilder.buildReport(studentsIDs), is(String.format(outputString, "")));
     }
 
     @Test
@@ -71,7 +73,7 @@ public class ReportBuilderTest {
         List<String> studentsIDs = Arrays.asList("001", "002");
         ReportBuilder reportBuilder = new ReportBuilder(klass);
 
-        assertThat(reportBuilder.buildReport(studentsIDs), is(String.format(outputString,stuLS)));
+        assertThat(reportBuilder.buildReport(studentsIDs), is(String.format(outputString, stuLS)));
     }
 
 }

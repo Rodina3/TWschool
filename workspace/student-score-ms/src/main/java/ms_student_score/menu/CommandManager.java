@@ -12,14 +12,18 @@ import java.util.regex.Pattern;
 /**
  * Created by rzhou on 27/07/2017.
  */
-public class Menu {
+public class CommandManager {
 
     private MenuStatus menuNow = MenuStatus.HOME_PAGE;
     private Klass klass = new Klass();
 
-    public Menu() {
-        System.out.print(InputNotice.mainMenu);;
+    public CommandManager() {
+        System.out.print(InputNotice.mainMenu);
+        ;
     }
+
+    //public analyzeCommand(){}
+    //public excuteCommand(){}
 
     public void chooseFunction(String input) {
         refreshMenu(input);
@@ -47,8 +51,10 @@ public class Menu {
         } else if (Objects.equals(menuNow, MenuStatus.ADD_REQUEST_PAGE) || Objects.equals(menuNow, MenuStatus.ADD_FAIL_PAGE)) {
             if (isLegalStudentInfo(input)) {
                 klass.addStudent(analyzeStudent(input));
-                menuNow = MenuStatus.ADD_SUCCESS_PAGE;
+
                 InputNotice.addSuccess = String.format(InputNotice.addSuccess, analyzeStudent(input).getName());
+                menuNow = MenuStatus.ADD_SUCCESS_PAGE;
+
             } else {
                 menuNow = MenuStatus.ADD_FAIL_PAGE;
             }
@@ -112,6 +118,7 @@ public class Menu {
                 break;
         }
         System.out.print(notice);
+        InputNotice.addSuccess = "学生%s的成绩被添加\n\n";
     }
 
     private boolean isLegalID(String str) {
