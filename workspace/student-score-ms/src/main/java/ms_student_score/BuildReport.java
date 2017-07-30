@@ -5,12 +5,14 @@ import java.util.List;
 /**
  * Created by rzhou on 27/07/2017.
  */
-public class Transcript {
-    static String transcriptBegin = "成绩单\n"
+public class BuildReport {
+    static String reportPrefix = "成绩单\n"
             + "姓名|数学|语文|英语|编程|平均分|总分 \n"
             + "========================\n";
 
-    static String transcripteEnding = "========================\n";
+    static String reportSuffix = "========================\n";
+            //+"全班总平均分：%d\n"
+            //+"全班总分中位数：%d\n";
 
 
     private Klass klass = null;
@@ -18,7 +20,7 @@ public class Transcript {
     private String klassAverageString = "全班总平均分：";
     private String klassMString = " 全班总分中位数：";
 
-    public Transcript(Klass klass) {
+    public BuildReport(Klass klass) {
         this.klass = klass;
     }
 
@@ -48,7 +50,7 @@ public class Transcript {
     private int findStudent(String id) {
         int index = -1;
         for (int i = 0; i < klass.getKlassScores().size(); i++) {
-            if (id == klass.getKlassScores().get(i).getID()) {
+            if (id .equals(klass.getKlassScores().get(i).getID())) {
                 index = i;
                 break;
             }
@@ -61,9 +63,9 @@ public class Transcript {
         buildStudentItems(studentIDs);
         buildAverageScore();
 
-        String transcriptString = transcriptBegin
+        String transcriptString = reportPrefix
                                 + this.studentScoresItem
-                                + transcripteEnding
+                                + reportSuffix
                                 + this.klassAverageString;
         return transcriptString;
     }

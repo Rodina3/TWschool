@@ -9,18 +9,23 @@ import java.util.List;
 public class Klass {
 
     private List<Student> klassScores = new ArrayList<Student>();
-    private float averageScore;
+    private float averageScore = 0;
 
     private void calculateKlassAverage() {
-
-        for (Student klassScore : this.klassScores) {
-            this.averageScore += klassScore.getAverage();
+        this.averageScore = 0;
+        for (Student stu : this.klassScores) {
+            this.averageScore += stu.getAverage();
         }
         this.averageScore /= this.klassScores.size();
     }
 
     public void addStudent(List<Student> students) {
         this.klassScores.addAll(students);
+        calculateKlassAverage();
+    }
+
+    public void addStudent(Student stu) {
+        this.klassScores.add(stu);
         calculateKlassAverage();
     }
 

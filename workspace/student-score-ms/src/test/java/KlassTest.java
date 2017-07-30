@@ -16,10 +16,8 @@ public class KlassTest {
     public void should_add_one_student_score() throws Exception {
         //given
         Student stu = new Student("张三", "000", 89, 78, 90, 84);
-        List<Student> stuList = Arrays.asList(stu);
-
         Klass klass = new Klass();
-        klass.addStudent(stuList);
+        klass.addStudent(stu);
 
 
         assertThat(klass.getKlassScores().get(0).getName(), is("张三"));

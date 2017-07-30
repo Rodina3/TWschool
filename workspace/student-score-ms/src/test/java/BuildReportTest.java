@@ -1,6 +1,6 @@
 import ms_student_score.Klass;
 import ms_student_score.Student;
-import ms_student_score.Transcript;
+import ms_student_score.BuildReport;
 import org.junit.Test;
 
 import java.util.Arrays;
@@ -13,7 +13,7 @@ import static org.junit.Assert.assertThat;
 /**
  * Created by rzhou on 27/07/2017.
  */
-public class TranscriptTest {
+public class BuildReportTest {
 
     @Test
     public void should_build_transcript_include_one_student() throws Exception {
@@ -26,10 +26,10 @@ public class TranscriptTest {
 
 
         List<String> studentsIDs = Collections.singletonList("000");
-        Transcript transcript = new Transcript(klass);
+        BuildReport buildReport = new BuildReport(klass);
 
         //when
-        String result = transcript.buildTranscript(studentsIDs);
+        String result = buildReport.buildTranscript(studentsIDs);
         //then
         assertThat(result, is("成绩单\n"
                 + "姓名|数学|语文|英语|编程|平均分|总分 \n"
@@ -49,9 +49,9 @@ public class TranscriptTest {
         klass.addStudent(students);
 
         List<String> studentsIDs = Arrays.asList("000", "001");
-        Transcript transcript = new Transcript(klass);
+        BuildReport buildReport = new BuildReport(klass);
 
-        assertThat(transcript.buildTranscript(studentsIDs), is(
+        assertThat(buildReport.buildTranscript(studentsIDs), is(
                 "成绩单\n"
                         + "姓名|数学|语文|英语|编程|平均分|总分 \n"
                         + "========================\n"
@@ -73,9 +73,9 @@ public class TranscriptTest {
         klass.addStudent(students);
 
         List<String> studentsIDs = Collections.singletonList("003");
-        Transcript transcript = new Transcript(klass);
+        BuildReport buildReport = new BuildReport(klass);
 
-        assertThat(transcript.buildTranscript(studentsIDs), is("成绩单\n"
+        assertThat(buildReport.buildTranscript(studentsIDs), is("成绩单\n"
                 + "姓名|数学|语文|英语|编程|平均分|总分 \n"
                 + "========================\n"
                 + "========================\n"
@@ -92,9 +92,9 @@ public class TranscriptTest {
         klass.addStudent(students);
 
         List<String> studentsIDs = Arrays.asList("001", "002");
-        Transcript transcript = new Transcript(klass);
+        BuildReport buildReport = new BuildReport(klass);
 
-        assertThat(transcript.buildTranscript(studentsIDs), is("成绩单\n"
+        assertThat(buildReport.buildTranscript(studentsIDs), is("成绩单\n"
                 + "姓名|数学|语文|英语|编程|平均分|总分 \n"
                 + "========================\n"
                 + "李四|69|79|60|74|70.5|282\n"
