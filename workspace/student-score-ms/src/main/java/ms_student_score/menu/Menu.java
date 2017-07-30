@@ -14,18 +14,7 @@ import java.util.regex.Pattern;
  */
 public class Menu {
 
-    private static String mainMenu = "欢迎进入学生成绩管理系统：\n"
-            + "1. 添加学生 \n"
-            + "2. 生成成绩单 \n"
-            + "3. 退出 \n"
-            + "请输入你的选择（1～3）：";
 
-    private static String addWaiting = "请输入学生信息（格式：姓名, 学号, 数学：分数, 语文：分数, 英语：分数, 编程：分数), 按回车提交:";
-    private static String addFail = "请按正确的格式输入（格式：姓名, 学号, 数学：分数, 语文：分数, 英语：分数, 编程：分数）：";
-    private static String addSuccess = "学生xxx的成绩被添加\n" + mainMenu;
-
-    private static String printWaiting = "请输入要打印的学生的学号（格式： 学号, 学号,...），按回车提交：";
-    private static String printFail = "请按正确的格式输入要打印的学生的学号（格式： 学号, 学号,...），按回车提交：";
 
 
     private MenuStatus menuNow = MenuStatus.MAIN_MENU;
@@ -35,39 +24,38 @@ public class Menu {
         showMenu();
     }
 
-    public String chooseMenu(String input) {
-        menuChange(input);
-        return showMenu();
+    public void chooseMenu(String input) {
+        refreshMenu(input);
+        showMenu();
     }
 
-    private String showMenu() {
+    private void showMenu() {
         String output = "";
         switch (menuNow) {
             case MAIN_MENU:
-                output = mainMenu;
+                output = InputNotice.mainMenu;
                 break;
             case ADD_REQUEST_MENU:
-                output = addWaiting;
+                output = InputNotice.addWaiting;
                 break;
             case ADD_FAIL_MENU:
-                output = addFail;
+                output = InputNotice.addFail;
                 break;
             case ADD_SUCCESS_MENU:
-                output = addSuccess;
+                output = InputNotice.addSuccess;
                 break;
             case PRINT_REQUEST_MENU:
-                output = printWaiting;
+                output = InputNotice.printWaiting;
                 break;
             case PRINT_FAIL_MENU:
-                output = printFail;
+                output = InputNotice.printFail;
                 break;
         }
-        System.out.println(output);
-        return output;
+        System.out.print(output);
     }
 
 
-    private void menuChange(String input) {
+    private void refreshMenu(String input) {
         if (Objects.equals(menuNow, MenuStatus.MAIN_MENU) || Objects.equals(menuNow, MenuStatus.ADD_SUCCESS_MENU)) {
             if (Objects.equals(input, "1")) {
                 menuNow = MenuStatus.ADD_REQUEST_MENU;
@@ -104,7 +92,7 @@ public class Menu {
                     studentIDs.add(ids[i]);
 
                 }
-                System.out.println(reprot.buildTranscript(studentIDs));
+                System.out.print(reprot.buildTranscript(studentIDs));
                 menuNow = MenuStatus.MAIN_MENU;
             } else {
                 menuNow = MenuStatus.PRINT_FAIL_MENU;

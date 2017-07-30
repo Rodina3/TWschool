@@ -32,7 +32,7 @@ public class BuildReportTest {
         String result = buildReport.buildTranscript(studentsIDs);
         //then
         assertThat(result, is("成绩单\n"
-                + "姓名|数学|语文|英语|编程|平均分|总分 \n"
+                + "姓名|数学|语文|英语|编程|平均分|总分\n"
                 + "========================\n"
                 + "张三|89|78|90|84|85.25|341\n"
                 + "========================\n"
@@ -53,7 +53,7 @@ public class BuildReportTest {
 
         assertThat(buildReport.buildTranscript(studentsIDs), is(
                 "成绩单\n"
-                        + "姓名|数学|语文|英语|编程|平均分|总分 \n"
+                        + "姓名|数学|语文|英语|编程|平均分|总分\n"
                         + "========================\n"
                         + "张三|89|78|90|84|85.25|341\n"
                         + "李四|69|79|60|74|70.5|282\n"
@@ -76,7 +76,7 @@ public class BuildReportTest {
         BuildReport buildReport = new BuildReport(klass);
 
         assertThat(buildReport.buildTranscript(studentsIDs), is("成绩单\n"
-                + "姓名|数学|语文|英语|编程|平均分|总分 \n"
+                + "姓名|数学|语文|英语|编程|平均分|总分\n"
                 + "========================\n"
                 + "========================\n"
                 + "全班总平均分：77.875\n"));
@@ -95,7 +95,7 @@ public class BuildReportTest {
         BuildReport buildReport = new BuildReport(klass);
 
         assertThat(buildReport.buildTranscript(studentsIDs), is("成绩单\n"
-                + "姓名|数学|语文|英语|编程|平均分|总分 \n"
+                + "姓名|数学|语文|英语|编程|平均分|总分\n"
                 + "========================\n"
                 + "李四|69|79|60|74|70.5|282\n"
                 + "========================\n"

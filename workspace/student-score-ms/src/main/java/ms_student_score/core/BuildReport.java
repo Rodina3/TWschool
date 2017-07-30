@@ -7,7 +7,7 @@ import java.util.List;
  */
 public class BuildReport {
     static String reportPrefix = "成绩单\n"
-            + "姓名|数学|语文|英语|编程|平均分|总分 \n"
+            + "姓名|数学|语文|英语|编程|平均分|总分\n"
             + "========================\n";
 
     static String reportSuffix = "========================\n";
