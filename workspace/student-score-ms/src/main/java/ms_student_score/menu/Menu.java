@@ -14,75 +14,46 @@ import java.util.regex.Pattern;
  */
 public class Menu {
 
-
-
-
-    private MenuStatus menuNow = MenuStatus.MAIN_MENU;
+    private MenuStatus menuNow = MenuStatus.HOME_PAGE;
     private Klass klass = new Klass();
 
     public Menu() {
-        showMenu();
+        System.out.print(InputNotice.mainMenu);;
     }
 
-    public void chooseMenu(String input) {
+    public void chooseFunction(String input) {
         refreshMenu(input);
-        showMenu();
+        showInputNotice();
     }
 
-    private void showMenu() {
-        String output = "";
-        switch (menuNow) {
-            case MAIN_MENU:
-                output = InputNotice.mainMenu;
-                break;
-            case ADD_REQUEST_MENU:
-                output = InputNotice.addWaiting;
-                break;
-            case ADD_FAIL_MENU:
-                output = InputNotice.addFail;
-                break;
-            case ADD_SUCCESS_MENU:
-                output = InputNotice.addSuccess;
-                break;
-            case PRINT_REQUEST_MENU:
-                output = InputNotice.printWaiting;
-                break;
-            case PRINT_FAIL_MENU:
-                output = InputNotice.printFail;
-                break;
-        }
-        System.out.print(output);
+    public MenuStatus getMenuNow() {
+        return menuNow;
     }
 
 
     private void refreshMenu(String input) {
-        if (Objects.equals(menuNow, MenuStatus.MAIN_MENU) || Objects.equals(menuNow, MenuStatus.ADD_SUCCESS_MENU)) {
-            if (Objects.equals(input, "1")) {
-                menuNow = MenuStatus.ADD_REQUEST_MENU;
-                //-->add student submenu
 
+        if (Objects.equals(menuNow, MenuStatus.HOME_PAGE) || Objects.equals(menuNow, MenuStatus.ADD_SUCCESS_PAGE)) {
+            if (Objects.equals(input, "1")) {
+                menuNow = MenuStatus.ADD_REQUEST_PAGE;
             } else if (Objects.equals(input, "2")) {
-                menuNow = MenuStatus.PRINT_REQUEST_MENU;
-                //-->print submenu
+                menuNow = MenuStatus.PRINT_REQUEST_PAGE;
 
             } else if (Objects.equals(input, "3")) {
-                menuNow = MenuStatus.EXIT_MENU;
-                //-->quit
-
+                menuNow = MenuStatus.EXIT_PAGE;
             } else {
-                //do nothing
-                menuNow = MenuStatus.MAIN_MENU;
+                menuNow = MenuStatus.HOME_PAGE;
             }
-        } else if (Objects.equals(menuNow, MenuStatus.ADD_REQUEST_MENU) || Objects.equals(menuNow, MenuStatus.ADD_FAIL_MENU)) {
+        } else if (Objects.equals(menuNow, MenuStatus.ADD_REQUEST_PAGE) || Objects.equals(menuNow, MenuStatus.ADD_FAIL_PAGE)) {
             if (isLegalStudentInfo(input)) {
-                //add student
                 klass.addStudent(analyzeStudent(input));
-                menuNow = MenuStatus.ADD_SUCCESS_MENU;
+                menuNow = MenuStatus.ADD_SUCCESS_PAGE;
+                InputNotice.addSuccess = String.format(InputNotice.addSuccess, analyzeStudent(input).getName());
             } else {
-                menuNow = MenuStatus.ADD_FAIL_MENU;
+                menuNow = MenuStatus.ADD_FAIL_PAGE;
             }
 
-        } else if (Objects.equals(menuNow, MenuStatus.PRINT_REQUEST_MENU) || Objects.equals(menuNow, MenuStatus.PRINT_FAIL_MENU)) {
+        } else if (Objects.equals(menuNow, MenuStatus.PRINT_REQUEST_PAGE) || Objects.equals(menuNow, MenuStatus.PRINT_FAIL_PAGE)) {
             if (isLegalPrintRequest(input)) {
                 //print transcript
                 BuildReport reprot = new BuildReport(klass);
@@ -93,9 +64,9 @@ public class Menu {
 
                 }
                 System.out.print(reprot.buildTranscript(studentIDs));
-                menuNow = MenuStatus.MAIN_MENU;
+                menuNow = MenuStatus.HOME_PAGE;
             } else {
-                menuNow = MenuStatus.PRINT_FAIL_MENU;
+                menuNow = MenuStatus.PRINT_FAIL_PAGE;
             }
 
         }
@@ -107,7 +78,7 @@ public class Menu {
 
         if (studentInfo.length == 6) {
             isLegal = isLegalName(studentInfo[0])
-                    && isLegalId(studentInfo[1])
+                    && isLegalID(studentInfo[1])
                     && isLegalScore(studentInfo[2])
                     && isLegalScore(studentInfo[3])
                     && isLegalScore(studentInfo[4])
@@ -117,7 +88,32 @@ public class Menu {
         return isLegal;
     }
 
-    private boolean isLegalId(String str) {
+    private void showInputNotice() {
+        String output = "";
+        switch (menuNow) {
+            case HOME_PAGE:
+                output = InputNotice.mainMenu;
+                break;
+            case ADD_REQUEST_PAGE:
+                output = InputNotice.addWaiting;
+                break;
+            case ADD_FAIL_PAGE:
+                output = InputNotice.addFail;
+                break;
+            case ADD_SUCCESS_PAGE:
+                output = InputNotice.addSuccess + InputNotice.mainMenu;
+                break;
+            case PRINT_REQUEST_PAGE:
+                output = InputNotice.printWaiting;
+                break;
+            case PRINT_FAIL_PAGE:
+                output = InputNotice.printFail;
+                break;
+        }
+        System.out.print(output);
+    }
+
+    private boolean isLegalID(String str) {
 
         boolean flag = false;
         if (str.length() != 0 && str.matches("\\d{3}")) {
@@ -144,7 +140,7 @@ public class Menu {
         String[] ids = str.split(", ");
         boolean flag = true;
         for (int i = 0; i < ids.length; i++) {
-            flag = flag && isLegalId(ids[i]);
+            flag = flag && isLegalID(ids[i]);
 
         }
         return flag;
@@ -165,7 +161,4 @@ public class Menu {
         return stu;
     }
 
-    public MenuStatus getMenuNow() {
-        return menuNow;
-    }
 }

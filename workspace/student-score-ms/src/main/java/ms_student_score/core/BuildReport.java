@@ -11,14 +11,11 @@ public class BuildReport {
             + "========================\n";
 
     static String reportSuffix = "========================\n";
-            //+"全班总平均分：%d\n"
-            //+"全班总分中位数：%d\n";
-
 
     private Klass klass = null;
     private String studentScoresItem = "";
-    private String klassAverageString = "全班总平均分：";
-    private String klassMString = " 全班总分中位数：";
+    private String klassAverageString = "全班总平均分：%.3f\n";
+    private String klassMString = " 全班总分中位数：%d\n";
 
     public BuildReport(Klass klass) {
         this.klass = klass;
@@ -71,7 +68,7 @@ public class BuildReport {
     }
 
     private void buildAverageScore() {
-        this.klassAverageString += this.klass.getKlassAverage()+ "\n";
+        this.klassAverageString=String.format(this.klassAverageString,this.klass.getKlassAverage());
     }
 
     private void buildM() {

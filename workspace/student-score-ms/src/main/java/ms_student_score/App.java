@@ -14,16 +14,13 @@ public class App {
 
     public static void main(String[] args) {
         Menu menu = new Menu();
+
         Scanner sc = new Scanner(System.in);
-        while (sc.hasNext()) {
-            menu.chooseMenu(sc.nextLine());
-
-            if (menu.getMenuNow() == MenuStatus.EXIT_MENU) {
-                sc.close();
-                System.exit(0);
-            }
-
+        while (sc.hasNext() && menu.getMenuNow() != MenuStatus.EXIT_PAGE) {
+            menu.chooseFunction(sc.nextLine());
         }
+        sc.close();
+        System.exit(0);
     }
 
 
