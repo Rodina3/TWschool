@@ -1,4 +1,4 @@
-import ms_student_score.Menu;
+import ms_student_score.menu.Menu;
 import org.junit.Test;
 
 import static org.hamcrest.core.Is.is;

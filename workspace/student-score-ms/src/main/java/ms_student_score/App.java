@@ -1,8 +1,8 @@
 package ms_student_score;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Objects;
+import ms_student_score.menu.Menu;
+import ms_student_score.menu.MenuStatus;
+
 import java.util.Scanner;
 
 

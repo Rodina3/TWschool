@@ -1,5 +1,5 @@
-import ms_student_score.Klass;
-import ms_student_score.Student;
+import ms_student_score.core.Klass;
+import ms_student_score.core.Student;
 import org.junit.Test;
 
 import java.util.Arrays;

@@ -1,4 +1,4 @@
-package ms_student_score;
+package ms_student_score.menu;
 
 /**
  * Created by rzhou on 28/07/2017.

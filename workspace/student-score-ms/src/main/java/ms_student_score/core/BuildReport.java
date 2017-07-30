@@ -1,4 +1,4 @@
-package ms_student_score;
+package ms_student_score.core;
 
 import java.util.List;
 

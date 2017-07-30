@@ -1,11 +1,13 @@
-package ms_student_score;
+package ms_student_score.menu;
+
+import ms_student_score.core.BuildReport;
+import ms_student_score.core.Klass;
+import ms_student_score.core.Student;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import java.util.regex.Pattern;
-
-import static ms_student_score.MenuStatus.*;
 
 /**
  * Created by rzhou on 27/07/2017.
@@ -17,6 +19,7 @@ public class Menu {
             + "2. 生成成绩单 \n"
             + "3. 退出 \n"
             + "请输入你的选择（1～3）：";
+
     private static String addWaiting = "请输入学生信息（格式：姓名, 学号, 数学：分数, 语文：分数, 英语：分数, 编程：分数), 按回车提交:";
     private static String addFail = "请按正确的格式输入（格式：姓名, 学号, 数学：分数, 语文：分数, 英语：分数, 编程：分数）：";
     private static String addSuccess = "学生xxx的成绩被添加\n" + mainMenu;
@@ -25,8 +28,7 @@ public class Menu {
     private static String printFail = "请按正确的格式输入要打印的学生的学号（格式： 学号, 学号,...），按回车提交：";
 
 
-    //  private Map<Integer, String> menuInfo = new HashMap<Integer, String>();
-    private MenuStatus menuNow = MAIN_MENU;
+    private MenuStatus menuNow = MenuStatus.MAIN_MENU;
     private Klass klass = new Klass();
 
     public Menu() {
@@ -66,33 +68,33 @@ public class Menu {
 
 
     private void menuChange(String input) {
-        if (Objects.equals(menuNow, MAIN_MENU) || Objects.equals(menuNow, ADD_SUCCESS_MENU)) {
+        if (Objects.equals(menuNow, MenuStatus.MAIN_MENU) || Objects.equals(menuNow, MenuStatus.ADD_SUCCESS_MENU)) {
             if (Objects.equals(input, "1")) {
-                menuNow = ADD_REQUEST_MENU;
+                menuNow = MenuStatus.ADD_REQUEST_MENU;
                 //-->add student submenu
 
             } else if (Objects.equals(input, "2")) {
-                menuNow = PRINT_REQUEST_MENU;
+                menuNow = MenuStatus.PRINT_REQUEST_MENU;
                 //-->print submenu
 
             } else if (Objects.equals(input, "3")) {
-                menuNow = EXIT_MENU;
+                menuNow = MenuStatus.EXIT_MENU;
                 //-->quit
 
             } else {
                 //do nothing
-                menuNow = MAIN_MENU;
+                menuNow = MenuStatus.MAIN_MENU;
             }
-        } else if (Objects.equals(menuNow, ADD_REQUEST_MENU) || Objects.equals(menuNow, ADD_FAIL_MENU)) {
+        } else if (Objects.equals(menuNow, MenuStatus.ADD_REQUEST_MENU) || Objects.equals(menuNow, MenuStatus.ADD_FAIL_MENU)) {
             if (isLegalStudentInfo(input)) {
                 //add student
                 klass.addStudent(analyzeStudent(input));
-                menuNow = ADD_SUCCESS_MENU;
+                menuNow = MenuStatus.ADD_SUCCESS_MENU;
             } else {
-                menuNow = ADD_FAIL_MENU;
+                menuNow = MenuStatus.ADD_FAIL_MENU;
             }
 
-        } else if (Objects.equals(menuNow, PRINT_REQUEST_MENU) || Objects.equals(menuNow, PRINT_FAIL_MENU)) {
+        } else if (Objects.equals(menuNow, MenuStatus.PRINT_REQUEST_MENU) || Objects.equals(menuNow, MenuStatus.PRINT_FAIL_MENU)) {
             if (isLegalPrintRequest(input)) {
                 //print transcript
                 BuildReport reprot = new BuildReport(klass);
@@ -103,9 +105,9 @@ public class Menu {
 
                 }
                 System.out.println(reprot.buildTranscript(studentIDs));
-                menuNow = MAIN_MENU;
+                menuNow = MenuStatus.MAIN_MENU;
             } else {
-                menuNow = PRINT_FAIL_MENU;
+                menuNow = MenuStatus.PRINT_FAIL_MENU;
             }
 
         }
