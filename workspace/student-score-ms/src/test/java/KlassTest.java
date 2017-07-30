@@ -20,14 +20,14 @@ public class KlassTest {
         klass.addStudent(stu);
 
 
-        assertThat(klass.getKlassScores().get(0).getName(), is("张三"));
-        assertThat(klass.getKlassScores().get(0).getID(), is("000"));
-        assertThat(klass.getKlassScores().get(0).getMath(), is(89));
-        assertThat(klass.getKlassScores().get(0).getChinese(), is(78));
-        assertThat(klass.getKlassScores().get(0).getEnglish(), is(90));
-        assertThat(klass.getKlassScores().get(0).getCoding(), is(84));
-        assertThat(klass.getKlassScores().get(0).getTotalScore(), is(341));
-        assertThat(klass.getKlassScores().get(0).getAverage() - 85.25 < 0.0001, is(true));
+        assertThat(klass.getStudentList().get(0).getName(), is("张三"));
+        assertThat(klass.getStudentList().get(0).getID(), is("000"));
+        assertThat(klass.getStudentList().get(0).getScores().get("数学"), is(89));
+        assertThat(klass.getStudentList().get(0).getScores().get("语文"), is(78));
+        assertThat(klass.getStudentList().get(0).getScores().get("英语"), is(90));
+        assertThat(klass.getStudentList().get(0).getScores().get("编程"), is(84));
+        assertThat(klass.getStudentList().get(0).getTotalScore(), is(341));
+        assertThat(klass.getStudentList().get(0).getAverage() - 85.25 < 0.0001, is(true));
 
     }
 
@@ -41,8 +41,8 @@ public class KlassTest {
         Klass klass = new Klass();
         klass.addStudent(stuList);
 
-        assertThat(klass.getKlassScores().size(), is(2));
-        assertThat(klass.getKlassScores().get(0).getCoding(), is(84));
-        assertThat(klass.getKlassScores().get(1).getID(), is("001"));
+        assertThat(klass.getStudentList().size(), is(2));
+        assertThat(klass.getStudentList().get(0).getScores().get("编程"), is(84));
+        assertThat(klass.getStudentList().get(1).getID(), is("001"));
     }
 }

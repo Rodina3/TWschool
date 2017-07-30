@@ -5,8 +5,8 @@ import java.util.List;
 /**
  * Created by rzhou on 27/07/2017.
  */
-public class BuildReport {
-    static String reportPrefix = "成绩单\n"
+public class ReportBuilder {
+    static String reportPrefix = "\n成绩单\n"
             + "姓名|数学|语文|英语|编程|平均分|总分\n"
             + "========================\n";
 
@@ -17,7 +17,7 @@ public class BuildReport {
     private String klassAverageString = "全班总平均分：%.3f\n";
     private String klassMString = " 全班总分中位数：%d\n";
 
-    public BuildReport(Klass klass) {
+    public ReportBuilder(Klass klass) {
         this.klass = klass;
     }
 
@@ -31,13 +31,13 @@ public class BuildReport {
                 continue;
             }
 
-            studentItem.append(klass.getKlassScores().get(index).getName()).append("|")
-                    .append(klass.getKlassScores().get(index).getMath()).append("|")
-                    .append(klass.getKlassScores().get(index).getChinese()).append("|")
-                    .append(klass.getKlassScores().get(index).getEnglish()).append("|")
-                    .append(klass.getKlassScores().get(index).getCoding()).append("|")
-                    .append(klass.getKlassScores().get(index).getAverage()).append("|")
-                    .append(klass.getKlassScores().get(index).getTotalScore()).append("\n");
+            studentItem.append(klass.getStudentList().get(index).getName()).append("|")
+                    .append(klass.getStudentList().get(index).getScores().get("数学")).append("|")
+                    .append(klass.getStudentList().get(index).getScores().get("语文")).append("|")
+                    .append(klass.getStudentList().get(index).getScores().get("英语")).append("|")
+                    .append(klass.getStudentList().get(index).getScores().get("编程")).append("|")
+                    .append(klass.getStudentList().get(index).getAverage()).append("|")
+                    .append(klass.getStudentList().get(index).getTotalScore()).append("\n");
 
         }
         this.studentScoresItem = studentItem.toString();
@@ -46,8 +46,8 @@ public class BuildReport {
 
     private int findStudent(String id) {
         int index = -1;
-        for (int i = 0; i < klass.getKlassScores().size(); i++) {
-            if (id .equals(klass.getKlassScores().get(i).getID())) {
+        for (int i = 0; i < klass.getStudentList().size(); i++) {
+            if (id .equals(klass.getStudentList().get(i).getID())) {
                 index = i;
                 break;
             }
@@ -56,18 +56,18 @@ public class BuildReport {
         return index;
     }
 
-    public String buildTranscript(List<String> studentIDs) {
+    public String buildReport(List<String> studentIDs) {
         buildStudentItems(studentIDs);
-        buildAverageScore();
+        buildAverageItem();
 
-        String transcriptString = reportPrefix
+        String report = reportPrefix
                                 + this.studentScoresItem
                                 + reportSuffix
                                 + this.klassAverageString;
-        return transcriptString;
+        return report;
     }
 
-    private void buildAverageScore() {
+    private void buildAverageItem() {
         this.klassAverageString=String.format(this.klassAverageString,this.klass.getKlassAverage());
     }
 

@@ -1,6 +1,6 @@
 package ms_student_score.menu;
 
-import ms_student_score.core.BuildReport;
+import ms_student_score.core.ReportBuilder;
 import ms_student_score.core.Klass;
 import ms_student_score.core.Student;
 
@@ -54,16 +54,17 @@ public class Menu {
             }
 
         } else if (Objects.equals(menuNow, MenuStatus.PRINT_REQUEST_PAGE) || Objects.equals(menuNow, MenuStatus.PRINT_FAIL_PAGE)) {
+
             if (isLegalPrintRequest(input)) {
-                //print transcript
-                BuildReport reprot = new BuildReport(klass);
+                ReportBuilder reprot = new ReportBuilder(klass);
                 String[] ids = input.split(", ");
                 List<String> studentIDs = new ArrayList<String>();
+
                 for (int i = 0; i < ids.length; i++) {
                     studentIDs.add(ids[i]);
 
                 }
-                System.out.print(reprot.buildTranscript(studentIDs));
+                System.out.print(reprot.buildReport(studentIDs));
                 menuNow = MenuStatus.HOME_PAGE;
             } else {
                 menuNow = MenuStatus.PRINT_FAIL_PAGE;
@@ -89,28 +90,28 @@ public class Menu {
     }
 
     private void showInputNotice() {
-        String output = "";
+        String notice = "";
         switch (menuNow) {
             case HOME_PAGE:
-                output = InputNotice.mainMenu;
+                notice = InputNotice.mainMenu;
                 break;
             case ADD_REQUEST_PAGE:
-                output = InputNotice.addWaiting;
+                notice = InputNotice.addWaiting;
                 break;
             case ADD_FAIL_PAGE:
-                output = InputNotice.addFail;
+                notice = InputNotice.addFail;
                 break;
             case ADD_SUCCESS_PAGE:
-                output = InputNotice.addSuccess + InputNotice.mainMenu;
+                notice = InputNotice.addSuccess + InputNotice.mainMenu;
                 break;
             case PRINT_REQUEST_PAGE:
-                output = InputNotice.printWaiting;
+                notice = InputNotice.printWaiting;
                 break;
             case PRINT_FAIL_PAGE:
-                output = InputNotice.printFail;
+                notice = InputNotice.printFail;
                 break;
         }
-        System.out.print(output);
+        System.out.print(notice);
     }
 
     private boolean isLegalID(String str) {
@@ -156,9 +157,7 @@ public class Menu {
                 coding = Integer.parseInt(studentInfo[5]);
 
 
-        Student stu = new Student(name, id, math, chinese, english, coding);
-
-        return stu;
+        return new Student(name, id, math, chinese, english, coding);
     }
 
 }

@@ -16,12 +16,13 @@ public class App {
         Menu menu = new Menu();
 
         Scanner sc = new Scanner(System.in);
-        while (sc.hasNext() && menu.getMenuNow() != MenuStatus.EXIT_PAGE) {
+        while (sc.hasNext()) {
             menu.chooseFunction(sc.nextLine());
+
+            if (menu.getMenuNow() == MenuStatus.EXIT_PAGE) break;
         }
         sc.close();
         System.exit(0);
     }
-
 
 }

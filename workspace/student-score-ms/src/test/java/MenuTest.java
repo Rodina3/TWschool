@@ -29,7 +29,7 @@ public class MenuTest {
     }
 
     @Test
-    public void should_jump_into_addWaiting_menu_when_input_1() throws Exception {
+    public void should_show_add_student_score_page_when_input_1() throws Exception {
         //given
         //when
         consoleLog.reset();
@@ -40,7 +40,7 @@ public class MenuTest {
     }
 
     @Test
-    public void should_jump_into_printWaiting_menu_when_input_2() throws Exception {
+    public void should_show_print_report_page_when_input_2() throws Exception {
         //given
         //when
         consoleLog.reset();
@@ -51,7 +51,7 @@ public class MenuTest {
     }
 
     @Test
-    public void should_jump_into_addFail_submenu_when_input_illegal() throws Exception {
+    public void should_show_add_fail_page_when_student_score_input_format_illegal() throws Exception {
         //given
         //when
         menu.chooseFunction("1");
@@ -63,7 +63,7 @@ public class MenuTest {
     }
 
     @Test
-    public void should_jump_into_addFail_submenu_when_id_illegal() throws Exception {
+    public void should_show_add_fail_page_when_id_empty() throws Exception {
         //given
         //when
         menu.chooseFunction("1");
@@ -75,7 +75,7 @@ public class MenuTest {
     }
 
     @Test
-    public void should_jump_into_addFail_submenu_when_id_illegal2() throws Exception {
+    public void should_show_add_fail_page_when_id_illegal() throws Exception {
         //given
         //when
         menu.chooseFunction("1");
@@ -87,9 +87,9 @@ public class MenuTest {
     }
 
     @Test
-    public void should_jump_into_addSuccess_when_input_legal() throws Exception {
+    public void should_show_add_success_page_when_input_legal_student_info() throws Exception {
         //given
-        String addSuccess = "学生张三的成绩被添加\n" + InputNotice.mainMenu;
+        String addSuccess = String.format(InputNotice.addSuccess,"张三") + InputNotice.mainMenu;
 
         //when
         menu.chooseFunction("1");
@@ -101,7 +101,7 @@ public class MenuTest {
     }
 
     @Test
-    public void should_jump_into_printFail_submenu_when_input_illegal() throws Exception {
+    public void should_show_print_fail_page_when_id_illegal() throws Exception {
         //given
         menu.chooseFunction("2");
 
@@ -114,13 +114,13 @@ public class MenuTest {
     }
 
     @Test
-    public void should_jump_into_printSuccess_when_input_legal() throws Exception {
+    public void should_show_print_success_page_when_input_legal_print_request() throws Exception {
         //given
         menu.chooseFunction("1");
         menu.chooseFunction("张三, 000, 89, 78, 90, 84");
         menu.chooseFunction("2");
 
-        String result = "成绩单\n"
+        String result = "\n成绩单\n"
                 + "姓名|数学|语文|英语|编程|平均分|总分\n"
                 + "========================\n"
                 + "张三|89|78|90|84|85.25|341\n"

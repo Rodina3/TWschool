@@ -8,34 +8,33 @@ import java.util.List;
  */
 public class Klass {
 
-    private List<Student> klassScores = new ArrayList<Student>();
-    private float averageScore = 0;
+    private List<Student> studentList = new ArrayList<Student>();
+    private float average = 0;
 
-    private void calculateKlassAverage() {
-        this.averageScore = 0;
-        for (Student stu : this.klassScores) {
-            this.averageScore += stu.getAverage();
+    private void refreshAverage() {
+        this.average = 0;
+        for (Student stu : this.studentList) {
+            this.average += stu.getAverage();
         }
-        this.averageScore /= this.klassScores.size();
+        this.average /= this.studentList.size();
+    }
+
+    public float getKlassAverage() {
+        return this.average;
     }
 
     public void addStudent(List<Student> students) {
-        this.klassScores.addAll(students);
-        calculateKlassAverage();
+        this.studentList.addAll(students);
+        refreshAverage();
     }
 
     public void addStudent(Student stu) {
-        this.klassScores.add(stu);
-        calculateKlassAverage();
+        this.studentList.add(stu);
+        refreshAverage();
     }
 
-
-    public List<Student> getKlassScores() {
-        return this.klassScores;
+    public List<Student> getStudentList() {
+        return this.studentList;
     }
 
-
-    public float getKlassAverage() {
-        return this.averageScore;
-    }
 }
