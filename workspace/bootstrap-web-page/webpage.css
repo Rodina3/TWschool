@@ -1,20 +1,51 @@
-.nav{
+body {
+    margin: 0 0;
+}
+
+.nav {
     background-color: #222;
     color: white;
     height: 96px;
     text-align: center;
 }
 
-.nav-content{
+.nav-content {
     display: inline-block;
     margin: 35px auto;
     font-size: 16px;
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.logo-img{
-    width:50px;
-    /*border-radius: 3px;*/
-    /*margin-right: 8px;*/
-    border-sizeing:border-box;
+.logo-img {
+    width: 50px;
+}
+
+.tw-school {
+    height: 800px;
+    text-align: center;
+    background-image: url('./mountain-star-min-mobile.png');
+    background-size: cover;
+    color: white;
+}
+
+.tw-school h1 {
+    font-weight: bold;
+    display: inline-block;
+    padding-top: 130px;
+    font-size: 100px;
+}
+
+.tw-school p {
+    font-size: 50px;
+    margin-bottom: 100px;;
+}
+
+.tw-button {
+    color: white;
+    background-color: transparent;
+    border-style: solid;
+    padding: 15px 32px;
+    display: inline-block;
+    font-size: 16px;
+    outline:none;
 }
