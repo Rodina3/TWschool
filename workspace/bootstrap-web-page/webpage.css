@@ -18,6 +18,8 @@ body {
 
 .logo-img {
     width: 50px;
+    display: inline-block;
+
 }
 
 .tw-school {
@@ -26,6 +28,7 @@ body {
     background-image: url('./mountain-star-min-mobile.png');
     background-size: cover;
     color: white;
+    margin-bottom: 25px;
 }
 
 .tw-school h1 {
@@ -45,7 +48,35 @@ body {
     background-color: transparent;
     border:3px solid;
     padding: 10px 10px;
-    display: inline-block;
+    display: inline;
     font-size: 28px;
     outline:none;
+}
+
+.key-feature h3{
+    color: #777;
+    font-size: 30px;
+    text-align: center;
+    letter-spacing: 2px;
+    font-weight: 300;
+    margin-top: 25px;
+    margin-bottom: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.cartoon-img{
+    display: block;
+    width:80px;
+    margin-top: 25px;
+    margin-left: 100px;
+    margin-bottom: 20px;
+}
+.cartoon-text{
+    text-align: center;
+}
+.cartoon-text h3{
+    font-size:16px;
+    color: #999;
+    font-weight: 400;
+    letter-spacing: 2px;
 }
