@@ -40,12 +40,12 @@ body {
     margin-bottom: 100px;;
 }
 
-.tw-button {
+.tw-button button{
     color: white;
     background-color: transparent;
-    border-style: solid;
-    padding: 15px 32px;
+    border:3px solid;
+    padding: 10px 10px;
     display: inline-block;
-    font-size: 16px;
+    font-size: 28px;
     outline:none;
 }
