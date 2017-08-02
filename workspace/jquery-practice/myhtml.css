@@ -1,0 +1,19 @@
+/*header*/
+.info {
+    display: inline-block;
+    margin-left: 40px;
+}
+
+/*main*/
+.question {
+    margin-left: 20px;
+}
+
+.option {
+    margin-left: 40px;
+
+}
+
+.answer-box{
+    margin-left: 30px;
+}

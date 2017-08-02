@@ -2,45 +2,10 @@
 <html>
 <head>
     <meta charset="GB2312">
-    <title>The jQuery Example</title>
-    <script type="text/javascript" src="./jquery-3.2.1.min.js"></script>
-    <script type="text/javascript" language="javascript"></script>
-    <script type="text/javascript">
-        $(document).ready(function () {
-
-            var klass = $('#klass').val();
-            var id = $('#id').val();
-            var name = $('#name').val();
-
-            var answer1_1 = $('.T1-1').val();
-            var answers1_2 = [];
-            var pars = $(".T1-2");
-            for (i = 0; i < pars.length; i++) {
-                answers1_2.push(pars[i].value);
-            }
-            var answer2_1 = $("#UML input:checked")[0].value;
-            var answer2_2 = $("#Java input:checked")[0].value;
-
-            var answer3_1 = [];
-            var len = $("#multiple-choice-1 input:checked");
-            for (i = 0; i < len.length; i++) {
-                answer3_1.push(len[i].value);
-            }
-
-            var answer3_2 = [];
-            var len = $("#multiple-choice-2 input:checked");
-            for (i = 0; i < len.length; i++) {
-                answer3_2.push(len[i].value);
-            }
-            var answer4_1=$("#true-or-false-1 input:checked")[0].value;
-            var answer4_2=$("#true-or-false-2 input:checked")[0].value;
-
-            var answer5 =$("#easy-question textarea").val();
-
-
-        });
-    </script>
-
+    <link rel="stylesheet" href="myhtml.css">
+    <script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="myhtml.js"></script>
+    <title>The jQuery Practice</title>
 </head>
 
 
@@ -55,10 +20,9 @@
         </tr>
 
         <tr>
-            <td>班级：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="klass" type="text" name="class" value="1班"/>
-            </td>
+            <td>班级:<input class="info" id="klass" type="text" name="class" value="1班"/></td>
             <td>学号：<input id="id" type="text" name="studentID" value="001"/></td>
-            <td> 姓名:<input id="name" type="text" name="name" value="王小闹"/></td>
+            <td>姓名:<input id="name" type="text" name="name" value="王小闹"/></td>
         </tr>
 
         <br>
@@ -66,28 +30,31 @@
 
 </header>
 
-<>
 <div>
     <h2>一、填空题（每题5分，共20分）</h2>
-    &nbsp;&nbsp;&nbsp;&nbsp;1.UML的中文全称是：<input type="text" class="T1-1" value="统一建模语言"/><br>
-    &nbsp;&nbsp;&nbsp;&nbsp;2.对象最突出的特特征是：<input type="text" class="T1-2" value="封装性"/>
-    <input type="text" class="T1-2" value="继承性"/>
-    <input type="text" class="T1-2" value="多态性"/>
+    <span class="question">1.UML的中文全称是：</span>
+    <input type="text" class="fill-in-blank-1" value="统一建模语言"/>
     <br>
+
+    <span class="question">2.对象最突出的特特征是：</span>
+    <input type="text" class="fill-in-blank-2" value="封装性"/>
+    <input type="text" class="fill-in-blank-2" value="继承性"/>
+    <input type="text" class="fill-in-blank-2" value="多态性"/>
+
 </div>
 
 <div>
     <h2>二、选择题（每题10分，共20分）</h2>
 
-    &nbsp;&nbsp;&nbsp;&nbsp;1.UML与软件工程的关系是：<br>
-    <ul id="UML">
+    <span class="question">1.UML与软件工程的关系是：</span>
+    <ul id="ratio-choice-1">
         <li type="none"><input type="radio" name="UML" value="A"/>(A)UML就是软件工程</li>
         <li type="none"><input type="radio" name="UML" value="B" checked/>(B)UML参与到软件工程中软件开发过程的几个阶段</li>
         <li type="none"><input type="radio" name="UML" value="C"/>(C)UML与软件工程无关</li>
         <li type="none"><input type="radio" name="UML" value="D"/>(D)UML是软件工程的一部分</li>
     </ul>
-    &nbsp;&nbsp;&nbsp;&nbsp;2.Java语言支持：<br>
-    <ul id="Java">
+    <span class="question">2.Java语言支持：</span>
+    <ul id="ratio-choice-2">
         <li type="none"><input type="radio" name="Java" value="A" checked/>(A)单继承</li>
         <li type="none"><input type="radio" name="Java" value="B"/>(B)多继承</li>
         <li type="none"><input type="radio" name="Java" value="C"/>(C)单继承和多继承都支持</li>
@@ -97,7 +64,7 @@
 <div>
     <h2>三、多选题(每题10分，共20分)</h2>
 
-    &nbsp;&nbsp;&nbsp;&nbsp;1.用例的粒度分为以下哪三种：<br>
+    <span class="question"> 1.用例的粒度分为以下哪三种：</span>
     <ul id="multiple-choice-1">
         <li type="none"><input type="checkbox" name="Granularity" value="A" checked/>(A)概述级</li>
         <li type="none"><input type="checkbox" name="Granularity" value="B" checked/>(B)需求级</li>
@@ -105,7 +72,7 @@
         <li type="none"><input type="checkbox" name="Granularity" value="D" checked/>(D)子功能级</li>
     </ul>
 
-    &nbsp;&nbsp;&nbsp;&nbsp;2.类图由以下哪三部分组成：<br>
+    <span class="question"> 2.类图由以下哪三部分组成：</span>
     <ul id="multiple-choice-2">
         <li type="none"><input type="checkbox" name="class diagram " value="A" checked/>(A)名称(Name)</li>
         <li type="none"><input type="checkbox" name="class diagram " value="B" checked/>(B)属性(Attribute)</li>
@@ -116,13 +83,13 @@
 <div>
     <h2>四、判断题（每题10分，共20分)</h2>
     <section id="true-or-false-1">
-        &nbsp;&nbsp;&nbsp;&nbsp;1.用例图只是用于和客户交流和沟通的，用于确定需求。
+        <span class="question">1.用例图只是用于和客户交流和沟通的，用于确定需求。</span>
         <input type="radio" name="class diagram" value="yes">&radic;
         <input type="radio" name="class diagram" value="no" checked>&Chi;
     </section>
 
     <section id="true-or-false-2">
-        &nbsp;&nbsp;&nbsp;&nbsp;2.在状态图中,终止条件在一个状态图中允许有任意多个。
+        <span class="question">2.在状态图中,终止条件在一个状态图中允许有任意多个。</span>
         <input type="radio" name="state diagram" value="yes" checked>&radic;
         <input type="radio" name="state diagram" value="no">&Chi;
         <br>
@@ -132,16 +99,16 @@
 <div id="easy-question">
     <h2>五、简答题（每题20分，共20分）</h2>
 
-    &nbsp;&nbsp;&nbsp;&nbsp;1.简述什么是模型以及模型的表现形式?<br>
+    <span class="question">1.简述什么是模型以及模型的表现形式?</span><br>
 
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<textarea rows="8" cols="100">
-        模型是对现实世界的简化和抽象，模型是对所研究的系统、过程、事物或概念的一种表达形式。可以是物理实体；也可以是某种图形；或者是一种数学表达式。
+    <textarea class="answer-box" rows="8" cols="100">模型是对现实世界的简化和抽象，模型是对所研究的系统、过程、事物或概念的一种表达形式。可以是物理实体；也可以是某种图形；或者是一种数学表达式。
 </textarea>
     <br>
 </div>
 
 </main>
-<button type="button">计算分数</button>
+
+<button id="calculate-button" type="button">计算分数</button>
 </body>
 
 </html>
