@@ -31,9 +31,9 @@ $(document).ready(function () {
     $("button").click(function () {
         const student = new Student();
         getAllContent(student);
-
-
-        //$(location).attr('href', 'newhtml.html');
+        let stuString = JSON.stringify(student);
+        localStorage.setItem('Student',stuString);
+        $(location).attr('href', 'newhtml.html');
     });
 });
 
