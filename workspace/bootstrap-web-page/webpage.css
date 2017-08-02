@@ -30,7 +30,7 @@ body {
 .tw-school {
     height: 800px;
     text-align: center;
-    background-image: url('./mountain-star-min-mobile.png');
+    background-image: url('image/mountain-star-min-mobile.png');
     background-size: cover;
     color: white;
     margin-top: -1px;
