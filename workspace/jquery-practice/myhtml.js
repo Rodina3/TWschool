@@ -40,6 +40,7 @@ $(document).ready(function () {
 
 function getAllContent(obj) {
 
+    // var flag;
     getStudentInof(obj);
     getFillInBlank(obj);
     getRadioChoice(obj);
@@ -52,7 +53,15 @@ function getAllContent(obj) {
 
 function getStudentInof(obj) {
 
+
     obj.klass = $('#klass').val();
+
+
+    // var reg = new RegExp("^[0-9]*$");
+    // if(!reg.test(id)){
+    //     alert("学号不是数字!");
+    //     return false;
+    // }
     obj.id = $('#id').val();
     obj.name = $('#name').val();
 }

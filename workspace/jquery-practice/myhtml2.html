@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="GB2312">
+    <meta charset="utf-8">
     <link rel="stylesheet" href="myhtml.css">
     <script type="text/javascript" src="jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="myhtml.js"></script>
@@ -12,18 +12,18 @@
 
 <body>
 <header>
-    <h1>ͳһ��ģ�������۲���</h1>
+    <h1>统一建模语言理论测试</h1>
     <table>
         <tr>
-            <td>���Կ�Ŀ��ͳһ��ģ����</td>
-            <td>ʱ�䣺100����</td>
-            <td>�÷֣�100</td>
+            <td>考试科目：统一建模语言</td>
+            <td>时间：100分钟</td>
+            <td>得分：100</td>
         </tr>
 
         <tr>
-            <td>�༶:<input class="info" id="klass" type="text" name="class" value="1��"/></td>
-            <td>ѧ�ţ�<input id="id" type="text" name="studentID" value="001"/></td>
-            <td>����:<input id="name" type="text" name="name" value="��С��"/></td>
+            <td>班级:<input class="info" id="klass" type="text" name="class" value="1班"/></td>
+            <td>学号：<input id="id" type="text" name="studentID" value="001"/></td>
+            <td>姓名:<input id="name" type="text" name="name" value="王小闹"/></td>
         </tr>
 
         <br>
@@ -32,65 +32,65 @@
 </header>
 
 <div>
-    <h2>һ������⣨ÿ��5�֣���20�֣�</h2>
-    <span class="question">1.UML������ȫ���ǣ�</span>
-    <input type="text" class="fill-in-blank-1" value="ͳһ��ģ����"/>
+    <h2>一、填空题（每题5分，共20分）</h2>
+    <span class="question">1.UML的中文全称是：</span>
+    <input type="text" class="fill-in-blank-1" value="统一建模语言"/>
     <br>
 
-    <span class="question">2.������ͻ�����������ǣ�</span>
-    <input type="text" class="fill-in-blank-2" value="��װ��"/>
-    <input type="text" class="fill-in-blank-2" value="�̳���"/>
-    <input type="text" class="fill-in-blank-2" value="��̬��"/>
+    <span class="question">2.对象最突出的特特征是：</span>
+    <input type="text" class="fill-in-blank-2" value="封装性"/>
+    <input type="text" class="fill-in-blank-2" value="继承性"/>
+    <input type="text" class="fill-in-blank-2" value="多态性"/>
 
 </div>
 
 <div>
-    <h2>����ѡ���⣨ÿ��10�֣���20�֣�</h2>
+    <h2>二、选择题（每题10分，共20分）</h2>
 
-    <span class="question">1.UML���������̵Ĺ�ϵ�ǣ�</span>
+    <span class="question">1.UML与软件工程的关系是：</span>
     <ul id="ratio-choice-1">
-        <li type="none"><input type="radio" name="UML" value="A"/>(A)UML������������</li>
-        <li type="none"><input type="radio" name="UML" value="B" checked/>(B)UML���뵽���������������������̵ļ����׶�</li>
-        <li type="none"><input type="radio" name="UML" value="C"/>(C)UML�����������޹�</li>
-        <li type="none"><input type="radio" name="UML" value="D"/>(D)UML���������̵�һ����</li>
+        <li type="none"><input type="radio" name="UML" value="A"/>(A)UML就是软件工程</li>
+        <li type="none"><input type="radio" name="UML" value="B" checked/>(B)UML参与到软件工程中软件开发过程的几个阶段</li>
+        <li type="none"><input type="radio" name="UML" value="C"/>(C)UML与软件工程无关</li>
+        <li type="none"><input type="radio" name="UML" value="D"/>(D)UML是软件工程的一部分</li>
     </ul>
-    <span class="question">2.Java����֧�֣�</span>
+    <span class="question">2.Java语言支持：</span>
     <ul id="ratio-choice-2">
-        <li type="none"><input type="radio" name="Java" value="A" checked/>(A)���̳�</li>
-        <li type="none"><input type="radio" name="Java" value="B"/>(B)��̳�</li>
-        <li type="none"><input type="radio" name="Java" value="C"/>(C)���̳кͶ�̳ж�֧��</li>
-        <li type="none"><input type="radio" name="Java" value="D"/>(D)���̳кͶ�̳ж���֧��</li>
+        <li type="none"><input type="radio" name="Java" value="A" checked/>(A)单继承</li>
+        <li type="none"><input type="radio" name="Java" value="B"/>(B)多继承</li>
+        <li type="none"><input type="radio" name="Java" value="C"/>(C)单继承和多继承都支持</li>
+        <li type="none"><input type="radio" name="Java" value="D"/>(D)单继承和多继承都不支持</li>
     </ul>
 </div>
 <div>
-    <h2>������ѡ��(ÿ��10�֣���20��)</h2>
+    <h2>三、多选题(每题10分，共20分)</h2>
 
-    <span class="question"> 1.���������ȷ�Ϊ���������֣�</span>
+    <span class="question"> 1.用例的粒度分为以下哪三种：</span>
     <ul id="multiple-choice-1">
-        <li type="none"><input type="checkbox" name="Granularity" value="A" checked/>(A)������</li>
-        <li type="none"><input type="checkbox" name="Granularity" value="B" checked/>(B)����</li>
-        <li type="none"><input type="checkbox" name="Granularity" value="C"/>(C)�û�Ŀ�꼶</li>
-        <li type="none"><input type="checkbox" name="Granularity" value="D" checked/>(D)�ӹ��ܼ�</li>
+        <li type="none"><input type="checkbox" name="Granularity" value="A" checked/>(A)概述级</li>
+        <li type="none"><input type="checkbox" name="Granularity" value="B" checked/>(B)需求级</li>
+        <li type="none"><input type="checkbox" name="Granularity" value="C"/>(C)用户目标级</li>
+        <li type="none"><input type="checkbox" name="Granularity" value="D" checked/>(D)子功能级</li>
     </ul>
 
-    <span class="question"> 2.��ͼ����������������ɣ�</span>
+    <span class="question"> 2.类图由以下哪三部分组成：</span>
     <ul id="multiple-choice-2">
-        <li type="none"><input type="checkbox" name="class diagram " value="A" checked/>(A)����(Name)</li>
-        <li type="none"><input type="checkbox" name="class diagram " value="B" checked/>(B)����(Attribute)</li>
-        <li type="none"><input type="checkbox" name="class diagram " value="C" checked/>(C)����(Operation)</li>
-        <li type="none"><input type="checkbox" name="class diagram " value="D"/>(D)����(Function)</li>
+        <li type="none"><input type="checkbox" name="class diagram " value="A" checked/>(A)名称(Name)</li>
+        <li type="none"><input type="checkbox" name="class diagram " value="B" checked/>(B)属性(Attribute)</li>
+        <li type="none"><input type="checkbox" name="class diagram " value="C" checked/>(C)操作(Operation)</li>
+        <li type="none"><input type="checkbox" name="class diagram " value="D"/>(D)方法(Function)</li>
     </ul>
 </div>
 <div>
-    <h2>�ġ��ж��⣨ÿ��10�֣���20��)</h2>
+    <h2>四、判断题（每题10分，共20分)</h2>
     <section id="true-or-false-1">
-        <span class="question">1.����ͼֻ�����ںͿͻ������͹�ͨ�ģ�����ȷ������</span>
+        <span class="question">1.用例图只是用于和客户交流和沟通的，用于确定需求。</span>
         <input type="radio" name="class diagram" value="yes">&radic;
         <input type="radio" name="class diagram" value="no" checked>&Chi;
     </section>
 
     <section id="true-or-false-2">
-        <span class="question">2.��״̬ͼ��,��ֹ������һ��״̬ͼ����������������</span>
+        <span class="question">2.在状态图中,终止条件在一个状态图中允许有任意多个。</span>
         <input type="radio" name="state diagram" value="yes" checked>&radic;
         <input type="radio" name="state diagram" value="no">&Chi;
         <br>
@@ -98,18 +98,18 @@
 </div>
 
 <div id="easy-question">
-    <h2>�塢����⣨ÿ��20�֣���20�֣�</h2>
+    <h2>五、简答题（每题20分，共20分）</h2>
 
-    <span class="question">1.����ʲô��ģ���Լ�ģ�͵ı�����ʽ?</span><br>
+    <span class="question">1.简述什么是模型以及模型的表现形式?</span><br>
 
-    <textarea class="answer-box" rows="8" cols="100">ģ���Ƕ���ʵ����ļ򻯺ͳ���ģ���Ƕ����о���ϵͳ�����̡����������һ�ֱ�����ʽ������������ʵ�壻Ҳ������ĳ��ͼ�Σ�������һ����ѧ����ʽ��
+    <textarea class="answer-box" rows="8" cols="100">模型是对现实世界的简化和抽象，模型是对所研究的系统、过程、事物或概念的一种表达形式。可以是物理实体；也可以是某种图形；或者是一种数学表达式。
 </textarea>
     <br>
 </div>
 
 </main>
 
-<button id="calculate-button" type="button">�������</button>
+<button id="calculate-button" type="button">计算分数</button>
 </body>
 
 </html>
