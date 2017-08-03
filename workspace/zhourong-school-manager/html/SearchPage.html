@@ -11,14 +11,18 @@
 
     <!--jqurey-->
     <script type="text/javascript" src="../js/vendor/jquery-3.2.1.js"></script>
+    <script type="text/javascript" src="../js/vendor/jquery.tmpl.min.js"></script>
+    <script type="text/javascript" src="../js/vendor/jquery.validate.min.js"></script>
+
 
     <!--JS-->
     <script type="text/javascript" src="../js/AddPage.js"></script>
     <script type="text/javascript" src="../js/SearchPage.js"></script>
 
+
 </head>
 
-<body>
+<body onpageshow="onShow()">
 
 <header>
     <nav>
@@ -46,6 +50,17 @@
     <!--student show table-->
     <div>
         <!--动态显示-->
+        <table id="student-inquire">
+            <tr>
+                <td>姓名</td>
+                <td>学号</td>
+                <td>班级</td>
+                <td>邮箱</td>
+                <td>电话</td>
+            </tr>
+
+        </table>
+
     </div>
 
 
