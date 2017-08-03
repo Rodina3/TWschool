@@ -10,6 +10,7 @@
 
     <!--jqurey-->
     <script type="text/javascript" src="../js/vendor/jquery-3.2.1.js"></script>
+    <script src="../js/vendor/jquery.validate.min.js"></script>
 
     <!--JS-->
     <script type="text/javascript" src="../js/AddPage.js"></script>
@@ -20,7 +21,7 @@
 
 </head>
 
-<body>
+<body class="container-fluid">
 <header>
     <nav>
         <a href="./HomePage.html">Home Page</a> |
@@ -36,24 +37,26 @@
     <div>
         <h3>请填写页面添加学生：</h3>
     </div>
-    <!--input-->
+
     <div>
-        <form id="student-info">
+        <!--input-->
+        <form id="student-info" action="">
             <p>姓名：<label><input type="text" name="name" value="王小闹"></label></p>
             <p>班级：<label><input type="text" name="klass" value="1班"></label></p>
             <p>邮箱：<label><input type="text" name="email" value="wangxn@163.com"></label></p>
             <p>电话：<label><input type="text" name="phone" value="12345678990"></label></p>
+
+            <!--button-->
+            <p>
+                <input id="add-submit" type="submit" value="提交">
+            </p>
+
         </form>
     </div>
 
-    <!--button-->
-    <div>
-        <p>
-            <button id="add-submit" type="button">提交</button>
-        <p>
+    <div id ="add-success-notice">
+
     </div>
 </main>
-
-
 </body>
 </html>
