@@ -11,6 +11,11 @@
     <!--jqurey-->
     <script type="text/javascript" src="../js/vendor/jquery-3.2.1.js"></script>
 
+    <!--JS-->
+    <script type="text/javascript" src="../js/AddPage.js"></script>
+    <script type="text/javascript" src="../js/SearchPage.js"></script>
+
+
     <title>Add Page</title>
 
 </head>
@@ -33,15 +38,19 @@
     </div>
     <!--input-->
     <div>
-        <p>姓名：<label><input type="text" name="name"></label></p>
-        <p>班级：<label><input type="text" name="klass"></label></p>
-        <p>邮箱：<label><input type="text" name="email"></label></p>
-        <p>电话：<label><input type="text" name="phone"></label></p>
+        <form id="student-info">
+            <p>姓名：<label><input type="text" name="name" value="王小闹"></label></p>
+            <p>班级：<label><input type="text" name="klass" value="1班"></label></p>
+            <p>邮箱：<label><input type="text" name="email" value="wangxn@163.com"></label></p>
+            <p>电话：<label><input type="text" name="phone" value="12345678990"></label></p>
+        </form>
     </div>
 
     <!--button-->
     <div>
-        <p><button type="button">提交</button><p>
+        <p>
+            <button id="add-submit" type="button">提交</button>
+        <p>
     </div>
 </main>
 
