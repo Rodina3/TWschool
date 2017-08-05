@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ReportBuilder.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">tdd-java-base</a> &gt; <a href="index.source.html" class="el_package">ms_student_score.core</a> &gt; <span class="el_source">ReportBuilder.java</span></div><h1>ReportBuilder.java</h1><pre class="source lang-java linenums">package ms_student_score.core;
+
+import java.util.List;
+
+/**
+ * Created by rzhou on 27/07/2017.
+ */
+public class ReportBuilder {
+<span class="fc" id="L9">    static String reportPrefix = &quot;\n成绩单\n&quot;</span>
+            + &quot;姓名|数学|语文|英语|编程|平均分|总分\n&quot;
+            + &quot;========================\n&quot;;
+
+<span class="fc" id="L13">    static String reportSuffix = &quot;========================\n&quot;;</span>
+
+<span class="fc" id="L15">    private Klass klass = null;</span>
+<span class="fc" id="L16">    private String studentScoresItem = &quot;&quot;;</span>
+<span class="fc" id="L17">    private String klassAverageString = &quot;全班总平均分：%.3f\n&quot;;</span>
+<span class="fc" id="L18">    private String klassMString = &quot; 全班总分中位数：%d\n&quot;;</span>
+
+<span class="fc" id="L20">    public ReportBuilder(Klass klass) {</span>
+<span class="fc" id="L21">        this.klass = klass;</span>
+<span class="fc" id="L22">    }</span>
+
+    private void buildStudentItems(List&lt;String&gt; studentIDs) {
+<span class="fc" id="L25">        StringBuilder studentItem = new StringBuilder();</span>
+
+<span class="fc bfc" id="L27" title="All 2 branches covered.">        for (int i = 0; i &lt; studentIDs.size(); i++) {</span>
+<span class="fc" id="L28">            int index = findStudent(studentIDs.get(i));</span>
+
+<span class="fc bfc" id="L30" title="All 2 branches covered.">            if (index == -1) {</span>
+<span class="fc" id="L31">                continue;</span>
+            }
+
+<span class="fc" id="L34">            studentItem.append(klass.getStudentList().get(index).getName()).append(&quot;|&quot;)</span>
+<span class="fc" id="L35">                    .append(klass.getStudentList().get(index).getScores().get(&quot;数学&quot;)).append(&quot;|&quot;)</span>
+<span class="fc" id="L36">                    .append(klass.getStudentList().get(index).getScores().get(&quot;语文&quot;)).append(&quot;|&quot;)</span>
+<span class="fc" id="L37">                    .append(klass.getStudentList().get(index).getScores().get(&quot;英语&quot;)).append(&quot;|&quot;)</span>
+<span class="fc" id="L38">                    .append(klass.getStudentList().get(index).getScores().get(&quot;编程&quot;)).append(&quot;|&quot;)</span>
+<span class="fc" id="L39">                    .append(klass.getStudentList().get(index).getAverage()).append(&quot;|&quot;)</span>
+<span class="fc" id="L40">                    .append(klass.getStudentList().get(index).getTotalScore()).append(&quot;\n&quot;);</span>
+
+        }
+<span class="fc" id="L43">        this.studentScoresItem = studentItem.toString();</span>
+
+<span class="fc" id="L45">    }</span>
+
+    private int findStudent(String id) {
+<span class="fc" id="L48">        int index = -1;</span>
+<span class="fc bfc" id="L49" title="All 2 branches covered.">        for (int i = 0; i &lt; klass.getStudentList().size(); i++) {</span>
+<span class="fc bfc" id="L50" title="All 2 branches covered.">            if (id .equals(klass.getStudentList().get(i).getID())) {</span>
+<span class="fc" id="L51">                index = i;</span>
+<span class="fc" id="L52">                break;</span>
+            }
+
+        }
+<span class="fc" id="L56">        return index;</span>
+    }
+
+    public String buildReport(List&lt;String&gt; studentIDs) {
+<span class="fc" id="L60">        buildStudentItems(studentIDs);</span>
+<span class="fc" id="L61">        buildAverageItem();</span>
+
+<span class="fc" id="L63">        String report = reportPrefix</span>
+                                + this.studentScoresItem
+                                + reportSuffix
+                                + this.klassAverageString;
+<span class="fc" id="L67">        return report;</span>
+    }
+
+    private void buildAverageItem() {
+<span class="fc" id="L71">        this.klassAverageString=String.format(this.klassAverageString,this.klass.getKlassAverage());</span>
+<span class="fc" id="L72">    }</span>
+
+    private void buildM() {
+
+<span class="nc" id="L76">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.8.201612092310</span></div></body></html>

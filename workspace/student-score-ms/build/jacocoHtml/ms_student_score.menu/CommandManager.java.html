@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>CommandManager.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">tdd-java-base</a> &gt; <a href="index.source.html" class="el_package">ms_student_score.menu</a> &gt; <span class="el_source">CommandManager.java</span></div><h1>CommandManager.java</h1><pre class="source lang-java linenums">package ms_student_score.menu;
+
+import ms_student_score.core.ReportBuilder;
+import ms_student_score.core.Klass;
+import ms_student_score.core.Student;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
+import java.util.regex.Pattern;
+
+/**
+ * Created by rzhou on 27/07/2017.
+ */
+public class CommandManager {
+
+<span class="fc" id="L17">    private MenuStatus menuNow = MenuStatus.HOME_PAGE;</span>
+<span class="fc" id="L18">    private Klass klass = new Klass();</span>
+
+<span class="fc" id="L20">    public CommandManager() {</span>
+<span class="fc" id="L21">        System.out.print(InputNotice.mainMenu);;</span>
+<span class="fc" id="L22">    }</span>
+
+    //public analyzeCommand(){}
+    //public excuteCommand(){}
+
+    public void chooseFunction(String input) {
+<span class="fc" id="L28">        refreshMenu(input);</span>
+<span class="fc" id="L29">        showInputNotice();</span>
+<span class="fc" id="L30">    }</span>
+
+    public MenuStatus getMenuNow() {
+<span class="nc" id="L33">        return menuNow;</span>
+    }
+
+
+    private void refreshMenu(String input) {
+
+<span class="fc bfc" id="L39" title="All 4 branches covered.">        if (Objects.equals(menuNow, MenuStatus.HOME_PAGE) || Objects.equals(menuNow, MenuStatus.ADD_SUCCESS_PAGE)) {</span>
+<span class="fc bfc" id="L40" title="All 2 branches covered.">            if (Objects.equals(input, &quot;1&quot;)) {</span>
+<span class="fc" id="L41">                menuNow = MenuStatus.ADD_REQUEST_PAGE;</span>
+<span class="pc bpc" id="L42" title="1 of 2 branches missed.">            } else if (Objects.equals(input, &quot;2&quot;)) {</span>
+<span class="fc" id="L43">                menuNow = MenuStatus.PRINT_REQUEST_PAGE;</span>
+
+<span class="nc bnc" id="L45" title="All 2 branches missed.">            } else if (Objects.equals(input, &quot;3&quot;)) {</span>
+<span class="nc" id="L46">                menuNow = MenuStatus.EXIT_PAGE;</span>
+            } else {
+<span class="nc" id="L48">                menuNow = MenuStatus.HOME_PAGE;</span>
+            }
+<span class="pc bpc" id="L50" title="1 of 4 branches missed.">        } else if (Objects.equals(menuNow, MenuStatus.ADD_REQUEST_PAGE) || Objects.equals(menuNow, MenuStatus.ADD_FAIL_PAGE)) {</span>
+<span class="fc bfc" id="L51" title="All 2 branches covered.">            if (isLegalStudentInfo(input)) {</span>
+<span class="fc" id="L52">                klass.addStudent(analyzeStudent(input));</span>
+<span class="fc" id="L53">                menuNow = MenuStatus.ADD_SUCCESS_PAGE;</span>
+<span class="fc" id="L54">                InputNotice.addSuccess = String.format(InputNotice.addSuccess, analyzeStudent(input).getName());</span>
+            } else {
+<span class="fc" id="L56">                menuNow = MenuStatus.ADD_FAIL_PAGE;</span>
+            }
+
+<span class="pc bpc" id="L59" title="3 of 4 branches missed.">        } else if (Objects.equals(menuNow, MenuStatus.PRINT_REQUEST_PAGE) || Objects.equals(menuNow, MenuStatus.PRINT_FAIL_PAGE)) {</span>
+
+<span class="fc bfc" id="L61" title="All 2 branches covered.">            if (isLegalPrintRequest(input)) {</span>
+<span class="fc" id="L62">                ReportBuilder reprot = new ReportBuilder(klass);</span>
+<span class="fc" id="L63">                String[] ids = input.split(&quot;, &quot;);</span>
+<span class="fc" id="L64">                List&lt;String&gt; studentIDs = new ArrayList&lt;String&gt;();</span>
+
+<span class="fc bfc" id="L66" title="All 2 branches covered.">                for (int i = 0; i &lt; ids.length; i++) {</span>
+<span class="fc" id="L67">                    studentIDs.add(ids[i]);</span>
+
+                }
+<span class="fc" id="L70">                System.out.print(reprot.buildReport(studentIDs));</span>
+<span class="fc" id="L71">                menuNow = MenuStatus.HOME_PAGE;</span>
+<span class="fc" id="L72">            } else {</span>
+<span class="fc" id="L73">                menuNow = MenuStatus.PRINT_FAIL_PAGE;</span>
+            }
+
+        }
+<span class="fc" id="L77">    }</span>
+
+    private boolean isLegalStudentInfo(String input) {
+<span class="fc" id="L80">        boolean isLegal = false;</span>
+<span class="fc" id="L81">        String[] studentInfo = input.split(&quot;, &quot;);</span>
+
+<span class="fc bfc" id="L83" title="All 2 branches covered.">        if (studentInfo.length == 6) {</span>
+<span class="pc bpc" id="L84" title="1 of 2 branches missed.">            isLegal = isLegalName(studentInfo[0])</span>
+<span class="fc bfc" id="L85" title="All 2 branches covered.">                    &amp;&amp; isLegalID(studentInfo[1])</span>
+<span class="pc bpc" id="L86" title="1 of 2 branches missed.">                    &amp;&amp; isLegalScore(studentInfo[2])</span>
+<span class="pc bpc" id="L87" title="1 of 2 branches missed.">                    &amp;&amp; isLegalScore(studentInfo[3])</span>
+<span class="pc bpc" id="L88" title="1 of 2 branches missed.">                    &amp;&amp; isLegalScore(studentInfo[4])</span>
+<span class="pc bpc" id="L89" title="1 of 2 branches missed.">                    &amp;&amp; isLegalScore(studentInfo[5]);</span>
+        }
+
+<span class="fc" id="L92">        return isLegal;</span>
+    }
+
+    private void showInputNotice() {
+<span class="fc" id="L96">        String notice = &quot;&quot;;</span>
+<span class="pc bpc" id="L97" title="1 of 7 branches missed.">        switch (menuNow) {</span>
+            case HOME_PAGE:
+<span class="fc" id="L99">                notice = InputNotice.mainMenu;</span>
+<span class="fc" id="L100">                break;</span>
+            case ADD_REQUEST_PAGE:
+<span class="fc" id="L102">                notice = InputNotice.addWaiting;</span>
+<span class="fc" id="L103">                break;</span>
+            case ADD_FAIL_PAGE:
+<span class="fc" id="L105">                notice = InputNotice.addFail;</span>
+<span class="fc" id="L106">                break;</span>
+            case ADD_SUCCESS_PAGE:
+<span class="fc" id="L108">                notice = InputNotice.addSuccess + InputNotice.mainMenu;</span>
+<span class="fc" id="L109">                break;</span>
+            case PRINT_REQUEST_PAGE:
+<span class="fc" id="L111">                notice = InputNotice.printWaiting;</span>
+<span class="fc" id="L112">                break;</span>
+            case PRINT_FAIL_PAGE:
+<span class="fc" id="L114">                notice = InputNotice.printFail;</span>
+                break;
+        }
+<span class="fc" id="L117">        System.out.print(notice);</span>
+<span class="fc" id="L118">    }</span>
+
+    private boolean isLegalID(String str) {
+
+<span class="fc" id="L122">        boolean flag = false;</span>
+<span class="fc bfc" id="L123" title="All 4 branches covered.">        if (str.length() != 0 &amp;&amp; str.matches(&quot;\\d{3}&quot;)) {</span>
+<span class="fc" id="L124">            flag = true;</span>
+        }
+<span class="fc" id="L126">        return flag;</span>
+    }
+
+    private boolean isLegalName(String str) {
+<span class="fc" id="L130">        boolean flag = false;</span>
+<span class="pc bpc" id="L131" title="1 of 2 branches missed.">        if (str.length() != 0) {</span>
+<span class="fc" id="L132">            flag = true;</span>
+
+        }
+<span class="fc" id="L135">        return flag;</span>
+    }
+
+    private boolean isLegalScore(String str) {
+<span class="fc" id="L139">        Pattern legalScore = Pattern.compile(&quot;[0-9]{1,3}&quot;);</span>
+<span class="pc bpc" id="L140" title="3 of 6 branches missed.">        return legalScore.matcher(str).find() &amp;&amp; Integer.parseInt(str) &lt;= 100 &amp;&amp; Integer.parseInt(str) &gt;= 0;</span>
+    }
+
+    private boolean isLegalPrintRequest(String str) {
+<span class="fc" id="L144">        String[] ids = str.split(&quot;, &quot;);</span>
+<span class="fc" id="L145">        boolean flag = true;</span>
+<span class="fc bfc" id="L146" title="All 2 branches covered.">        for (int i = 0; i &lt; ids.length; i++) {</span>
+<span class="pc bpc" id="L147" title="1 of 4 branches missed.">            flag = flag &amp;&amp; isLegalID(ids[i]);</span>
+
+        }
+<span class="fc" id="L150">        return flag;</span>
+    }
+
+    private Student analyzeStudent(String str) {
+<span class="fc" id="L154">        String[] studentInfo = str.split(&quot;, &quot;);</span>
+<span class="fc" id="L155">        String name = studentInfo[0],</span>
+<span class="fc" id="L156">                id = studentInfo[1];</span>
+<span class="fc" id="L157">        int math = Integer.parseInt(studentInfo[2]),</span>
+<span class="fc" id="L158">                chinese = Integer.parseInt(studentInfo[3]),</span>
+<span class="fc" id="L159">                english = Integer.parseInt(studentInfo[4]),</span>
+<span class="fc" id="L160">                coding = Integer.parseInt(studentInfo[5]);</span>
+
+
+<span class="fc" id="L163">        return new Student(name, id, math, chinese, english, coding);</span>
+    }
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.8.201612092310</span></div></body></html>

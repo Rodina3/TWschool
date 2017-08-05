@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Student.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">tdd-java-base</a> &gt; <a href="index.source.html" class="el_package">ms_student_score</a> &gt; <span class="el_source">Student.java</span></div><h1>Student.java</h1><pre class="source lang-java linenums">package ms_student_score;
+
+/**
+ * Created by rzhou on 27/07/2017.
+ */
+public class Student {
+    private String name;
+    private String id;
+    private int math;
+    private int chinese;
+    private int english;
+    private int coding;
+    private int totalScore;
+    private float average;
+
+<span class="fc" id="L16">    public Student(String name, String id, int math, int chinese, int english, int coding) {</span>
+<span class="fc" id="L17">        this.name = name;</span>
+<span class="fc" id="L18">        this.id = id;</span>
+<span class="fc" id="L19">        this.math = math;</span>
+<span class="fc" id="L20">        this.chinese = chinese;</span>
+<span class="fc" id="L21">        this.english = english;</span>
+<span class="fc" id="L22">        this.coding = coding;</span>
+
+<span class="fc" id="L24">        this.totalScore = this.math + this.chinese + this.english + this.coding;</span>
+<span class="fc" id="L25">        this.average = (float) (this.totalScore / 4.0);</span>
+<span class="fc" id="L26">    }</span>
+
+
+    public String getName() {
+<span class="fc" id="L30">        return this.name;</span>
+    }
+
+    public String getID() {
+<span class="fc" id="L34">        return this.id;</span>
+    }
+
+    public int getMath() {
+<span class="fc" id="L38">        return this.math;</span>
+    }
+
+    public int getChinese() {
+<span class="fc" id="L42">        return this.chinese;</span>
+    }
+
+    public int getEnglish() {
+<span class="fc" id="L46">        return this.english;</span>
+    }
+
+    public int getCoding() {
+<span class="fc" id="L50">        return this.coding;</span>
+    }
+
+    public int getTotalScore() {
+<span class="fc" id="L54">        return this.totalScore;</span>
+    }
+
+    public float getAverage() {
+<span class="fc" id="L58">        return this.average;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.8.201612092310</span></div></body></html>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>FrequencyWords.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">tdd-java-base</a> &gt; <a href="index.source.html" class="el_package">frequencyWordsPackage</a> &gt; <span class="el_source">FrequencyWords.java</span></div><h1>FrequencyWords.java</h1><pre class="source lang-java linenums">package frequencyWordsPackage;
+
+import java.io.*;
+import java.util.*;
+
+/**
+ * Created by rzhou on 25/07/2017.
+ */
+<span class="fc" id="L9">public class FrequencyWords {</span>
+
+
+    public String[] wordSplit(String str) {
+<span class="fc" id="L13">        return str.split(&quot; +&quot;);</span>
+
+    }
+
+    public Map&lt;String, Integer&gt; countWordsFrequency(String[] words) {
+<span class="fc" id="L18">        Map&lt;String, Integer&gt; wordsMap = new HashMap&lt;String, Integer&gt;();</span>
+<span class="fc bfc" id="L19" title="All 2 branches covered.">        for (String s : words) {</span>
+
+<span class="fc bfc" id="L21" title="All 2 branches covered.">            if (wordsMap.containsKey(s)) {</span>
+<span class="fc" id="L22">                wordsMap.put(s, wordsMap.get(s) + 1);</span>
+            } else {
+<span class="fc" id="L24">                wordsMap.put(s, 1);</span>
+            }
+        }
+<span class="fc" id="L27">        return wordsMap;</span>
+    }
+
+    public Map&lt;String, Integer&gt; sortWords(Map&lt;String, Integer&gt; wordsMap) {
+<span class="fc" id="L31">        return MapUtil.sortByValue(wordsMap);</span>
+    }
+
+    public String printWordFrequency(Map&lt;String, Integer&gt; sortedWordMap) {
+        //StringBuilder printString = new StringBuilder(&quot; &quot;);
+<span class="fc" id="L36">        String printString = &quot;&quot;;</span>
+<span class="fc bfc" id="L37" title="All 2 branches covered.">        for (Map.Entry&lt;String, Integer&gt; entry : sortedWordMap.entrySet()) {</span>
+            //printString.append(entry.getKey()).append(entry.getValue()).append(&quot;\n&quot;);
+<span class="fc" id="L39">            printString += entry.getKey() + entry.getValue() + &quot;\n&quot;;</span>
+<span class="fc" id="L40">        }</span>
+
+        //return printString.toString();
+<span class="fc" id="L43">        return printString;</span>
+    }
+
+    public String loadTXT(String filePath) {
+
+<span class="fc" id="L48">        StringBuilder content = new StringBuilder();</span>
+
+        try {
+<span class="fc" id="L51">            BufferedReader reader = new BufferedReader(new FileReader(filePath));</span>
+
+<span class="fc" id="L53">            String line = reader.readLine();</span>
+<span class="fc bfc" id="L54" title="All 2 branches covered.">            while (line != null) {</span>
+<span class="fc" id="L55">                content.append(line);</span>
+                //content.append(&quot;\n&quot;);
+
+<span class="fc" id="L58">                line = reader.readLine();</span>
+            }
+<span class="nc" id="L60">        } catch (IOException e) {</span>
+<span class="nc" id="L61">            e.printStackTrace();</span>
+<span class="fc" id="L62">        }</span>
+
+<span class="fc" id="L64">        return content.toString();</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.8.201612092310</span></div></body></html>

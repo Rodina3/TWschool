@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Menu.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">tdd-java-base</a> &gt; <a href="index.source.html" class="el_package">ms_student_score</a> &gt; <span class="el_source">Menu.java</span></div><h1>Menu.java</h1><pre class="source lang-java linenums">package ms_student_score;
+
+import java.util.Objects;
+import java.util.regex.Pattern;
+
+/**
+ * Created by rzhou on 27/07/2017.
+ */
+<span class="fc" id="L9">public class Menu {</span>
+
+<span class="fc" id="L11">    private static String mainMenu = &quot;1. 添加学生 \n&quot;</span>
+            + &quot;2. 生成成绩单 \n&quot;
+            + &quot;3. 退出 \n&quot;
+            + &quot;请输入你的选择（1～3）：&quot;;
+<span class="fc" id="L15">    private static String addWaiting = &quot;请输入学生信息（格式：姓名, 学号，数学：分数，语文：分数，英语：分数，编程：分数），按回车提交\n&quot;;</span>
+<span class="fc" id="L16">    private static String addFail = &quot;请按正确的格式输入（格式：姓名, 学号，数学：分数，语文：分数，英语：分数，编程：分数）：\n&quot;;</span>
+<span class="fc" id="L17">    private static String addSuccess = &quot;学生xxx的成绩被添加\n&quot; + mainMenu;</span>
+
+<span class="fc" id="L19">    private static String printWaiting = &quot;请输入要打印的学生的学号（格式： 学号, 学号,...），按回车提交：\n&quot;;</span>
+<span class="fc" id="L20">    private static String printFail = &quot;请按正确的格式输入要打印的学生的学号（格式： 学号, 学号,...），按回车提交：\n&quot;;</span>
+
+<span class="fc" id="L22">    private final Integer mainM = 0;</span>
+<span class="fc" id="L23">    private final Integer addM = 1;</span>
+<span class="fc" id="L24">    private final Integer addFailM = 2;</span>
+<span class="fc" id="L25">    private final Integer addSuccessM = 3;</span>
+<span class="fc" id="L26">    private final Integer printM = 4;</span>
+<span class="fc" id="L27">    private final Integer printFailM = 5;</span>
+
+
+    //  private Map&lt;Integer, String&gt; menuInfo = new HashMap&lt;Integer, String&gt;();
+<span class="fc" id="L31">    private Integer menuNow = mainM;</span>
+
+    public String chooseMenu(String input) {
+<span class="fc" id="L34">        menuManager(input);</span>
+<span class="fc" id="L35">        return showMenu();</span>
+    }
+
+    private String showMenu() {
+<span class="fc" id="L39">        String output = &quot;&quot;;</span>
+<span class="pc bpc" id="L40" title="1 of 7 branches missed.">        switch (menuNow) {</span>
+            case 0:
+<span class="fc" id="L42">                output = mainMenu;</span>
+<span class="fc" id="L43">                break;</span>
+            case 1:
+<span class="fc" id="L45">                output = addWaiting;</span>
+<span class="fc" id="L46">                break;</span>
+            case 2:
+<span class="fc" id="L48">                output = addFail;</span>
+<span class="fc" id="L49">                break;</span>
+            case 3:
+<span class="fc" id="L51">                output = addSuccess;</span>
+<span class="fc" id="L52">                break;</span>
+            case 4:
+<span class="fc" id="L54">                output = printWaiting;</span>
+<span class="fc" id="L55">                break;</span>
+            case 5:
+<span class="fc" id="L57">                output = printFail;</span>
+                break;
+        }
+<span class="fc" id="L60">        return output;</span>
+    }
+
+
+    private void menuManager(String input) {
+<span class="pc bpc" id="L65" title="1 of 4 branches missed.">        if (Objects.equals(menuNow, mainM) || Objects.equals(menuNow, addSuccessM)) {</span>
+<span class="fc bfc" id="L66" title="All 2 branches covered.">            if (Objects.equals(input, &quot;1&quot;)) {</span>
+<span class="fc" id="L67">                menuNow = addM;</span>
+                //--&gt;add student submenu
+
+<span class="pc bpc" id="L70" title="1 of 2 branches missed.">            } else if (Objects.equals(input, &quot;2&quot;)) {</span>
+<span class="fc" id="L71">                menuNow = printM;</span>
+                //--&gt;print submenu
+
+<span class="nc bnc" id="L74" title="All 2 branches missed.">            } else if (Objects.equals(input, &quot;3&quot;)) {</span>
+
+                //--&gt;quit
+
+            } else {
+
+                //do nothing
+            }
+<span class="pc bpc" id="L82" title="1 of 4 branches missed.">        } else if (Objects.equals(menuNow, addM) || Objects.equals(menuNow, addFailM)) {</span>
+<span class="fc bfc" id="L83" title="All 2 branches covered.">            if (isLegalStudentInfo(input)) {</span>
+                //add student
+<span class="fc" id="L85">                menuNow = addSuccessM;</span>
+            } else {
+<span class="fc" id="L87">                menuNow = addFailM;</span>
+            }
+
+<span class="pc bpc" id="L90" title="3 of 4 branches missed.">        } else if (Objects.equals(menuNow, printM) || Objects.equals(menuNow, printFailM)) {</span>
+<span class="fc bfc" id="L91" title="All 2 branches covered.">            if (isLegalPrintRequest(input)) {</span>
+                //print transcript
+<span class="fc" id="L93">                menuNow = mainM;</span>
+            } else {
+<span class="fc" id="L95">                menuNow = printFailM;</span>
+            }
+
+        }
+<span class="fc" id="L99">    }</span>
+
+    private boolean isLegalStudentInfo(String input) {
+<span class="fc" id="L102">        boolean isLegal = false;</span>
+<span class="fc" id="L103">        String[] studentInfo = input.split(&quot;, &quot;);</span>
+<span class="fc bfc" id="L104" title="All 2 branches covered.">        if (studentInfo.length == 6) {</span>
+<span class="pc bpc" id="L105" title="1 of 2 branches missed.">            isLegal = isLegalScore(studentInfo[2])</span>
+<span class="pc bpc" id="L106" title="1 of 2 branches missed.">                    &amp;&amp; isLegalScore(studentInfo[3])</span>
+<span class="pc bpc" id="L107" title="1 of 2 branches missed.">                    &amp;&amp; isLegalScore(studentInfo[4])</span>
+<span class="pc bpc" id="L108" title="1 of 2 branches missed.">                    &amp;&amp; isLegalScore(studentInfo[5]);</span>
+        }
+
+<span class="fc" id="L111">        return isLegal;</span>
+    }
+
+    private boolean isLegalScore(String str) {
+<span class="fc" id="L115">        Pattern legalScore = Pattern.compile(&quot;[0-9]{1,3}&quot;);</span>
+<span class="pc bpc" id="L116" title="3 of 6 branches missed.">        return legalScore.matcher(str).find() &amp;&amp; Integer.parseInt(str) &lt;= 100 &amp;&amp; Integer.parseInt(str) &gt;= 0;</span>
+    }
+
+    private boolean isLegalPrintRequest(String str) {
+<span class="fc" id="L120">        Pattern legalID = Pattern.compile(&quot;[0-9]{3}&quot;);</span>
+<span class="fc" id="L121">        return legalID.matcher(str).find();</span>
+    }
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.8.201612092310</span></div></body></html>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="FrequencyWordsTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2017-07-26T01:55:17" hostname="CNrzhou.local" time="0.009">
+  <properties/>
+  <testcase name="should_load_TXT_to_String" classname="FrequencyWordsTest" time="0.007"/>
+  <testcase name="should_split_sentence_into_single_word_with_space" classname="FrequencyWordsTest" time="0.001"/>
+  <testcase name="should_sort_words_according_to_its_frequency" classname="FrequencyWordsTest" time="0.001"/>
+  <testcase name="should_count_word_frequency" classname="FrequencyWordsTest" time="0.0"/>
+  <testcase name="should_print_words_in_frequence" classname="FrequencyWordsTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

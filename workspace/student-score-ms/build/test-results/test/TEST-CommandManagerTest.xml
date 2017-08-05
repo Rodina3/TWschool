@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="CommandManagerTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2017-07-30T13:36:34" hostname="CNrzhou.local" time="0.012">
+  <properties/>
+  <testcase name="should_show_add_fail_page_when_id_empty" classname="CommandManagerTest" time="0.006"/>
+  <testcase name="should_show_add_fail_page_when_id_illegal" classname="CommandManagerTest" time="0.0"/>
+  <testcase name="should_show_add_fail_page_when_student_score_input_format_illegal" classname="CommandManagerTest" time="0.001"/>
+  <testcase name="should_show_add_student_score_page_when_input_1" classname="CommandManagerTest" time="0.0"/>
+  <testcase name="should_show_print_fail_page_when_id_illegal" classname="CommandManagerTest" time="0.0"/>
+  <testcase name="should_show_add_success_page_when_input_legal_student_info" classname="CommandManagerTest" time="0.001"/>
+  <testcase name="should_show_print_success_page_when_input_legal_print_request" classname="CommandManagerTest" time="0.001"/>
+  <testcase name="should_show_print_report_page_when_input_2" classname="CommandManagerTest" time="0.0"/>
+  <system-out><![CDATA[欢迎进入学生成绩管理系统：
+1. 添加学生 
+2. 生成成绩单 
+3. 退出 
+请输入你的选择（1～3）：]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

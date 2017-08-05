@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="MenuTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2017-07-27T16:55:35" hostname="CNrzhou.local" time="0.002">
+  <properties/>
+  <testcase name="should_jump_into_printFail_submenu_when_input_illegal" classname="MenuTest" time="0.001"/>
+  <testcase name="should_jump_into_addSuccess_when_input_legal" classname="MenuTest" time="0.0"/>
+  <testcase name="should_jump_into_printSuccess_when_input_legal" classname="MenuTest" time="0.001"/>
+  <testcase name="should_jump_into_addFail_submenu_when_input_illegal" classname="MenuTest" time="0.0"/>
+  <testcase name="should_jump_into_printWaiting_menu_when_input_2" classname="MenuTest" time="0.0"/>
+  <testcase name="should_jump_into_addWaiting_menu_when_input_1" classname="MenuTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
