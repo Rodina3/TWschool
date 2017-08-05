@@ -3,18 +3,21 @@
  */
 $(document).ready(function () {
     $('#search-button').click(function () {
-        for (let i = 0; i < localStorage.length; i++) {
-            var stuStr = localStorage.getItem('studentInfo' + i);
-            var student = JSON.parse(stuStr);
-            //showReportHeader();
-            showStudentItem(student);
-        }
+        // $('#student-inquire').html("");
+        // for (let i = 0; i < localStorage.length; i++) {
+        //     var stuStr = localStorage.getItem('studentInfo' + i);
+        //     var student = JSON.parse(stuStr);
+        //     //showReportHeader();
+        //     showStudentItem(student);
+        // }
+        showStudentItem();
     });
 });
 
 
 function showStudentItem(obj) {
-    //$('#student-inquire').html("");
+
+
     var markup = "<tr> " +
         "<td>${name}</td> " +
         "<td>${id}</td> " +
@@ -23,11 +26,13 @@ function showStudentItem(obj) {
         "<td>${phone}</td>" +
         "</tr>";
 
-    /* Compile the markup as a named template */
-    $.template("studentTemplate", markup);
-    /* Render the template with the movies data and insert
-     the rendered HTML under the "movieList" element */
-    $.tmpl("studentTemplate", obj).appendTo("#student-inquire");
+    // /* Compile the markup as a named template */
+    // $.template("studentTemplate", markup);
+    // /* Render the template with the movies data and insert
+    //  the rendered HTML under the "movieList" element */
+    // $.tmpl("studentTemplate", obj).appendTo("#student-inquire");
+
+    $("#myTemplate").tmpl(obj).appendTo("markup");
 }
 
 
@@ -36,7 +41,7 @@ function onShow() {
         var stuStr = localStorage.getItem('studentInfo' + i);
         var student = JSON.parse(stuStr);
         //showReportHeader();
-        showStudentItem(student);
+        //showStudentItem(student);
     }
 
 }

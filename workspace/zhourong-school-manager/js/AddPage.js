@@ -59,7 +59,8 @@ $.validator.setDefaults({
     }
 });
 
-var count=0;
+var count=localStorage.length-1;
+//var count=0;
 function saveStudentInfo() {
     var formObj = $('#student-info').serializeArray();
     //判断是否重复添加
