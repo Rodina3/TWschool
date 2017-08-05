@@ -46,6 +46,7 @@ public class EmployeeMemoryService implements EmployeeService {
         if (emp != null) {
             emp.setName(employee.getName());
             emp.setId(employee.getId());
+            emp.setAddress(employee.getAddress());
             return new ResponseEntity<>(employee, HttpStatus.OK);
         }
         return new ResponseEntity<>((Employee) null, HttpStatus.NOT_FOUND);
