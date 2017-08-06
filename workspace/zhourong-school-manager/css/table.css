@@ -1,0 +1,17 @@
+table{
+    text-align: center;
+}
+
+table tr {
+    border-width: 1px;
+    padding: 1px;
+    border-style: inset;
+    border-color: gray;
+}
+
+table td {
+    border-width: 1px;
+    padding: 1px;
+    border-style: inset;
+    border-color: gray;
+}

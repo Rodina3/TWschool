@@ -77,11 +77,11 @@ function findStudentById() {
 
 function showReportHeadder() {
     var markup = "<tr> " +
-        "<td>姓名</td> " +
-        "<td>学号</td> " +
-        "<td>班级</td> " +
-        "<td>邮箱</td> " +
-        "<td>电话</td>" +
+        "<td class='col-md-2'>姓名</td> " +
+        "<td class='col-md-1'>学号</td> " +
+        "<td class='col-md-1'>班级</td> " +
+        "<td class='col-md-4'>邮箱</td> " +
+        "<td class='col-md-4'>电话</td>" +
         "</tr>";
     $("#student-inquire").html(markup);
 }
@@ -89,11 +89,11 @@ function showReportHeadder() {
 function showStudentItem(obj) {
 
     var markup = "<tr> " +
-        "<td>${name}</td> " +
-        "<td>${id}</td> " +
-        "<td>${klass}</td> " +
-        "<td>${email}</td> " +
-        "<td>${phone}</td>" +
+        "<td class='col-md-2'>${name}</td> " +
+        "<td class='col-md-1'>${id}</td> " +
+        "<td class='col-md-1'>${klass}</td> " +
+        "<td class='col-md-4'>${email}</td> " +
+        "<td class='col-md-4'>${phone}</td>" +
         "</tr>";
     $.template("studentTemplate", markup);
     $.tmpl("studentTemplate", obj).appendTo("#student-inquire");
@@ -104,6 +104,7 @@ function onShow() {
     showReportHeadder();
     for (let i = 0; i < localStorage.length; i++) {
         var stuStr = localStorage.getItem('studentInfo' + i);
+        if (stuStr == null) break;
         var student = JSON.parse(stuStr);
         showStudentItem(student);
     }
