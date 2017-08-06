@@ -1,14 +1,14 @@
 package ms_student_score.core;
 
 import ms_student_score.view.*;
+
 import java.util.List;
 
 /**
  * Created by rzhou on 06/08/2017.
  */
 public class Manager {
-    private Klass klass;
-    private View view;
+    private Klass klass =new Klass();
     private String studentScoresItem;
 
     private void buildStudentItems(List<String> studentIDs) {
@@ -45,7 +45,7 @@ public class Manager {
         return index;
     }
 
-    public String buildReport(List<String> studentIDs) {
+    public void buildReport(List<String> studentIDs) {
         buildStudentItems(studentIDs);
 
         String report = String.format(Report.reportTemplate,
@@ -53,11 +53,12 @@ public class Manager {
                 this.klass.getKlassAverage(),
                 this.klass.getKlassMedian());
 
-        return report;
+       View.showReportPage(report);
     }
 
     public void addStudent(Student student) {
         klass.addStudent(student);
+        View.showAddSuccessPage(student);
     }
 
 }

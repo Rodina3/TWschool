@@ -1,7 +1,6 @@
 package ms_student_score.core;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
@@ -14,7 +13,7 @@ public class Klass {
     private float average = 0;
     private float median = 0;
 
-    private void refreshAverage() {
+    private void updateAverage() {
         this.average = 0;
         for (Student stu : this.studentList) {
             this.average += stu.getAverage();
@@ -22,7 +21,7 @@ public class Klass {
         this.average /= this.studentList.size();
     }
 
-    private void refreshMedian() {
+    private void updateMedian() {
         this.median = 0;
         List<Integer> totalScoreList = new ArrayList<>();
 
@@ -56,14 +55,14 @@ public class Klass {
 
     public void addStudent(List<Student> students) {
         this.studentList.addAll(students);
-        refreshAverage();
-        refreshMedian();
+        updateAverage();
+        updateMedian();
     }
 
     public void addStudent(Student stu) {
         this.studentList.add(stu);
-        refreshAverage();
-        refreshMedian();
+        updateAverage();
+        updateMedian();
     }
 
     public List<Student> getStudentList() {

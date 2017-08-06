@@ -8,7 +8,6 @@ public enum CurrentStatus {
 
     ADD_REQUEST_PAGE,
     ADD_FAIL_PAGE,
-    ADD_SUCCESS_PAGE,
 
     PRINT_REQUEST_PAGE,
     PRINT_FAIL_PAGE,
