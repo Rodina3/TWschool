@@ -1,4 +1,4 @@
-package ms_student_score.menu;
+package ms_student_score.view;
 
 import ms_student_score.core.ReportBuilder;
 import ms_student_score.core.Klass;
