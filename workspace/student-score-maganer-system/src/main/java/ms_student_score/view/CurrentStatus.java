@@ -3,7 +3,7 @@ package ms_student_score.view;
 /**
  * Created by rzhou on 28/07/2017.
  */
-public enum MenuStatus {
+public enum CurrentStatus {
     HOME_PAGE,
 
     ADD_REQUEST_PAGE,

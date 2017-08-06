@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * Created by rzhou on 06/08/2017.
  */
-public class manager {
+public class Manager {
     private Klass klass;
     private View view;
     private String studentScoresItem;

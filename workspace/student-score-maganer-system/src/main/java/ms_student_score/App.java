@@ -1,7 +1,7 @@
 package ms_student_score;
 
 import ms_student_score.view.CommandManager;
-import ms_student_score.view.MenuStatus;
+import ms_student_score.view.CurrentStatus;
 
 import java.util.Scanner;
 
@@ -19,7 +19,7 @@ public class App {
         while (sc.hasNext()) {
             commandManager.chooseFunction(sc.nextLine());
 
-            if (commandManager.getMenuNow() == MenuStatus.EXIT_PAGE) break;
+            if (commandManager.getMenuNow() == CurrentStatus.EXIT_PAGE) break;
         }
         sc.close();
         System.exit(0);

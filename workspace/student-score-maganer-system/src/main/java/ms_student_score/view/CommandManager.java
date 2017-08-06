@@ -14,7 +14,7 @@ import java.util.regex.Pattern;
  */
 public class CommandManager {
 
-    private MenuStatus menuNow = MenuStatus.HOME_PAGE;
+    private CurrentStatus menuNow = CurrentStatus.HOME_PAGE;
     private Klass klass = new Klass();
 
     public CommandManager() {
@@ -30,36 +30,36 @@ public class CommandManager {
         showInputNotice();
     }
 
-    public MenuStatus getMenuNow() {
+    public CurrentStatus getMenuNow() {
         return menuNow;
     }
 
 
     private void refreshMenu(String input) {
 
-        if (Objects.equals(menuNow, MenuStatus.HOME_PAGE) || Objects.equals(menuNow, MenuStatus.ADD_SUCCESS_PAGE)) {
+        if (Objects.equals(menuNow, CurrentStatus.HOME_PAGE) || Objects.equals(menuNow, CurrentStatus.ADD_SUCCESS_PAGE)) {
             if (Objects.equals(input, "1")) {
-                menuNow = MenuStatus.ADD_REQUEST_PAGE;
+                menuNow = CurrentStatus.ADD_REQUEST_PAGE;
             } else if (Objects.equals(input, "2")) {
-                menuNow = MenuStatus.PRINT_REQUEST_PAGE;
+                menuNow = CurrentStatus.PRINT_REQUEST_PAGE;
 
             } else if (Objects.equals(input, "3")) {
-                menuNow = MenuStatus.EXIT_PAGE;
+                menuNow = CurrentStatus.EXIT_PAGE;
             } else {
-                menuNow = MenuStatus.HOME_PAGE;
+                menuNow = CurrentStatus.HOME_PAGE;
             }
-        } else if (Objects.equals(menuNow, MenuStatus.ADD_REQUEST_PAGE) || Objects.equals(menuNow, MenuStatus.ADD_FAIL_PAGE)) {
+        } else if (Objects.equals(menuNow, CurrentStatus.ADD_REQUEST_PAGE) || Objects.equals(menuNow, CurrentStatus.ADD_FAIL_PAGE)) {
             if (isLegalStudentInfo(input)) {
                 klass.addStudent(analyzeStudent(input));
 
                 InputNotice.addSuccess = String.format(InputNotice.addSuccess, analyzeStudent(input).getName());
-                menuNow = MenuStatus.ADD_SUCCESS_PAGE;
+                menuNow = CurrentStatus.ADD_SUCCESS_PAGE;
 
             } else {
-                menuNow = MenuStatus.ADD_FAIL_PAGE;
+                menuNow = CurrentStatus.ADD_FAIL_PAGE;
             }
 
-        } else if (Objects.equals(menuNow, MenuStatus.PRINT_REQUEST_PAGE) || Objects.equals(menuNow, MenuStatus.PRINT_FAIL_PAGE)) {
+        } else if (Objects.equals(menuNow, CurrentStatus.PRINT_REQUEST_PAGE) || Objects.equals(menuNow, CurrentStatus.PRINT_FAIL_PAGE)) {
 
             if (isLegalPrintRequest(input)) {
                 Report reprot = new Report(klass);
@@ -71,9 +71,9 @@ public class CommandManager {
 
                 }
                 System.out.print(reprot.buildReport(studentIDs));
-                menuNow = MenuStatus.HOME_PAGE;
+                menuNow = CurrentStatus.HOME_PAGE;
             } else {
-                menuNow = MenuStatus.PRINT_FAIL_PAGE;
+                menuNow = CurrentStatus.PRINT_FAIL_PAGE;
             }
 
         }
