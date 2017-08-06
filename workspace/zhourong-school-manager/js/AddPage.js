@@ -47,19 +47,20 @@ $(document).ready(function () {
     });
 
 
+    $('#add-submit').click(function () {
+        $('#add-success-notice').text("");
+    });
+
 });
 
 $.validator.setDefaults({
     submitHandler: function () {
-        //添加不成功的时候，去掉这句话
         saveStudentInfo();
-        $('#add-success-notice').text("添加学生成功");
         //刷新表单
-
     }
 });
 
-var count=localStorage.length-1;
+var count = localStorage.length - 1;
 //var count=0;
 function saveStudentInfo() {
     var formObj = $('#student-info').serializeArray();
@@ -67,8 +68,9 @@ function saveStudentInfo() {
     //function
     var student = formatStudent(formObj);
     var str = JSON.stringify(student);
-    localStorage.setItem('studentInfo'+count, str);
+    localStorage.setItem('studentInfo' + count, str);
     count++;
+    $('#add-success-notice').text("添加学生成功");
 }
 
 
@@ -77,6 +79,6 @@ function formatStudent(obj) {
     for (let i = 0; i < obj.length; i++) {
         student[obj[i].name] = obj[i].value;
     }
-    student.id=count;
+    student.id = count;
     return student;
 }

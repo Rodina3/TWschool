@@ -22,7 +22,7 @@
 
 </head>
 
-<body  class="container-fluid" onpageshow="onShow()">
+<body class="container-fluid" onpageshow="onShow()">
 
 <header>
     <nav>
@@ -39,30 +39,18 @@
     <h3>请填写姓名或学号查看学生信息：</h3>
     <!--search block-->
     <div>
-        姓名：<label><input type="text" name="name"></label>
-        学号：<label><input type="text" name="name"></label>
-        <p>
-            <button id="search-button" type="button">提交</button>
-
-        <p>
+        姓名：<label><input type="text" name="name" id="name-searched"></label>
+        <button id="search-name-bn" type="submit">搜索</button>
+        学号：<label><input type="text" name="id" id="id-searched"></label>
+        <button id="search-id-bn" type="submit">搜索</button>
+        <p id="search-notice">&nbsp;</p>
     </div>
 
     <!--student show table-->
     <div>
         <!--动态显示-->
-        <table id="student-inquire">
-            <tr>
-                <td>姓名</td>
-                <td>学号</td>
-                <td>班级</td>
-                <td>邮箱</td>
-                <td>电话</td>
-            </tr>
-
-        </table>
-
+        <table id="student-inquire"></table>
     </div>
-
 
 </main>
 
