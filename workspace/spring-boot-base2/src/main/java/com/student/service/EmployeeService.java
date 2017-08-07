@@ -12,9 +12,13 @@ import java.util.List;
 @Service
 public interface EmployeeService {
 
-    public ResponseEntity<Employee> addEmployee(Employee employee);
-    public ResponseEntity<Employee> getEmployee(int id);
-    public ResponseEntity<List<Employee>> getAllEmployees();
-    public ResponseEntity<Employee> modifyEmployee(Employee employee);
-    public ResponseEntity<Employee> deleteEmployee(int id);
+    ResponseEntity<Employee> addEmployee(Employee employee);
+
+    ResponseEntity<Employee> getEmployee(int id);
+
+    ResponseEntity<List<Employee>> getAllEmployees();
+
+    ResponseEntity<Employee> modifyEmployee(Employee employee);
+
+    ResponseEntity<Employee> deleteEmployee(int id);
 }

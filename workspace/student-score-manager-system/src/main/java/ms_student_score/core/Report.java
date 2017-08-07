@@ -14,4 +14,8 @@ public class Report {
     static String klassMedian = "全班总分中位数：%.3f\n\n";
 
     static String reportTemplate = reportHeader + "%s" + reportSuffix + klassAverage + klassMedian;
+
+    public static String getReportTemplate() {
+        return reportTemplate;
+    }
 }

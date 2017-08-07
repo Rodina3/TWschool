@@ -1,6 +1,6 @@
 package ms_student_score.controller;
 
-import ms_student_score.core.Manager;
+import ms_student_score.service.Manager;
 import ms_student_score.core.Student;
 import ms_student_score.view.CurrentStatus;
 import ms_student_score.view.View;

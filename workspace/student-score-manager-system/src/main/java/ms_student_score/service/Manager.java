@@ -1,5 +1,8 @@
-package ms_student_score.core;
+package ms_student_score.service;
 
+import ms_student_score.core.Klass;
+import ms_student_score.core.Report;
+import ms_student_score.core.Student;
 import ms_student_score.view.*;
 
 import java.util.List;
@@ -48,7 +51,7 @@ public class Manager {
     public void buildReport(List<String> studentIDs) {
         buildStudentItems(studentIDs);
 
-        String report = String.format(Report.reportTemplate,
+        String report = String.format(Report.getReportTemplate(),
                 this.studentScoresItem,
                 this.klass.getKlassAverage(),
                 this.klass.getKlassMedian());

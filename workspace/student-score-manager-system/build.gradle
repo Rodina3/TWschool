@@ -7,20 +7,30 @@
  */
 
 // Apply the java-library plugin to add support for Java Library
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.5.2.RELEASE")
+    }
+}
+
 apply plugin: 'java-library'
 apply plugin: 'idea'
 apply plugin: 'jacoco'
+apply plugin: 'org.springframework.boot'
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
 
 jacocoTestReport {
-  reports {
-    xml.enabled false
-    csv.enabled false
-    html.destination "${buildDir}/jacocoHtml"
-  }
+    reports {
+        xml.enabled false
+        csv.enabled false
+        html.destination "${buildDir}/jacocoHtml"
+    }
 }
 
 check.dependsOn jacocoTestReport
@@ -46,4 +56,6 @@ dependencies {
     testImplementation 'junit:junit:4.12'
 
     testCompile group: 'org.mockito', name: 'mockito-all', version: '1.10.19'
+    compile('org.springframework.boot:spring-boot-starter-web');
+    testCompile('org.springframework.boot:spring-boot-starter-test');
 }
