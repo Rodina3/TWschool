@@ -1,5 +1,6 @@
 package ms_student_score.controller;
 
+import ms_student_score.core.Report;
 import ms_student_score.service.Manager;
 import ms_student_score.core.Student;
 import ms_student_score.view.CurrentStatus;
@@ -118,8 +119,8 @@ public class CustomController {
             case PRINT_FAIL_PAGE:
                 if (isLegalPrintRequest(command)) {
                     statusNow = CurrentStatus.HOME_PAGE;
-                    String report = manager.buildReport(parsePrintCommand(command));
-                    View.showReportPage(report);
+                    Report report = manager.buildReport(parsePrintCommand(command));
+                    //View.showReportPage(report.toString());
                     View.showHomePage();
                 } else {
                     statusNow = CurrentStatus.PRINT_FAIL_PAGE;

@@ -1,6 +1,7 @@
 package ms_student_score.controller;
 
 import ms_student_score.core.Klass;
+import ms_student_score.core.Report;
 import ms_student_score.core.Student;
 import ms_student_score.service.MsService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,7 +30,7 @@ public class MsController {
     }
 
     @RequestMapping(value="/report",method=RequestMethod.GET)
-   public ResponseEntity<String> buildReport(){
+   public ResponseEntity<Report> buildReport(){
         return serv.buildReport();
     }
 //

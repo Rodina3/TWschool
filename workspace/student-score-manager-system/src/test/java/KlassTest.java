@@ -28,8 +28,6 @@ public class KlassTest {
         assertThat(klass.getStudentList().get(0).getScores().get("编程"), is(84));
         assertThat(klass.getStudentList().get(0).getTotalScore(), is(341));
         assertThat(klass.getStudentList().get(0).getAverage() - 85.25 < 0.0001, is(true));
-        assertThat(klass.getKlassMedian() - 341 < 0.0001, is(true));
-        assertThat(klass.getKlassAverage() - 341 < 0.0001, is(true));
 
     }
 
@@ -46,6 +44,5 @@ public class KlassTest {
         assertThat(klass.getStudentList().size(), is(2));
         assertThat(klass.getStudentList().get(0).getScores().get("编程"), is(84));
         assertThat(klass.getStudentList().get(1).getID(), is("001"));
-        assertThat(klass.getKlassMedian() - 311.5 < 0.0001, is(true));
     }
 }

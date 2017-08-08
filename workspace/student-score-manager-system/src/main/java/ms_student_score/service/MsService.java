@@ -1,6 +1,7 @@
 package ms_student_score.service;
 
 import ms_student_score.core.Klass;
+import ms_student_score.core.Report;
 import ms_student_score.core.Student;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -24,13 +25,13 @@ public class MsService {
     }
 
 
-    public ResponseEntity<String> buildReport() {
+    public ResponseEntity<Report> buildReport() {
         Klass klass = manager.getKlass();
         List<String> studentIDs = new ArrayList<>();
         for (int i = 0; i < klass.getStudentList().size(); i++) {
             studentIDs.add(klass.getStudentList().get(i).getID());
         }
-        return new ResponseEntity<String>(manager.buildReport(studentIDs), HttpStatus.OK);
+        return new ResponseEntity<Report>(manager.buildReport(studentIDs), HttpStatus.OK);
     }
 
     public ResponseEntity<Klass> getAllStudents() {

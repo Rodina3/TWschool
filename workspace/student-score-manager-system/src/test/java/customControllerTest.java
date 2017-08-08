@@ -123,28 +123,28 @@ public class customControllerTest {
         assertThat(consoleLog.toString(), is(Notice.printFail));
     }
 
-    @Test
-    public void should_show_print_success_page_when_input_legal_print_request() throws Exception {
-        //given
-        commandManager.commandMapping("1");
-        commandManager.commandMapping("张三, 000, 89, 78, 90, 84");
-        commandManager.commandMapping("2");
-
-        String result = "\n成绩单\n"
-                + "姓名|数学|语文|英语|编程|平均分|总分\n"
-                + "========================\n"
-                + "张三|89|78|90|84|85.25|341\n"
-                + "========================\n"
-                + "全班总平均分：85.250\n"
-                +"全班总分中位数：341.000\n\n"
-                + Notice.homePage;
-        //when
-        consoleLog.reset();
-        commandManager.commandMapping("000");
-
-        //then
-        assertThat(consoleLog.toString(), is(result));
-    }
+//    @Test
+//    public void should_show_print_success_page_when_input_legal_print_request() throws Exception {
+//        //given
+//        commandManager.commandMapping("1");
+//        commandManager.commandMapping("张三, 000, 89, 78, 90, 84");
+//        commandManager.commandMapping("2");
+//
+//        String result = "\n成绩单\n"
+//                + "姓名|数学|语文|英语|编程|平均分|总分\n"
+//                + "========================\n"
+//                + "张三|89|78|90|84|85.25|341\n"
+//                + "========================\n"
+//                + "全班总平均分：85.250\n"
+//                +"全班总分中位数：341.000\n\n"
+//                + Notice.homePage;
+//        //when
+//        consoleLog.reset();
+//        commandManager.commandMapping("000");
+//
+//        //then
+//        assertThat(consoleLog.toString(), is(result));
+//    }
 
 
 }
