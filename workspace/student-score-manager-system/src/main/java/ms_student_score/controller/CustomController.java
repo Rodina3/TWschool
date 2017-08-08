@@ -13,7 +13,7 @@ import java.util.regex.Pattern;
 /**
  * Created by rzhou on 06/08/2017.
  */
-public class Controller {
+public class CustomController {
     private Manager manager = new Manager();
     private CurrentStatus statusNow = CurrentStatus.HOME_PAGE;
 
@@ -107,6 +107,7 @@ public class Controller {
                 if (isLegalAddRequest(command)) {
                     statusNow = CurrentStatus.HOME_PAGE;
                     manager.addStudent(parseAddCommand(command));
+                    View.showAddSuccessPage(parseAddCommand(command));
                     View.showHomePage();
                 } else {
                     statusNow = CurrentStatus.ADD_FAIL_PAGE;
@@ -117,7 +118,8 @@ public class Controller {
             case PRINT_FAIL_PAGE:
                 if (isLegalPrintRequest(command)) {
                     statusNow = CurrentStatus.HOME_PAGE;
-                    manager.buildReport(parsePrintCommand(command));
+                    String report = manager.buildReport(parsePrintCommand(command));
+                    View.showReportPage(report);
                     View.showHomePage();
                 } else {
                     statusNow = CurrentStatus.PRINT_FAIL_PAGE;

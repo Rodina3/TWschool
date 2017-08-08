@@ -11,7 +11,7 @@ import java.util.List;
  * Created by rzhou on 06/08/2017.
  */
 public class Manager {
-    private Klass klass =new Klass();
+    private Klass klass = new Klass();
     private String studentScoresItem;
 
     private void buildStudentItems(List<String> studentIDs) {
@@ -48,7 +48,7 @@ public class Manager {
         return index;
     }
 
-    public void buildReport(List<String> studentIDs) {
+    public String buildReport(List<String> studentIDs) {
         buildStudentItems(studentIDs);
 
         String report = String.format(Report.getReportTemplate(),
@@ -56,12 +56,14 @@ public class Manager {
                 this.klass.getKlassAverage(),
                 this.klass.getKlassMedian());
 
-       View.showReportPage(report);
+        return report;
     }
 
     public void addStudent(Student student) {
         klass.addStudent(student);
-        View.showAddSuccessPage(student);
     }
 
+    public Klass getKlass() {
+        return klass;
+    }
 }

@@ -1,4 +1,4 @@
-import ms_student_score.controller.Controller;
+import ms_student_score.controller.CustomController;
 
 import ms_student_score.view.Notice;
 import org.junit.After;
@@ -16,9 +16,9 @@ import static org.junit.Assert.assertThat;
  *  Created by rzhou on 27/07/2017.
  */
 
-public class ControllerTest {
+public class customControllerTest {
 
-    private Controller commandManager = new Controller();
+    private CustomController commandManager = new CustomController();
     private final ByteArrayOutputStream consoleLog = new ByteArrayOutputStream();
 
     @Before

@@ -13,6 +13,7 @@ public class Student {
 
     private int totalScore;
     private float average;
+    public Student(){};
 
     public Student(String name, String id, int math, int chinese, int english, int coding) {
         this.name = name;
@@ -28,6 +29,17 @@ public class Student {
         this.average = (float) (this.totalScore / 4.0);
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public void setScores(Map<String, Integer> scores) {
+        this.scores = scores;
+    }
 
     public String getName() {
         return this.name;
@@ -42,10 +54,13 @@ public class Student {
     }
 
     public int getTotalScore() {
+        this.totalScore = scores.get("数学") + scores.get("语文") + scores.get("英语") + scores.get("编程");
         return this.totalScore;
     }
 
     public float getAverage() {
+        getTotalScore();
+        this.average = (float) (this.totalScore / 4.0);
         return this.average;
     }
 }
