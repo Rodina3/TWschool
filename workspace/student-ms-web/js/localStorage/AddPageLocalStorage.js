@@ -6,6 +6,7 @@ $(document).ready(function () {
     $("#student-info").validate({
         rules: {
             name: "required",
+            //klass: "required",
             phone: {
                 required: true,
                 minlength: 11,
@@ -36,6 +37,13 @@ $(document).ready(function () {
                 error.insertAfter(element);
             }
         }
+        // },
+        // highlight: function (element, errorClass, validClass) {
+        //     $(element).parents(".col-sm-5").addClass("has-error").removeClass("has-success");
+        // },
+        // unhighlight: function (element, errorClass, validClass) {
+        //     $(element).parents(".col-sm-5").addClass("has-success").removeClass("has-error");
+        // }
     });
 
 
@@ -58,8 +66,8 @@ function getStudentFromForm() {
     var studentAPI = {};
     studentAPI.name = student.name;
     studentAPI.id = student.id;
-    studentAPI.email = student.email;
-    studentAPI.phone = student.phone;
+    studentAPI.email=student.email;
+    studentAPI.phone=student.phone;
     studentAPI.scores = {};
     studentAPI.scores.math = 100;
     studentAPI.scores.chinese = 100;
@@ -85,6 +93,22 @@ function postToRemote(url, student) {
         }
     })
 }
+
+
+//localStorage实现
+//var count = localStorage.length - 1;
+// //var count=0;
+// function saveStudentInfo() {
+//     var formObj = $('#student-info').serializeArray();
+//     //判断是否重复添加
+//     //function
+//     var student = formatStudent(formObj);
+//     var str = JSON.stringify(student);
+//     localStorage.setItem('studentInfo' + count, str);
+//     count++;
+//     $('#add-notice').text("添加学生成功");
+// }
+
 
 function formatStudent(obj) {
     var student = {};

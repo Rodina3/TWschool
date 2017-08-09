@@ -12,12 +12,13 @@ public class Main {
 //        System.out.println("转换字符串\"" + s + "\"为整数:");
 //        int k = Integer.parseInt(s);
 //        System.out.println(k);
+//        System.out.println("我是程序的末尾！");
 //    }
 
 
 //    //case 2:try...catch捕获异常
 //    public static void main(String[] args) {
-//        int k = 888;
+//        int k = 0;
 //        String s = JOptionPane.showInputDialog("请输入整数");
 //        System.out.println("转换字符串\"" + s + "\"为整数:");
 //        try {
@@ -27,20 +28,20 @@ public class Main {
 //            System.out.println("getMessage():" + e.getMessage());
 //            System.out.println("你输入的不是整数！");
 //        }
-//        System.out.println(k);
+//        System.out.println("我是程序的末尾");
 //    }
 
 
 //    //case 3:编译时异常
 //    public static void main(String[] args) {
-//        int k=1/0;
+//        int k = 1 / 0;
 ////        try{
 ////            int k=1/0;
 ////
 ////        } catch (ArithmeticException e) {
 ////            System.out.println("除数不能为0");
 ////        }
-//        System.out.println("end");
+//        System.out.println("我是程序的末尾！");
 //    }
 
 //    //case 4:运行时异常
@@ -65,13 +66,13 @@ public class Main {
 //        } catch (StringIndexOutOfBoundsException e) {
 //            System.out.println(e.toString());
 //        }
-
+//
 //        try {
 //            System.out.println(str.length());
 //        } catch (NullPointerException e) {
 //            System.out.println(e.toString());
 //        }
-//        System.out.println("以上是出现各种运行时异常的情况！");
+//        System.out.println("以上是常见的运行时异常的情况！");
 //    }
 
 
