@@ -44,36 +44,36 @@ public class Main {
 //        System.out.println("我是程序的末尾！");
 //    }
 
-//    //case 4:运行时异常
-//    static String str;
-//    public static void main(String[] args) {
-//        try {
-//            int x = 8 / 0;
-//        } catch (ArithmeticException e) {
-//            System.out.println(e.toString());
-//        }
-//
-//        try {
-//            int y[] = new int[2];
-//            System.out.println(y[2]);
-//        } catch (ArrayIndexOutOfBoundsException e) {
-//            System.out.println(e.toString());
-//        }
-//
-//        try {
-//            String s = "abc";
-//            System.out.println(s.charAt(3));
-//        } catch (StringIndexOutOfBoundsException e) {
-//            System.out.println(e.toString());
-//        }
-//
-//        try {
-//            System.out.println(str.length());
-//        } catch (NullPointerException e) {
-//            System.out.println(e.toString());
-//        }
-//        System.out.println("以上是常见的运行时异常的情况！");
-//    }
+    //case 4:运行时异常
+    static String str;
+    public static void main(String[] args) {
+        try {
+            int x = 8 / 0;
+        } catch (ArithmeticException e) {
+            System.out.println(e.toString());
+        }
+
+        try {
+            int y[] = new int[2];
+            System.out.println(y[2]);
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println(e.toString());
+        }
+
+        try {
+            String s = "abc";
+            System.out.println(s.charAt(3));
+        } catch (StringIndexOutOfBoundsException e) {
+            System.out.println(e.toString());
+        }
+
+        try {
+            System.out.println(str.length());
+        } catch (NullPointerException e) {
+            System.out.println(e.toString());
+        }
+        System.out.println("以上是常见的运行时异常的情况！");
+    }
 
 
 //    //case 5:try...catch..finally

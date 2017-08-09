@@ -13,13 +13,12 @@
     <script src="../js/vendor/jquery.validate.min.js"></script>
 
     <!--JS-->
-    <script type="text/javascript" src="../js/AddPage.js"></script>
-    <script type="text/javascript" src="../js/SearchPage.js"></script>
+    <script type="text/javascript" src="../js/ScorePage.js"></script>
 
     <!--stylesheet-->
     <link href="../css/navigation.css" rel="stylesheet">
 
-    <title>Add Page</title>
+    <title>Score Page</title>
 
 </head>
 
@@ -35,28 +34,31 @@
 </header>
 
 <main>
-    <h1>Add Page</h1>
+    <h1>Score Page</h1>
     <!--Notice-->
     <div>
-        <h3>请填写页面添加学生信息：</h3>
+        <h3>请填写学生成绩：</h3>
     </div>
 
     <div>
         <!--input-->
-        <form id="student-info" action="">
-            <p>姓名：<label><input type="text" name="name" value="王小闹"></label></p>
-            <p>邮箱：<label><input type="text" name="email" value="wangxn@163.com"></label></p>
-            <p>电话：<label><input type="text" name="phone" value="12345678990"></label></p>
+        <form id="student-score" action="">
+            <!--<p>姓名：<label><input type="text" name="name" value="王小闹"></label></p>-->
+            <p>学号：<label><input type="text" name="id" value="1"></label></p>
+            <p>数学：<label><input type="text" name="math" value="100"></label></p>
+            <p>语文：<label><input type="text" name="chinese" value="100"></label></p>
+            <p>英语：<label><input type="text" name="english" value="100"></label></p>
+            <p>编程：<label><input type="text" name="coding" value="100"></label></p>
 
             <!--button-->
             <p>
-                <input id="add-submit" type="submit" value="提交">
+                <input id="score-submit" type="submit" value="提交">
             </p>
 
         </form>
     </div>
 
-    <div id ="add-success-notice">
+    <div id="score-notice">
 
     </div>
 </main>
