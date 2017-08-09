@@ -8,6 +8,7 @@ import ms_student_score.view.*;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by rzhou on 06/08/2017.
@@ -44,5 +45,13 @@ public class Manager {
             }
         }
         return null;
+    }
+
+    public Student modifyStudentScoresById(int id, Map<String, Integer> scores) {
+        Student student = findStudentById(id);
+        if (student != null){
+            student.setScores(scores);
+        }
+       return student;
     }
 }

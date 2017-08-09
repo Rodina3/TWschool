@@ -61,10 +61,10 @@ function getStudentFromForm() {
     studentAPI.email = student.email;
     studentAPI.phone = student.phone;
     studentAPI.scores = {};
-    studentAPI.scores.math = 100;
-    studentAPI.scores.chinese = 100;
-    studentAPI.scores.english = 100;
-    studentAPI.scores.coding = 100;
+    studentAPI.scores.math = 0;
+    studentAPI.scores.chinese = 0;
+    studentAPI.scores.english = 0;
+    studentAPI.scores.coding = 0;
 
     return studentAPI;
 }

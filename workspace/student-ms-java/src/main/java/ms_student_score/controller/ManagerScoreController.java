@@ -9,6 +9,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Map;
+
 
 /**
  * Created by rzhou on 07/08/2017.
@@ -48,11 +50,18 @@ public class ManagerScoreController {
             return new ResponseEntity<Student>((Student) null, HttpStatus.NOT_FOUND);
 
     }
-//
-//    @RequestMapping(value="/students{id}",method=RequestMethod.DELETE)
-//    public ResponseEntity<Student> getStudent(@PathVariable("id")int id){
-//
-//    }
+
+    @RequestMapping(value="/students/{id}",method=RequestMethod.PUT)
+    public ResponseEntity<Student> getStudent(@PathVariable("id")int id, @RequestBody Map<String,Integer> scores){
+        Student student = serv.putStudentScoresById(id,scores);
+        if (student !=null)
+        {
+            return new ResponseEntity<Student>(student,HttpStatus.OK);
+        }
+        else
+            return new ResponseEntity<Student>((Student)null,HttpStatus.NOT_FOUND);
+
+    }
 //
 //    @RequestMapping(value = "/report", method = RequestMethod.GET)
 //    public ResponseEntity<String> buildReport(){

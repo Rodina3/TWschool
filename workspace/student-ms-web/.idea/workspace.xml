@@ -18,8 +18,8 @@
       <file leaf-file-name="AddPage.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/AddPage.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="305">
-              <caret line="78" column="25" lean-forward="true" selection-start-line="78" selection-start-column="25" selection-end-line="78" selection-end-column="25" />
+            <state relative-caret-position="143">
+              <caret line="49" column="28" lean-forward="true" selection-start-line="49" selection-start-column="28" selection-end-line="49" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -37,11 +37,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ReportPage.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="HomePage.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/html/HomePage.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ReportPage.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/ReportPage.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="275">
-              <caret line="33" column="56" lean-forward="true" selection-start-line="33" selection-start-column="56" selection-end-line="33" selection-end-column="56" />
+            <state relative-caret-position="105">
+              <caret line="9" column="12" lean-forward="true" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
               <folding>
                 <element signature="e#0#42#0" expanded="false" />
               </folding>
@@ -49,11 +59,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ReportPage.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ReportPage.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/html/ReportPage.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="346">
-              <caret line="49" column="25" lean-forward="true" selection-start-line="49" selection-start-column="25" selection-end-line="49" selection-end-column="35" />
+            <state relative-caret-position="251">
+              <caret line="46" column="21" lean-forward="true" selection-start-line="46" selection-start-column="21" selection-end-line="46" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="table.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/css/table.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="16" column="1" lean-forward="true" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="navigation.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/css/navigation.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="1" column="21" lean-forward="false" selection-start-line="1" selection-start-column="21" selection-end-line="1" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -72,8 +102,8 @@
       <file leaf-file-name="AddPage.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/html/AddPage.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="16" selection-end-column="70" />
+            <state relative-caret-position="-334">
+              <caret line="5" column="70" lean-forward="true" selection-start-line="5" selection-start-column="70" selection-end-line="5" selection-end-column="70" />
               <folding />
             </state>
           </provider>
@@ -112,11 +142,11 @@
         <option value="$PROJECT_DIR$/css/navigation.css" />
         <option value="$PROJECT_DIR$/html/HomePage.html" />
         <option value="$PROJECT_DIR$/html/AddPage.html" />
-        <option value="$PROJECT_DIR$/js/AddPage.js" />
         <option value="$PROJECT_DIR$/html/SearchPage.html" />
         <option value="$PROJECT_DIR$/js/SearchPage.js" />
         <option value="$PROJECT_DIR$/html/ReportPage.html" />
         <option value="$PROJECT_DIR$/js/ReportPage.js" />
+        <option value="$PROJECT_DIR$/js/AddPage.js" />
       </list>
     </option>
   </component>
@@ -243,20 +273,20 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.HomePage.html (1)">
+  <component name="RunManager" selected="JavaScript Debug.ReportPage.html (1)">
     <configuration default="false" name="HomePage.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/zhourong-school-manager/html/HomePage.html">
       <method />
     </configuration>
     <configuration default="false" name="AddPage.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/zhourong-school-manager/html/AddPage.html">
       <method />
     </configuration>
-    <configuration default="false" name="ReportPage.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/zhourong-school-manager/html/ReportPage.html">
-      <method />
-    </configuration>
     <configuration default="false" name="SearchPage.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/zhourong-school-manager/html/SearchPage.html">
       <method />
     </configuration>
     <configuration default="false" name="HomePage.html (1)" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/student-ms-web/zhourong-school-manager/html/HomePage.html">
+      <method />
+    </configuration>
+    <configuration default="false" name="ReportPage.html (1)" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/student-ms-web/zhourong-school-manager/html/ReportPage.html">
       <method />
     </configuration>
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
@@ -649,17 +679,17 @@
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.HomePage.html" />
       <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.AddPage.html" />
-      <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.ReportPage.html" />
-      <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.SearchPage.html" />
-      <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.HomePage.html (1)" />
+      <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.SearchPage.html" />
+      <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.HomePage.html (1)" />
+      <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.ReportPage.html (1)" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.HomePage.html (1)" />
-        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.HomePage.html" />
-        <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.SearchPage.html" />
-        <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.AddPage.html" />
-        <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.ReportPage.html" />
+        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.ReportPage.html (1)" />
+        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.HomePage.html (1)" />
+        <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.HomePage.html" />
+        <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.SearchPage.html" />
+        <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.AddPage.html" />
       </list>
     </recent_temporary>
   </component>
@@ -677,12 +707,12 @@
       <workItem from="1501808518626" duration="2186000" />
       <workItem from="1501996508173" duration="6393000" />
       <workItem from="1502176728689" duration="9082000" />
-      <workItem from="1502240654139" duration="7681000" />
+      <workItem from="1502240654139" duration="9047000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="49048000" />
+    <option name="totallyTimeSpent" value="50414000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="78" y="47" width="1400" height="770" extended-state="0" />
@@ -710,7 +740,7 @@
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26435935" sideWeight="0.5058997" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26435935" sideWeight="0.5058997" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1054,28 +1084,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/css/vendor/navigation.css" />
-    <entry file="file://$PROJECT_DIR$/css/table.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="1" lean-forward="true" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/navigation.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="21" lean-forward="false" selection-start-line="1" selection-start-column="21" selection-end-line="1" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/html/HomePage.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/localStorage/SearchPageLocalStorage.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-734">
@@ -1088,22 +1096,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/html/AddPage.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="16" selection-end-column="70" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/AddPage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="305">
-          <caret line="78" column="25" lean-forward="true" selection-start-line="78" selection-start-column="25" selection-end-line="78" selection-end-column="25" />
           <folding />
         </state>
       </provider>
@@ -1126,21 +1118,61 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/html/ReportPage.html">
+    <entry file="file://$PROJECT_DIR$/js/ReportPage.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="346">
-          <caret line="49" column="25" lean-forward="true" selection-start-line="49" selection-start-column="25" selection-end-line="49" selection-end-column="35" />
+        <state relative-caret-position="105">
+          <caret line="9" column="12" lean-forward="true" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#42#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/navigation.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="21" lean-forward="false" selection-start-line="1" selection-start-column="21" selection-end-line="1" selection-end-column="21" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/ReportPage.js">
+    <entry file="file://$PROJECT_DIR$/css/table.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="33" column="56" lean-forward="true" selection-start-line="33" selection-start-column="56" selection-end-line="33" selection-end-column="56" />
-          <folding>
-            <element signature="e#0#42#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="240">
+          <caret line="16" column="1" lean-forward="true" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/HomePage.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/AddPage.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-334">
+          <caret line="5" column="70" lean-forward="true" selection-start-line="5" selection-start-column="70" selection-end-line="5" selection-end-column="70" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/AddPage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="143">
+          <caret line="49" column="28" lean-forward="true" selection-start-line="49" selection-start-column="28" selection-end-line="49" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/ReportPage.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="251">
+          <caret line="46" column="21" lean-forward="true" selection-start-line="46" selection-start-column="21" selection-end-line="46" selection-end-column="21" />
+          <folding />
         </state>
       </provider>
     </entry>

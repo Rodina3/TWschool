@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by rzhou on 07/08/2017.
@@ -34,5 +35,9 @@ public class ManagerScoreService {
 
     public Student getStudentById(int id) {
         return manager.findStudentById(id);
+    }
+
+    public Student putStudentScoresById(int id, Map<String, Integer> scores) {
+        return manager.modifyStudentScoresById(id, scores);
     }
 }
