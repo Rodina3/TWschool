@@ -64,7 +64,7 @@ public class ReportBuilder {
     private int findStudentById(String id) {
         int index = -1;
         for (int i = 0; i < klass.getStudentList().size(); i++) {
-            if (id.equals(klass.getStudentList().get(i).getID())) {
+            if (id.equals(klass.getStudentList().get(i).getId())) {
                 index = i;
                 break;
             }

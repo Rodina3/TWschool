@@ -9,8 +9,8 @@ import java.util.List;
  */
 public class Klass {
 
+    public Klass(){};
     private List<Student> studentList = new ArrayList<Student>();
-
 
     public void addStudent(List<Student> students) {
         this.studentList.addAll(students);

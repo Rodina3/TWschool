@@ -119,6 +119,7 @@ public class CustomController {
             case PRINT_FAIL_PAGE:
                 if (isLegalPrintRequest(command)) {
                     statusNow = CurrentStatus.HOME_PAGE;
+
                     Report report = manager.buildReport(parsePrintCommand(command));
                     //View.showReportPage(report.toString());
                     View.showHomePage();

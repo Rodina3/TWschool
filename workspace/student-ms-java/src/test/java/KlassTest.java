@@ -21,7 +21,7 @@ public class KlassTest {
 
 
         assertThat(klass.getStudentList().get(0).getName(), is("张三"));
-        assertThat(klass.getStudentList().get(0).getID(), is("000"));
+        assertThat(klass.getStudentList().get(0).getId(), is("000"));
         assertThat(klass.getStudentList().get(0).getScores().get("math"), is(89));
         assertThat(klass.getStudentList().get(0).getScores().get("chinese"), is(78));
         assertThat(klass.getStudentList().get(0).getScores().get("english"), is(90));
@@ -43,6 +43,6 @@ public class KlassTest {
 
         assertThat(klass.getStudentList().size(), is(2));
         assertThat(klass.getStudentList().get(0).getScores().get("coding"), is(84));
-        assertThat(klass.getStudentList().get(1).getID(), is("001"));
+        assertThat(klass.getStudentList().get(1).getId(), is("001"));
     }
 }

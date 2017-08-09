@@ -6,6 +6,7 @@ import ms_student_score.core.ReportBuilder;
 import ms_student_score.core.Student;
 import ms_student_score.view.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -24,7 +25,24 @@ public class Manager {
     }
 
     public Report buildReport(List<String> studentIds) {
-        Report report = reportBuilder.buildReport(studentIds, this.klass);
-        return report;
+        return reportBuilder.buildReport(studentIds, this.klass);
+    }
+
+    public Report buildAllReport() {
+        List<String> studentIds = new ArrayList<>();
+        for (int i = 0; i < klass.getStudentList().size(); i++) {
+            studentIds.add(klass.getStudentList().get(i).getId());
+        }
+        return reportBuilder.buildReport(studentIds, this.klass);
+    }
+
+    public Student findStudentById(int id) {
+        Student student = new Student();
+        for (int i = 0; i < klass.getStudentList().size(); i++) {
+            if (Integer.parseInt(klass.getStudentList().get(i).getId()) == id) {
+                return klass.getStudentList().get(i);
+            }
+        }
+        return null;
     }
 }

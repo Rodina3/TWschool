@@ -1,5 +1,7 @@
 package ms_student_score.core;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -9,6 +11,8 @@ import java.util.Map;
 public class Student {
     private String name;
     private String id;
+    private String email;
+    private String phone;
     private Map<String, Integer> scores = new LinkedHashMap<>();
 
     private int totalScore;
@@ -17,7 +21,6 @@ public class Student {
     public Student() {
     }
 
-    ;
 
     public Student(String name, String id, int math, int chinese, int english, int coding) {
         this.name = name;
@@ -49,13 +52,14 @@ public class Student {
         return this.name;
     }
 
-    public String getID() {
+    public String getId() {
         return this.id;
     }
 
     public Map<String, Integer> getScores() {
         return this.scores;
     }
+
 
     public int getTotalScore() {
         this.totalScore = scores.get("math") + scores.get("chinese") + scores.get("english") + scores.get("coding");
@@ -66,5 +70,21 @@ public class Student {
         getTotalScore();
         this.average = (float) (this.totalScore / 4.0);
         return this.average;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 }
