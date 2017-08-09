@@ -5,7 +5,10 @@ $(document).ready(function () {
 
     $("#student-score").validate({
         rules: {
-            id: "required",
+            id: {
+                required:true,
+                digits:true
+            },
             math: {
                 required: true,
                 digits: true,
@@ -29,7 +32,10 @@ $(document).ready(function () {
 
         },
         messages: {
-            id: "请输入学生学号",
+            id: {
+                required:"请输入学生学号",
+                digits:"学号非法",
+            },
             math: {
                 required: "请输入数学成绩",
                 digits: "请输入整数",
@@ -98,7 +104,7 @@ function getStudentFromForm() {
 function putToRemote(url, scores) {
     $.ajax({
         url: url,
-        type: "POST",
+        type: "PUT",
         contentType: "application/json",
         data: JSON.stringify(scores),
         dataType: "json",
@@ -106,7 +112,7 @@ function putToRemote(url, scores) {
             $('#score-notice').text("修改成绩成功");
         },
         error: function () {
-            $('#score-notice').text("添加学生失败");
+            $('#score-notice').text("查无此人，修改成绩失败");
         }
     })
 }
@@ -116,6 +122,10 @@ function formatStudentScores(obj) {
     for (let i = 0; i < obj.length; i++) {
         studentScores[obj[i].name] = obj[i].value;
     }
-    studentScores.id = 0;
+    studentScores.math = parseInt(studentScores.math);
+    studentScores.chinese=parseInt(studentScores.chinese);
+    studentScores.english=parseInt(studentScores.english);
+    studentScores.coding=parseInt(studentScores.coding);
+
     return studentScores;
 }

@@ -18,8 +18,8 @@
       <file leaf-file-name="ScorePage.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/html/ScorePage.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="461">
-              <caret line="60" column="13" lean-forward="true" selection-start-line="60" selection-start-column="13" selection-end-line="60" selection-end-column="25" />
+            <state relative-caret-position="161">
+              <caret line="40" column="10" lean-forward="true" selection-start-line="40" selection-start-column="10" selection-end-line="40" selection-end-column="10" />
               <folding />
             </state>
           </provider>
@@ -28,43 +28,11 @@
       <file leaf-file-name="ScorePage.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/ScorePage.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="402">
-              <caret line="95" column="0" lean-forward="true" selection-start-line="95" selection-start-column="0" selection-end-line="95" selection-end-column="0" />
+            <state relative-caret-position="440">
+              <caret line="36" column="30" lean-forward="false" selection-start-line="36" selection-start-column="30" selection-end-line="36" selection-end-column="30" />
               <folding>
                 <element signature="e#0#42#0" expanded="false" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SearchPage.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/SearchPage.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="121">
-              <caret line="17" column="42" lean-forward="true" selection-start-line="17" selection-start-column="42" selection-end-line="17" selection-end-column="42" />
-              <folding>
-                <element signature="e#0#42#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AddPage.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/html/AddPage.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="329">
-              <caret line="47" column="12" lean-forward="false" selection-start-line="47" selection-start-column="12" selection-end-line="47" selection-end-column="12" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AddPage.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/AddPage.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="123">
-              <caret line="48" column="32" lean-forward="false" selection-start-line="48" selection-start-column="32" selection-end-line="48" selection-end-column="32" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -107,8 +75,8 @@
         <option value="$PROJECT_DIR$/html/ReportPage.html" />
         <option value="$PROJECT_DIR$/html/SearchPage.html" />
         <option value="$PROJECT_DIR$/html/AddPage.html" />
-        <option value="$PROJECT_DIR$/html/ScorePage.html" />
         <option value="$PROJECT_DIR$/js/AddPage.js" />
+        <option value="$PROJECT_DIR$/html/ScorePage.html" />
         <option value="$PROJECT_DIR$/js/ScorePage.js" />
       </list>
     </option>
@@ -236,11 +204,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.ReportPage.html (1)">
+  <component name="RunManager" selected="JavaScript Debug.ScorePage.html">
     <configuration default="false" name="HomePage.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/zhourong-school-manager/html/HomePage.html">
-      <method />
-    </configuration>
-    <configuration default="false" name="AddPage.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/zhourong-school-manager/html/AddPage.html">
       <method />
     </configuration>
     <configuration default="false" name="SearchPage.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/zhourong-school-manager/html/SearchPage.html">
@@ -250,6 +215,9 @@
       <method />
     </configuration>
     <configuration default="false" name="ReportPage.html (1)" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/student-ms-web/zhourong-school-manager/html/ReportPage.html">
+      <method />
+    </configuration>
+    <configuration default="false" name="ScorePage.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/student-ms-web/zhourong-school-manager/html/ScorePage.html">
       <method />
     </configuration>
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
@@ -641,18 +609,18 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.HomePage.html" />
-      <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.AddPage.html" />
-      <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.SearchPage.html" />
-      <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.HomePage.html (1)" />
-      <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.ReportPage.html (1)" />
+      <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.SearchPage.html" />
+      <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.HomePage.html (1)" />
+      <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.ReportPage.html (1)" />
+      <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.ScorePage.html" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.ReportPage.html (1)" />
-        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.HomePage.html (1)" />
-        <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.HomePage.html" />
-        <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.SearchPage.html" />
-        <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.AddPage.html" />
+        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.ScorePage.html" />
+        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.ReportPage.html (1)" />
+        <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.HomePage.html (1)" />
+        <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.HomePage.html" />
+        <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.SearchPage.html" />
       </list>
     </recent_temporary>
   </component>
@@ -671,12 +639,12 @@
       <workItem from="1501996508173" duration="6393000" />
       <workItem from="1502176728689" duration="9082000" />
       <workItem from="1502240654139" duration="10068000" />
-      <workItem from="1502265415942" duration="1852000" />
+      <workItem from="1502265415942" duration="3133000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="53287000" />
+    <option name="totallyTimeSpent" value="54568000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="40" y="32" width="1400" height="770" extended-state="0" />
@@ -1072,20 +1040,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/SearchPage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="121">
-          <caret line="17" column="42" lean-forward="true" selection-start-line="17" selection-start-column="42" selection-end-line="17" selection-end-column="42" />
-          <folding>
-            <element signature="e#0#42#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/AddPage.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="123">
-          <caret line="48" column="32" lean-forward="false" selection-start-line="48" selection-start-column="32" selection-end-line="48" selection-end-column="32" />
+        <state relative-caret-position="380">
+          <caret line="82" column="43" lean-forward="false" selection-start-line="82" selection-start-column="43" selection-end-line="82" selection-end-column="43" />
           <folding />
         </state>
       </provider>
@@ -1098,18 +1056,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/js/SearchPage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="121">
+          <caret line="17" column="42" lean-forward="true" selection-start-line="17" selection-start-column="42" selection-end-line="17" selection-end-column="42" />
+          <folding>
+            <element signature="e#0#42#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/html/ScorePage.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="461">
-          <caret line="60" column="13" lean-forward="true" selection-start-line="60" selection-start-column="13" selection-end-line="60" selection-end-column="25" />
+        <state relative-caret-position="161">
+          <caret line="40" column="10" lean-forward="true" selection-start-line="40" selection-start-column="10" selection-end-line="40" selection-end-column="10" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/ScorePage.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="402">
-          <caret line="95" column="0" lean-forward="true" selection-start-line="95" selection-start-column="0" selection-end-line="95" selection-end-column="0" />
+        <state relative-caret-position="440">
+          <caret line="36" column="30" lean-forward="false" selection-start-line="36" selection-start-column="30" selection-end-line="36" selection-end-column="30" />
           <folding>
             <element signature="e#0#42#0" expanded="false" />
           </folding>
