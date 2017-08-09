@@ -11,14 +11,19 @@
 
     <!--jqurey-->
     <script type="text/javascript" src="../js/vendor/jquery-3.2.1.js"></script>
+    <script type="text/javascript" src="../js/vendor/jquery.tmpl.min.js"></script>
+
 
     <!--stylesheet-->
     <link href="../css/table.css" rel="stylesheet">
     <link href="../css/navigation.css" rel="stylesheet">
 
+    <!--JS-->
+    <script type="text/javascript" src="../js/ReportPage.js"></script>
+
 </head>
 
-<body  class="container-fluid">
+<body class="container-fluid">
 <header>
     <nav>
         <a href="./HomePage.html">Home Page</a> |
@@ -41,45 +46,15 @@
     <hr/>
     <div id="report">
         <section>
-            <table><p class="col-md-12">XX班级成绩单：</p>
-                <tr>
-                    <td class="col-md-1">姓名</td>
-                    <td class="col-md-1">学号</td>
-                    <td class="col-md-1">语文</td>
-                    <td class="col-md-1">数学</td>
-                    <td class="col-md-1">英语</td>
-                    <td class="col-md-1">编程</td>
-                </tr>
-                <tr>
-                    <td>王小闹</td>
-                    <td>001</td>
-                    <td>90</td>
-                    <td>90</td>
-                    <td>90</td>
-                    <td>90</td>
-                </tr>
-                <tr>
-                    <td>李小闹</td>
-                    <td>002</td>
-                    <td>80</td>
-                    <td>80</td>
-                    <td>80</td>
-                    <td>80</td>
-                </tr>
-                <tr>
-                    <td>张小闹</td>
-                    <td>003</td>
-                    <td>100</td>
-                    <td>100</td>
-                    <td>100</td>
-                    <td>100</td>
-                </tr>
+            <p>XX班级成绩单：</p>
+            <table id = "reportItem" class="col-md-12">
+
             </table>
         </section>
         <br>
         <section>
-            <p>总分平均分:450</p>
-            <p>总分中位数：450</p>
+            <p id="totalAverage">总分平均分:450</p>
+            <p id="totalScore">总分中位数：450</p>
         </section>
         <hr/>
 

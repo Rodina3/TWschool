@@ -28,7 +28,7 @@ $(document).ready(function () {
         //     // $('#search-notice').append(studentList.length);
         //     // $('#search-notice').append("项。");
         //
-        //     showReportHeader();
+        //     showTableHeader();
         //     for (let i = 0; i < studentList.length; i++) {
         //         showStudentItem(studentList[i]);
         //     }
@@ -119,7 +119,7 @@ function showStudentItem(obj) {
 }
 //
 // function onShow() {
-//     showReportHeader();
+//     showTableHeader();
 //     var student = getStudentFromRemote("http://localhost:8080/students");
 //
 //     for (let i = 0; i < localStorage.length; i++) {

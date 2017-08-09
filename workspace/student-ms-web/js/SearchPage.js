@@ -29,7 +29,8 @@ function isLegalId(id) {
 }
 
 
-function showReportHeader() {
+function showTableHeader() {
+
     var markup = "<tr> " +
         "<td class='col-md-2'>姓名</td> " +
         "<td class='col-md-1'>学号</td> " +
@@ -63,12 +64,12 @@ function getStudentFromRemote(url) {
         dataType: "json",
         success: function (data) {
             $('#search-notice').text("获取学生成功");
-            showReportHeader();
+            showTableHeader();
             showStudentItem(data);
         },
         error: function () {
             $('#search-notice').text("获取学生失败");
-            showReportHeader();
+            showTableHeader();
         }
     })
 }
@@ -82,7 +83,7 @@ function getAllStudentsFromRemote(url) {
         dataType: "json",
         success: function (data) {
             $('#s').text("显示全部学生信息");
-            showReportHeader();
+            showTableHeader();
             for (let i = 0; i < data.studentList.length; i++) {
                 var student = data.studentList[i];
                 showStudentItem(student);
