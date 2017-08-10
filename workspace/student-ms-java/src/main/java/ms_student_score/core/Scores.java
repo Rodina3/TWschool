@@ -4,6 +4,7 @@ package ms_student_score.core;
  * Created by rzhou on 10/08/2017.
  */
 public class Scores {
+    private String name;
     private String id;
     private int math;
     private int chinese;
@@ -72,9 +73,13 @@ public class Scores {
         return coding;
     }
 
+    public String getName() {
+        return name;
+    }
 
-
-
+    public void setName(String name) {
+        this.name = name;
+    }
 
     public int getTotalScore() {
         this.totalScore = this.math + this.chinese + this.english + this.coding;
