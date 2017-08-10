@@ -33,6 +33,6 @@ public class ScoreManagerService {
     }
 
     public Scores putStudentScoresById(Scores scores) {
-        return manager.modifyStudentScoresById(scores);
+        return manager.modifyStudentScores(scores);
     }
 }

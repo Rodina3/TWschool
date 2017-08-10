@@ -19,10 +19,9 @@ public class Manager {
 
     public Student getStudentById(String id) {
         int index = klass.findStudentById(id);
-        if (index != -1){
+        if (index != -1) {
             return klass.getStudentList().get(index);
-        }
-        else
+        } else
             return null;
     }
 
@@ -30,8 +29,21 @@ public class Manager {
         return klass;
     }
 
+    public Scores modifyStudentScores(Scores scores) {
+        if (klass.findStudentById(scores.getId()) != -1) {
+            int index = scoresCenter.findScoreSheetById(scores.getId());
+            if (index != -1) {
+                scoresCenter.getScores().get(index).setGrade(scores);
+            } else {
+                scoresCenter.addScoreSheet(scores);
+            }
+            return scores;
+        }
+        return null;
+    }
+
     public Report buildReport(List<String> studentIds) {
-        return reportBuilder.buildReport(studentIds, scoresCenter,klass);
+        return reportBuilder.buildReport(studentIds, scoresCenter, klass);
     }
 
     public Report buildAllReport() {
@@ -39,18 +51,7 @@ public class Manager {
         for (int i = 0; i < klass.getStudentList().size(); i++) {
             studentIds.add(klass.getStudentList().get(i).getId());
         }
-        return reportBuilder.buildReport(studentIds, scoresCenter,klass);
+        return reportBuilder.buildReport(studentIds, scoresCenter, klass);
     }
-
-    public Scores modifyStudentScoresById(Scores scores) {
-        int index = scoresCenter.findScoreSheetById(scores.getId());
-        if (index != -1) {
-            scoresCenter.getScores().get(index).setGrade(scores);
-            return scores;
-
-        } else
-            return null;
-    }
-
 
 }
