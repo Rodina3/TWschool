@@ -2,7 +2,7 @@
  * Created by rzhou on 09/08/2017.
  */
 $(document).ready(function () {
-    getReportFromRemote("http://localhost:8080/report");
+    getReportFromRemote("http://localhost:8080/db/report");
 });
 
 function getReportFromRemote(url) {

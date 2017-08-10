@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
  * Created by rzhou on 07/08/2017.
  */
 @Service
-public class ScoreManagerService {
+public class MemoryService {
 
     private Manager manager = new Manager();
 

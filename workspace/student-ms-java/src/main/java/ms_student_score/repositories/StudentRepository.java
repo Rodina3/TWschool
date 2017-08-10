@@ -10,6 +10,8 @@ import java.util.List;
  */
 public interface StudentRepository extends CrudRepository<Student, Long> {
     Student save(Student student);
+
     Student findById(String id);
-    Iterable<Student> findAll();
+
+    List<Student> findAll();
 }

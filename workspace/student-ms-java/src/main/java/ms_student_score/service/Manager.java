@@ -1,6 +1,7 @@
 package ms_student_score.service;
 
 import ms_student_score.core.*;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;

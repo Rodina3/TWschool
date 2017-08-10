@@ -82,7 +82,7 @@ $(document).ready(function () {
 $.validator.setDefaults({
     submitHandler: function () {
         var scores = getStudentFromForm();
-        putToRemote("http://localhost:8080/students/scores", scores);
+        putToRemote("http://localhost:8080/db/students/scores", scores);
     }
 });
 

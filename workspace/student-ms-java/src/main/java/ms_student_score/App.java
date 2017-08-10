@@ -17,7 +17,7 @@ public class App {
 
     //命令行入口
 //    public static void main(String[] args) {
-//        CustomController controller=new CustomController();
+//        CommandController controller=new CommandController();
 //        View.showHomePage();
 //
 //        Scanner sc = new Scanner(System.in);

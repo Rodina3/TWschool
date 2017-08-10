@@ -2,7 +2,7 @@
  * Created by rzhou on 03/08/2017.
  */
 $(document).ready(function () {
-    getAllStudentsFromRemote("http://localhost:8080/students");
+    getAllStudentsFromRemote("http://localhost:8080/db/students");
     $('#search-id-bn').click(function () {
         $("#name-searched").val(" ");
         getStudentByIdInService();
@@ -17,7 +17,7 @@ function getStudentByIdInService() {
     $('#name-searched').val(" ");
     var inputId = $('#id-searched').val();
     if (isLegalId(inputId)) {
-        var student = getStudentFromRemote("http://localhost:8080/students/" + inputId);
+        var student = getStudentFromRemote("http://localhost:8080/db/students/" + inputId);
         showStudentItem(student);
     }
 
@@ -82,8 +82,8 @@ function getAllStudentsFromRemote(url) {
         success: function (data) {
             $('#s').text("显示全部学生信息");
             showTableHeader();
-            for (let i = 0; i < data.studentList.length; i++) {
-                var student = data.studentList[i];
+            for (let i = 0; i < data.length; i++) {
+                var student = data[i];
                 showStudentItem(student);
             }
         },

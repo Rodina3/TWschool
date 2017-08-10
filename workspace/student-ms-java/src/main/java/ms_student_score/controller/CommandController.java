@@ -14,7 +14,7 @@ import java.util.regex.Pattern;
 /**
  * Created by rzhou on 06/08/2017.
  */
-public class CustomController {
+public class CommandController {
     private Manager manager = new Manager();
     private CurrentStatus statusNow = CurrentStatus.HOME_PAGE;
 

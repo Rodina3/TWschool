@@ -1,11 +1,17 @@
 package ms_student_score.core;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
 /**
  * Created by rzhou on 10/08/2017.
  */
+@Entity
 public class Scores {
-    private String name;
+    @Id
     private String id;
+
+    private String name;
     private int math;
     private int chinese;
     private int english;

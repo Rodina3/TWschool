@@ -47,7 +47,7 @@ $(document).ready(function () {
 
 $.validator.setDefaults({
     submitHandler: function () {
-        postToRemote("http://localhost:8080/students", getStudentFromForm());
+        postToRemote("http://localhost:8080/db/students", getStudentFromForm());
     }
 });
 
