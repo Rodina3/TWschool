@@ -1,3 +1,5 @@
+package coreTest;
+
 import ms_student_score.core.Scores;
 import ms_student_score.core.ScoresCenter;
 import org.junit.Test;

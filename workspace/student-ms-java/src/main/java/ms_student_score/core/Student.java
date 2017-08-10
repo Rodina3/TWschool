@@ -11,11 +11,12 @@ import java.util.Map;
  * Created by rzhou on 27/07/2017.
  */
 
-//@Entity
+@Entity
 public class Student {
-    // @Id
-    // @GeneratedValue(strategy = GenerationType.AUTO)
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private String id;
+
     private String name;
     private String email;
     private String phone;
