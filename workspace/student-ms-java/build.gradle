@@ -37,12 +37,14 @@ check.dependsOn jacocoTestReport
 // In this section you declare where to find the dependencies of your project
 repositories {
     // Use jcenter for resolving your dependencies.
-    // You can declare any Maven/Ivy/file repository here.
+    // You can declare any Maven/Ivy/file repositories here.
     mavenLocal()
     jcenter()
     maven { url 'http://repo.spring.io/plugins-release' }
     maven { url 'http://repo.spring.io/milestone' }
     maven { url "https://plugins.gradle.org/m2/" }
+    maven { url 'https://repo.spring.io/libs-release' }
+
 }
 
 dependencies {
@@ -55,7 +57,10 @@ dependencies {
     // Use JUnit test framework
     testImplementation 'junit:junit:4.12'
 
-    testCompile group: 'org.mockito', name: 'mockito-all', version: '1.10.19'
     compile('org.springframework.boot:spring-boot-starter-web');
+    compile ('org.springframework.boot:spring-boot-starter-data-jpa');
+    runtime("com.h2database:h2");
+    testCompile group: 'org.mockito', name: 'mockito-all', version: '1.10.19'
     testCompile('org.springframework.boot:spring-boot-starter-test');
 }
+

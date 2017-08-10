@@ -73,7 +73,8 @@ public class CustomController {
                 chinese = Integer.parseInt(studentInfo[3]),
                 english = Integer.parseInt(studentInfo[4]),
                 coding = Integer.parseInt(studentInfo[5]);
-        return new Student(name, id, math, chinese, english, coding);
+        //return new Student(name, id, math, chinese, english, coding);
+        return new Student();
     }
 
     private List<String> parsePrintCommand(String str) {

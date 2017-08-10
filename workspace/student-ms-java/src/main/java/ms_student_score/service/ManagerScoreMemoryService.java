@@ -2,20 +2,15 @@ package ms_student_score.service;
 
 import ms_student_score.core.Klass;
 import ms_student_score.core.Report;
+import ms_student_score.core.ScoreSheet;
 import ms_student_score.core.Student;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
 
 /**
  * Created by rzhou on 07/08/2017.
  */
 @Service
-public class ManagerScoreService {
+public class ManagerScoreMemoryService {
 
     private Manager manager = new Manager();
 
@@ -30,14 +25,14 @@ public class ManagerScoreService {
     }
 
     public Klass getAllStudents() {
-        return manager.getKlass();
+        return manager.getAllStudents();
     }
 
-    public Student getStudentById(int id) {
+    public Student getStudentById(String id) {
         return manager.findStudentById(id);
     }
 
-    public Student putStudentScoresById(int id, Map<String, Integer> scores) {
-        return manager.modifyStudentScoresById(id, scores);
+    public ScoreSheet putStudentScoresById(ScoreSheet scoreSheet) {
+        return manager.modifyStudentScoresById(scoreSheet);
     }
 }

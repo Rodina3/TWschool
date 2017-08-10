@@ -1,32 +1,28 @@
 package ms_student_score.service;
 
-import ms_student_score.core.Klass;
-import ms_student_score.core.Report;
-import ms_student_score.core.ReportBuilder;
-import ms_student_score.core.Student;
-import ms_student_score.view.*;
+import ms_student_score.core.*;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 /**
  * Created by rzhou on 06/08/2017.
  */
 public class Manager {
     private Klass klass = new Klass();
+    private GradeCenter gradeCenter = new GradeCenter();
     private ReportBuilder reportBuilder = new ReportBuilder();
 
     public void addStudent(Student student) {
         klass.addStudent(student);
     }
 
-    public Klass getKlass() {
+    public Klass getAllStudents() {
         return klass;
     }
 
     public Report buildReport(List<String> studentIds) {
-        return reportBuilder.buildReport(studentIds, this.klass);
+        return reportBuilder.buildReport(studentIds, gradeCenter);
     }
 
     public Report buildAllReport() {
@@ -34,24 +30,25 @@ public class Manager {
         for (int i = 0; i < klass.getStudentList().size(); i++) {
             studentIds.add(klass.getStudentList().get(i).getId());
         }
-        return reportBuilder.buildReport(studentIds, this.klass);
+        return reportBuilder.buildReport(studentIds, gradeCenter);
     }
 
-    public Student findStudentById(int id) {
-        Student student = new Student();
-        for (int i = 0; i < klass.getStudentList().size(); i++) {
-            if (Integer.parseInt(klass.getStudentList().get(i).getId()) == id) {
-                return klass.getStudentList().get(i);
-            }
-        }
-        return null;
+    public ScoreSheet modifyStudentScoresById(ScoreSheet scoreSheet) {
+        int index = gradeCenter.findScoreSheetById(scoreSheet.getId());
+        if (index != -1) {
+            gradeCenter.getScoreSheet().get(index).setGrade(scoreSheet);
+            return scoreSheet;
+
+        } else
+            return null;
     }
 
-    public Student modifyStudentScoresById(int id, Map<String, Integer> scores) {
-        Student student = findStudentById(id);
-        if (student != null){
-            student.setScores(scores);
+    public Student findStudentById(String id) {
+        int index = klass.findStudentById(id);
+        if (index != -1){
+            return klass.getStudentList().get(index);
         }
-       return student;
+        else
+            return null;
     }
 }

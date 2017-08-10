@@ -1,5 +1,6 @@
 package ms_student_score.core;
 
+import javax.persistence.GeneratedValue;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -9,30 +10,30 @@ import java.util.List;
  */
 public class ReportBuilder {
 
-    private Klass klass = new Klass();
+    private GradeCenter gradeCenter = new GradeCenter();
     private Report report = new Report();
-    private List<Student> studentItem = new ArrayList<>();
+    private List<ScoreSheet> studentScoreItem = new ArrayList<>();
 
-    private void buildStudentItems(List<String> studentIDs) {
-        studentItem.clear();
+    private void buildStudentScoreItems(List<String> studentIDs) {
+        studentScoreItem.clear();
         for (int i = 0; i < studentIDs.size(); i++) {
-            int index = findStudentById(studentIDs.get(i));
+            int index = gradeCenter.findScoreSheetById(studentIDs.get(i));
 
             if (index == -1) {
                 continue;
             }
-            studentItem.add(klass.getStudentList().get(i));
+            studentScoreItem.add(gradeCenter.getScoreSheet().get(i));
         }
-        report.setStudentItem(studentItem);
+        report.setStudentItem(studentScoreItem);
     }
 
 
     private void updateAverage() {
         float average = 0;
-        for (Student stu : this.studentItem) {
-            average += stu.getAverage();
+        for (ScoreSheet scoreSheet : this.studentScoreItem) {
+            average += scoreSheet.getAverage();
         }
-        average /= this.studentItem.size();
+        average /= this.studentScoreItem.size();
         report.setAverage(average);
     }
 
@@ -40,42 +41,31 @@ public class ReportBuilder {
         float median = 0;
         List<Integer> totalScoreList = new ArrayList<>();
 
-        if (studentItem.size() == 1) {
-            median = studentItem.get(0).getTotalScore();
+        if (studentScoreItem.size() == 1) {
+            median = studentScoreItem.get(0).getTotalScore();
             report.setMedian(median);
             return;
         }
 
-        for (int i = 0; i < studentItem.size(); i++) {
-            totalScoreList.add(studentItem.get(i).getTotalScore());
+        for (int i = 0; i < studentScoreItem.size(); i++) {
+            totalScoreList.add(studentScoreItem.get(i).getTotalScore());
         }
         Collections.sort(totalScoreList);
         int index = 0;
-        if (studentItem.size() % 2 == 0) {
-            index = studentItem.size() / 2;
-            median = (float) ((studentItem.get(index).getTotalScore() + studentItem.get(index - 1).getTotalScore()) / 2.0);
+        if (studentScoreItem.size() % 2 == 0) {
+            index = studentScoreItem.size() / 2;
+            median = (float) ((studentScoreItem.get(index).getTotalScore() + studentScoreItem.get(index - 1).getTotalScore()) / 2.0);
         } else {
-            index = (studentItem.size() - 1) / 2;
-            median = studentItem.get(index).getTotalScore();
+            index = (studentScoreItem.size() - 1) / 2;
+            median = studentScoreItem.get(index).getTotalScore();
         }
         report.setMedian(median);
     }
 
-    private int findStudentById(String id) {
-        int index = -1;
-        for (int i = 0; i < klass.getStudentList().size(); i++) {
-            if (id.equals(klass.getStudentList().get(i).getId())) {
-                index = i;
-                break;
-            }
 
-        }
-        return index;
-    }
-
-    public Report buildReport(List<String> studentIDs, Klass klass) {
-        this.klass = klass;
-        buildStudentItems(studentIDs);
+    public Report buildReport(List<String> studentIDs, GradeCenter gradeCenter) {
+        this.gradeCenter = gradeCenter;
+        buildStudentScoreItems(studentIDs);
         updateAverage();
         updateMedian();
         return this.report;

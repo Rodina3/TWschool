@@ -13,36 +13,27 @@ import static org.junit.Assert.assertThat;
  */
 public class KlassTest {
     @Test
-    public void should_add_one_student_score() throws Exception {
+    public void should_add_one_student_info() throws Exception {
         //given
-        Student stu = new Student("张三", "000", 89, 78, 90, 84);
+        Student stu = new Student("张三", "000", "buaa@163.com", "123");
         Klass klass = new Klass();
         klass.addStudent(stu);
 
-
         assertThat(klass.getStudentList().get(0).getName(), is("张三"));
         assertThat(klass.getStudentList().get(0).getId(), is("000"));
-        assertThat(klass.getStudentList().get(0).getScores().get("math"), is(89));
-        assertThat(klass.getStudentList().get(0).getScores().get("chinese"), is(78));
-        assertThat(klass.getStudentList().get(0).getScores().get("english"), is(90));
-        assertThat(klass.getStudentList().get(0).getScores().get("coding"), is(84));
-        assertThat(klass.getStudentList().get(0).getTotalScore(), is(341));
-        assertThat(klass.getStudentList().get(0).getAverage() - 85.25 < 0.0001, is(true));
-
+        assertThat(klass.getStudentList().get(0).getEmail(), is("buaa@163.com"));
+        assertThat(klass.getStudentList().get(0).getPhone(), is("123"));
     }
 
     @Test
-    public void should_add_two_students_score() throws Exception {
+    public void should_find_student_info_when_input_id() throws Exception {
         //given
-        Student stu1 = new Student("张三", "000", 89, 78, 90, 84);
-        Student stu2 = new Student("李四", "001", 69, 79, 60, 74);
-        List<Student> stuList = Arrays.asList(stu1, stu2);
-
+        Student stu = new Student("张三", "000", "buaa@163.com", "123");
         Klass klass = new Klass();
-        klass.addStudent(stuList);
+        klass.addStudent(stu);
 
-        assertThat(klass.getStudentList().size(), is(2));
-        assertThat(klass.getStudentList().get(0).getScores().get("coding"), is(84));
-        assertThat(klass.getStudentList().get(1).getId(), is("001"));
+        assertThat(klass.getStudentList().get(klass.findStudentById("000")), is(stu));
+        assertThat(klass.findStudentById("111"),is(-1));
     }
+
 }
