@@ -1,4 +1,5 @@
 package ms_student_score.controller;
+
 import ms_student_score.core.Klass;
 import ms_student_score.core.Report;
 import ms_student_score.core.Scores;
@@ -34,11 +35,6 @@ public class ScoreManagerController {
         return new ResponseEntity<Klass>(klass, HttpStatus.OK);
     }
 
-    @RequestMapping(value = "/report", method = RequestMethod.GET)
-    public ResponseEntity<Report> buildReport() {
-        return new ResponseEntity<Report>(serv.buildReport(), HttpStatus.OK);
-    }
-
     @RequestMapping(value = "/students/{id}", method = RequestMethod.GET)
     public ResponseEntity<Student> getStudentById(@PathVariable("id") String id) {
         Student student = serv.getStudentById(id);
@@ -46,25 +42,22 @@ public class ScoreManagerController {
             return new ResponseEntity<Student>(student, HttpStatus.OK);
         } else
             return new ResponseEntity<Student>((Student) null, HttpStatus.NOT_FOUND);
-
     }
 
-    @RequestMapping(value="/students/{id}",method=RequestMethod.PUT)
-    public ResponseEntity<Scores> putStudentScores(@PathVariable("id")String id, @RequestBody Scores grade){
+    @RequestMapping(value = "/students/scores", method = RequestMethod.PUT)
+    public ResponseEntity<Scores> putStudentScores (@RequestBody Scores grade) {
         Scores scores = serv.putStudentScoresById(grade);
-        if (scores !=null)
-        {
-            return new ResponseEntity<Scores>(scores,HttpStatus.OK);
-        }
-        else
-            return new ResponseEntity<Scores>((Scores) null,HttpStatus.NOT_FOUND);
-
+        if (scores != null) {
+            return new ResponseEntity<Scores>(scores, HttpStatus.OK);
+        } else
+            return new ResponseEntity<Scores>((Scores) null, HttpStatus.NOT_FOUND);
     }
-//
-//    @RequestMapping(value = "/report", method = RequestMethod.GET)
-//    public ResponseEntity<String> buildReport(){
-//        return ;
-//    }
+
+    @RequestMapping(value = "/report", method = RequestMethod.GET)
+    public ResponseEntity<Report> buildReport() {
+        return new ResponseEntity<Report>(serv.buildReport(), HttpStatus.OK);
+    }
+
 }
 
 

@@ -15,7 +15,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @EnableJpaRepositories("ms_student_score.repositories")
 public class App {
 
-
+    //命令行入口
 //    public static void main(String[] args) {
 //        CustomController controller=new CustomController();
 //        View.showHomePage();

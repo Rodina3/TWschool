@@ -22,6 +22,8 @@ public class ManagerTest {
         assertThat(manager.getAllStudents().getStudentList().get(0).getId(), is("000"));
         assertThat(manager.getStudentById("000").getEmail(), is("buaa@163.com"));
         assertThat(manager.getStudentById("000").getPhone(), is("123"));
+        assertThat(manager.buildAllReport().getStudentScoreItem().get(0).getChinese(),is(0));
+        assertThat(manager.buildAllReport().getStudentScoreItem().get(0).getName(),is("张三"));
     }
 
 

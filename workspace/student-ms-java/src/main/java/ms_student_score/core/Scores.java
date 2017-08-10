@@ -29,10 +29,10 @@ public class Scores {
     }
 
     public void setGrade(Scores scores){
-        this.chinese=getChinese();
-        this.math=getMath();
-        this.english=getEnglish();
-        this.coding=getCoding();
+        this.chinese=scores.getChinese();
+        this.math=scores.getMath();
+        this.english=scores.getEnglish();
+        this.coding=scores.getCoding();
         getTotalScore();
         getAverage();
     }

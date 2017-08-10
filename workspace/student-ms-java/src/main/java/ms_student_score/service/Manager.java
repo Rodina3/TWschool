@@ -15,6 +15,7 @@ public class Manager {
 
     public void addStudent(Student student) {
         klass.addStudent(student);
+        scoresCenter.addScoreSheet(new Scores(student.getId(),0,0,0,0));
     }
 
     public Student getStudentById(String id) {
