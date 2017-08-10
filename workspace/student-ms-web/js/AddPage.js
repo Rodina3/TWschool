@@ -56,14 +56,8 @@ function getStudentFromForm() {
     var student = formatStudent(formObj);
     var studentAPI = {};
     studentAPI.name = student.name;
-    studentAPI.id = student.id;
     studentAPI.email = student.email;
     studentAPI.phone = student.phone;
-    studentAPI.scores = {};
-    studentAPI.scores.math = 0;
-    studentAPI.scores.chinese = 0;
-    studentAPI.scores.english = 0;
-    studentAPI.scores.coding = 0;
 
     return studentAPI;
 }

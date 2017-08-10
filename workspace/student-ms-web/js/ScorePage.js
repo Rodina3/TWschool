@@ -81,23 +81,15 @@ $(document).ready(function () {
 
 $.validator.setDefaults({
     submitHandler: function () {
-        var student = getStudentFromForm();
-        putToRemote("http://localhost:8080/students/"+student.id, student.scores);
+        var scores = getStudentFromForm();
+        putToRemote("http://localhost:8080/students/scores", scores);
     }
 });
 
 function getStudentFromForm() {
     var formObj = $('#student-score').serializeArray();
     var scores = formatStudentScores(formObj);
-    var scoreAPI = {};
-    scoreAPI.id = scores.id;
-    scoreAPI.scores = {};
-    scoreAPI.scores.math = scores.math;
-    scoreAPI.scores.chinese = scores.chinese;
-    scoreAPI.scores.english = scores.english;
-    scoreAPI.scores.coding = scores.coding;
-
-    return scoreAPI;
+    return scores;
 }
 
 

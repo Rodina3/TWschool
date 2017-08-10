@@ -34,7 +34,6 @@ function showTableHeader() {
     var markup = "<tr> " +
         "<td class='col-md-2'>姓名</td> " +
         "<td class='col-md-1'>学号</td> " +
-        //"<td class='col-md-1'>班级</td> " +
         "<td class='col-md-4'>邮箱</td> " +
         "<td class='col-md-4'>电话</td>" +
         "</tr>";
@@ -46,7 +45,6 @@ function showStudentItem(obj) {
     var markup = "<tr> " +
         "<td class='col-md-2'>${name}</td> " +
         "<td class='col-md-1'>${id}</td> " +
-        //"<td class='col-md-1'>${klass}</td> " +
         "<td class='col-md-4'>${email}</td> " +
         "<td class='col-md-4'>${phone}</td>" +
         "</tr>";

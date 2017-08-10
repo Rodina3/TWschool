@@ -14,8 +14,8 @@ function getReportFromRemote(url) {
         dataType: "json",
         success: function (data) {
             showReportTable();
-            for (let i = 0; i < data.studentItem.length; i++) {
-                var obj = data.studentItem[i];
+            for (let i = 0; i < data.studentScoreItem.length; i++) {
+                var obj = data.studentScoreItem[i];
                 showReportItem(obj);
             }
             $("#totalAverage").text("总分平均分："+data.average);
@@ -30,10 +30,10 @@ function showReportItem(obj) {
     var markup = "<tr> " +
         "<td class='col-md-1'>${name}</td> " +
         "<td class='col-md-1'>${id}</td> " +
-        "<td class='col-md-1'>${scores.math}</td> " +
-        "<td class='col-md-1'>${scores.chinese}</td> " +
-        "<td class='col-md-1'>${scores.english}</td>" +
-        "<td class='col-md-1'>${scores.coding}</td>" +
+        "<td class='col-md-1'>${math}</td> " +
+        "<td class='col-md-1'>${chinese}</td> " +
+        "<td class='col-md-1'>${english}</td>" +
+        "<td class='col-md-1'>${coding}</td>" +
         "</tr>";
     $.template("reportTemplate", markup);
     $.tmpl("reportTemplate", obj).appendTo("#reportItem");
