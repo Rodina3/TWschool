@@ -1,7 +1,7 @@
 package ms_student_score.controller;
 import ms_student_score.core.Klass;
 import ms_student_score.core.Report;
-import ms_student_score.core.ScoreSheet;
+import ms_student_score.core.Scores;
 import ms_student_score.core.Student;
 import ms_student_score.service.ManagerScoreMemoryService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -51,14 +51,14 @@ public class ManagerScoreController {
     }
 
     @RequestMapping(value="/students/{id}",method=RequestMethod.PUT)
-    public ResponseEntity<ScoreSheet> putStudentScores(@PathVariable("id")String id, @RequestBody ScoreSheet grade){
-        ScoreSheet scoreSheet = serv.putStudentScoresById(grade);
-        if (scoreSheet !=null)
+    public ResponseEntity<Scores> putStudentScores(@PathVariable("id")String id, @RequestBody Scores grade){
+        Scores scores = serv.putStudentScoresById(grade);
+        if (scores !=null)
         {
-            return new ResponseEntity<ScoreSheet>(scoreSheet,HttpStatus.OK);
+            return new ResponseEntity<Scores>(scores,HttpStatus.OK);
         }
         else
-            return new ResponseEntity<ScoreSheet>((ScoreSheet) null,HttpStatus.NOT_FOUND);
+            return new ResponseEntity<Scores>((Scores) null,HttpStatus.NOT_FOUND);
 
     }
 //

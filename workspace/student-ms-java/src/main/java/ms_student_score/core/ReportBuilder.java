@@ -1,6 +1,5 @@
 package ms_student_score.core;
 
-import javax.persistence.GeneratedValue;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -10,19 +9,19 @@ import java.util.List;
  */
 public class ReportBuilder {
 
-    private GradeCenter gradeCenter = new GradeCenter();
+    private ScoresCenter scoresCenter = new ScoresCenter();
     private Report report = new Report();
-    private List<ScoreSheet> studentScoreItem = new ArrayList<>();
+    private List<Scores> studentScoreItem = new ArrayList<>();
 
     private void buildStudentScoreItems(List<String> studentIDs) {
         studentScoreItem.clear();
         for (int i = 0; i < studentIDs.size(); i++) {
-            int index = gradeCenter.findScoreSheetById(studentIDs.get(i));
+            int index = scoresCenter.findScoreSheetById(studentIDs.get(i));
 
             if (index == -1) {
                 continue;
             }
-            studentScoreItem.add(gradeCenter.getScoreSheet().get(i));
+            studentScoreItem.add(scoresCenter.getScores().get(i));
         }
         report.setStudentItem(studentScoreItem);
     }
@@ -30,8 +29,8 @@ public class ReportBuilder {
 
     private void updateAverage() {
         float average = 0;
-        for (ScoreSheet scoreSheet : this.studentScoreItem) {
-            average += scoreSheet.getAverage();
+        for (Scores scores : this.studentScoreItem) {
+            average += scores.getAverage();
         }
         average /= this.studentScoreItem.size();
         report.setAverage(average);
@@ -63,8 +62,8 @@ public class ReportBuilder {
     }
 
 
-    public Report buildReport(List<String> studentIDs, GradeCenter gradeCenter) {
-        this.gradeCenter = gradeCenter;
+    public Report buildReport(List<String> studentIDs, ScoresCenter scoresCenter) {
+        this.scoresCenter = scoresCenter;
         buildStudentScoreItems(studentIDs);
         updateAverage();
         updateMedian();

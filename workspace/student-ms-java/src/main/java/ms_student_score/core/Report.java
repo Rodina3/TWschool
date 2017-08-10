@@ -8,11 +8,11 @@ import java.util.List;
  */
 public class Report {
 
-    private List<ScoreSheet> studentItem = new ArrayList<>();
+    private List<Scores> studentItem = new ArrayList<>();
     private float average = 0;
     private float median = 0;
 
-    public List<ScoreSheet> getStudentScoreItem() {
+    public List<Scores> getStudentScoreItem() {
         return studentItem;
     }
 
@@ -20,7 +20,7 @@ public class Report {
         this.average = average;
     }
 
-    public void setStudentItem(List<ScoreSheet> studentItem) {
+    public void setStudentItem(List<Scores> studentItem) {
         this.studentItem = studentItem;
     }
 

@@ -1,11 +1,9 @@
 package ms_student_score.core;
 
-import java.util.Map;
-
 /**
  * Created by rzhou on 10/08/2017.
  */
-public class ScoreSheet {
+public class Scores {
     private String id;
     private int math;
     private int chinese;
@@ -14,15 +12,22 @@ public class ScoreSheet {
     private int totalScore;
     private float average;
 
-    public ScoreSheet() {
+    public Scores() {
     }
 
+    public Scores(String id, int math, int chinese, int english, int coding) {
+        this.id = id;
+        this.math = math;
+        this.chinese = chinese;
+        this.english = english;
+        this.coding = coding;
+    }
 
     public String getId() {
         return id;
     }
 
-    public void setGrade(ScoreSheet scoreSheet){
+    public void setGrade(Scores scores){
         this.chinese=getChinese();
         this.math=getMath();
         this.english=getEnglish();

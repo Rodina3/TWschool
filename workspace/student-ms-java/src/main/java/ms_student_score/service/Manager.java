@@ -10,7 +10,7 @@ import java.util.List;
  */
 public class Manager {
     private Klass klass = new Klass();
-    private GradeCenter gradeCenter = new GradeCenter();
+    private ScoresCenter scoresCenter = new ScoresCenter();
     private ReportBuilder reportBuilder = new ReportBuilder();
 
     public void addStudent(Student student) {
@@ -22,7 +22,7 @@ public class Manager {
     }
 
     public Report buildReport(List<String> studentIds) {
-        return reportBuilder.buildReport(studentIds, gradeCenter);
+        return reportBuilder.buildReport(studentIds, scoresCenter);
     }
 
     public Report buildAllReport() {
@@ -30,14 +30,14 @@ public class Manager {
         for (int i = 0; i < klass.getStudentList().size(); i++) {
             studentIds.add(klass.getStudentList().get(i).getId());
         }
-        return reportBuilder.buildReport(studentIds, gradeCenter);
+        return reportBuilder.buildReport(studentIds, scoresCenter);
     }
 
-    public ScoreSheet modifyStudentScoresById(ScoreSheet scoreSheet) {
-        int index = gradeCenter.findScoreSheetById(scoreSheet.getId());
+    public Scores modifyStudentScoresById(Scores scores) {
+        int index = scoresCenter.findScoreSheetById(scores.getId());
         if (index != -1) {
-            gradeCenter.getScoreSheet().get(index).setGrade(scoreSheet);
-            return scoreSheet;
+            scoresCenter.getScores().get(index).setGrade(scores);
+            return scores;
 
         } else
             return null;

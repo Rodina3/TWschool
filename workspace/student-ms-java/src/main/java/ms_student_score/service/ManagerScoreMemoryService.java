@@ -2,7 +2,7 @@ package ms_student_score.service;
 
 import ms_student_score.core.Klass;
 import ms_student_score.core.Report;
-import ms_student_score.core.ScoreSheet;
+import ms_student_score.core.Scores;
 import ms_student_score.core.Student;
 import org.springframework.stereotype.Service;
 
@@ -32,7 +32,7 @@ public class ManagerScoreMemoryService {
         return manager.findStudentById(id);
     }
 
-    public ScoreSheet putStudentScoresById(ScoreSheet scoreSheet) {
-        return manager.modifyStudentScoresById(scoreSheet);
+    public Scores putStudentScoresById(Scores scores) {
+        return manager.modifyStudentScoresById(scores);
     }
 }
