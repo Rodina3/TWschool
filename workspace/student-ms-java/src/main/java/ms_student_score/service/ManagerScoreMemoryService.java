@@ -29,7 +29,7 @@ public class ManagerScoreMemoryService {
     }
 
     public Student getStudentById(String id) {
-        return manager.findStudentById(id);
+        return manager.getStudentById(id);
     }
 
     public Scores putStudentScoresById(Scores scores) {

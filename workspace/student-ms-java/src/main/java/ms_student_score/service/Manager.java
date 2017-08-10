@@ -17,6 +17,15 @@ public class Manager {
         klass.addStudent(student);
     }
 
+    public Student getStudentById(String id) {
+        int index = klass.findStudentById(id);
+        if (index != -1){
+            return klass.getStudentList().get(index);
+        }
+        else
+            return null;
+    }
+
     public Klass getAllStudents() {
         return klass;
     }
@@ -43,12 +52,5 @@ public class Manager {
             return null;
     }
 
-    public Student findStudentById(String id) {
-        int index = klass.findStudentById(id);
-        if (index != -1){
-            return klass.getStudentList().get(index);
-        }
-        else
-            return null;
-    }
+
 }

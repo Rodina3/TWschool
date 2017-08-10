@@ -12,6 +12,9 @@ public class Report {
     private float average = 0;
     private float median = 0;
 
+    public Report() {
+    }
+
     public List<Scores> getStudentScoreItem() {
         return studentItem;
     }

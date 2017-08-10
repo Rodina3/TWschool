@@ -9,8 +9,8 @@ import java.util.List;
  */
 public class ReportBuilder {
 
-    private ScoresCenter scoresCenter = new ScoresCenter();
     private Report report = new Report();
+    private ScoresCenter scoresCenter = new ScoresCenter();
     private List<Scores> studentScoreItem = new ArrayList<>();
 
     private void buildStudentScoreItems(List<String> studentIDs) {
