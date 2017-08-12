@@ -48,6 +48,12 @@ public class DataBaseController {
             return new ResponseEntity<Scores>((Scores) null, HttpStatus.NOT_FOUND);
     }
 
+    @RequestMapping(value = "db/students/scores/{id}", method = RequestMethod.GET)
+    public Scores addStudentScores(@PathVariable ("id") String id) {
+        return dbService.findStudentScoresById(id);
+    }
+
+
     @RequestMapping(value = "db/report", method = RequestMethod.GET)
     public Report buildReport() {
         return dbService.buildReport();

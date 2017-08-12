@@ -22,6 +22,9 @@ public class DataBaseService {
 
     public Student addStudent(Student student) {
         studentRepository.save(student);
+        Scores scores = new Scores(student.getId(), 0, 0, 0, 0);
+        scores.setName(student.getName());
+        scoresRepository.save(scores);
         return student;
     }
 
@@ -58,4 +61,7 @@ public class DataBaseService {
         return reportBuilder.buildReport(studentIDs, scoresList, studentsList);
     }
 
+    public Scores findStudentScoresById(String id) {
+        return scoresRepository.findById(id);
+    }
 }

@@ -3,12 +3,15 @@
  */
 $(document).ready(function () {
 
+    const id = getURLParameter("id");
+    const name = getURLParameter("name");
+    $('#name').text(name);
+    $('#id').text(id);
+
+    getFromRemote("http://localhost:8080/db/students/scores/" + id);
+
     $("#student-score").validate({
         rules: {
-            id: {
-                required:true,
-                digits:true
-            },
             math: {
                 required: true,
                 digits: true,
@@ -32,10 +35,6 @@ $(document).ready(function () {
 
         },
         messages: {
-            id: {
-                required:"请输入学生学号",
-                digits:"学号非法",
-            },
             math: {
                 required: "请输入数学成绩",
                 digits: "请输入整数",
@@ -71,12 +70,10 @@ $(document).ready(function () {
             }
         }
     });
+});
 
-
-    $('#score-submit').click(function () {
-        $('#score-notice').text("");
-    });
-
+$('#score-submit').click(function () {
+    $('#score-notice').text("");
 });
 
 $.validator.setDefaults({
@@ -86,10 +83,24 @@ $.validator.setDefaults({
     }
 });
 
+function getURLParameter(name) {
+    return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search) || [null, ''])[1].replace(/\+/g, '%20')) || null;
+}
+
 function getStudentFromForm() {
     var formObj = $('#student-score').serializeArray();
     var scores = formatStudentScores(formObj);
     return scores;
+}
+
+function getFromRemote(url) {
+    $.ajax({
+        url: url,
+        type: "GET",
+        success: function (data) {
+            showStudentScores(data);
+        }
+    })
 }
 
 
@@ -114,10 +125,29 @@ function formatStudentScores(obj) {
     for (let i = 0; i < obj.length; i++) {
         studentScores[obj[i].name] = obj[i].value;
     }
+    studentScores.id = $("#id").text();
     studentScores.math = parseInt(studentScores.math);
-    studentScores.chinese=parseInt(studentScores.chinese);
-    studentScores.english=parseInt(studentScores.english);
-    studentScores.coding=parseInt(studentScores.coding);
+    studentScores.chinese = parseInt(studentScores.chinese);
+    studentScores.english = parseInt(studentScores.english);
+    studentScores.coding = parseInt(studentScores.coding);
 
     return studentScores;
+}
+
+$("#return").click(function () {
+    window.location.href = "./SearchPage.html";
+});
+
+function showStudentScores(obj) {
+    $("#student-scores").html("");
+    var markup =
+        "<p>数学：<label><input value=${math} name='math'></label></p>" +
+        "<p>语文：<label><input value=${chinese} name='chinese'></label></p>" +
+        "<p>英语：<label><input value=${english} name='english'></label></p>" +
+        "<p>编程：<label><input value=${coding} name='coding'></label></p>" +
+        "<p><input id='score-submit' type='submit' value='提交'></p>";
+
+
+    $.template("studentTemplate", markup);
+    $.tmpl("studentTemplate", obj).appendTo("#student-score");
 }

@@ -45,7 +45,7 @@ public class MemoryController {
     }
 
     @RequestMapping(value = "/students/scores", method = RequestMethod.PUT)
-    public ResponseEntity<Scores> putStudentScores (@RequestBody Scores grade) {
+    public ResponseEntity<Scores> putStudentScores(@RequestBody Scores grade) {
         Scores scores = serv.putStudentScoresById(grade);
         if (scores != null) {
             return new ResponseEntity<Scores>(scores, HttpStatus.OK);

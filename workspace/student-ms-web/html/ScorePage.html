@@ -4,58 +4,42 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Score Page</title>
 
     <!--bootstrap-->
     <link href="../css/vendor/bootstrap.min.css" rel="stylesheet">
-
-    <!--jqurey-->
-    <script type="text/javascript" src="../js/vendor/jquery-3.2.1.js"></script>
-    <script src="../js/vendor/jquery.validate.min.js"></script>
-
-    <!--JS-->
-    <script type="text/javascript" src="../js/ScorePage.js"></script>
-
     <!--stylesheet-->
     <link href="../css/navigation.css" rel="stylesheet">
-
-    <title>Score Page</title>
 
 </head>
 
 <body class="container-fluid">
 <header>
-    <nav>
-        <a href="./HomePage.html">Home Page</a> |
-        <a href="./AddPage.html">Add Page</a> |
-        <a href="./ScorePage.html">Score Page</a> |
-        <a href="./SearchPage.html">Search Page</a> |
-        <a href="./ReportPage.html">Report Page</a>
-    </nav>
 </header>
 
 <main>
-    <h1>Score Page</h1>
+    <!--<h1>Score Page</h1>-->
     <!--Notice-->
     <div>
         <h3>请填写学生成绩：</h3>
     </div>
 
     <div>
+        <p>姓名：<label id="name"></label></p>
+        <p>学号：<label id="id"></label></p>
         <!--input-->
         <form id="student-score" action="">
-            <!--<p>姓名：<label><input type="text" name="name" value="王小闹"></label></p>-->
-            <p>学号：<label><input type="text" name="id"></label></p>
-            <p>数学：<label><input type="text" name="math"></label></p>
-            <p>语文：<label><input type="text" name="chinese"></label></p>
-            <p>英语：<label><input type="text" name="english"></label></p>
-            <p>编程：<label><input type="text" name="coding"></label></p>
-
-            <!--button-->
-            <p>
-                <input id="score-submit" type="submit" value="提交">
-            </p>
-
+            <!--<p>数学：<label><input type="text" name="math"></label></p>-->
+            <!--<p>语文：<label><input type="text" name="chinese"></label></p>-->
+            <!--<p>英语：<label><input type="text" name="english"></label></p>-->
+            <!--<p>编程：<label><input type="text" name="coding"></label></p>-->
+            <!--&lt;!&ndash;button&ndash;&gt;-->
+            <!--<p>-->
+                <!--<input id="score-submit" type="submit" value="提交">-->
+                <!--<input id="return" type="button" value="返回">-->
+            <!--</p>-->
         </form>
+        <input id='return' type='button' value='返回'>
     </div>
 
     <div id="score-notice">
@@ -63,4 +47,13 @@
     </div>
 </main>
 </body>
+
+<!--jqurey-->
+<script type="text/javascript" src="../js/vendor/jquery-3.2.1.js"></script>
+<script src="../js/vendor/jquery.validate.min.js"></script>
+<script type="text/javascript" src="../js/vendor/jquery.tmpl.min.js"></script>
+
+<!--JS-->
+<script type="text/javascript" src="../js/ScorePage.js"></script>
+
 </html>
