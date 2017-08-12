@@ -10,21 +10,27 @@ import java.util.List;
 public class ReportBuilder {
 
     private Report report = new Report();
-    private ScoresCenter scoresCenter = new ScoresCenter();
-    private Klass klass = new Klass();
+    private List<Scores> scoresList = new ArrayList<>();
+    private List<Student> studentsList = new ArrayList<>();
+
     private List<Scores> studentScoreItem = new ArrayList<>();
 
     private void buildStudentScoreItems(List<String> studentIDs) {
         studentScoreItem.clear();
         for (int i = 0; i < studentIDs.size(); i++) {
-            int index = scoresCenter.findScoreSheetById(studentIDs.get(i));
-            if (index == -1) {
+            int studentIndex = findStudentById(studentIDs.get(i));
+            if (studentIndex == -1) {
                 continue;
             }
 
-            String name = klass.getStudentList().get(klass.findStudentById(studentIDs.get(i))).getName();
-            scoresCenter.getScores().get(i).setName(name);
-            studentScoreItem.add(scoresCenter.getScores().get(i));
+            String name = studentsList.get(studentIndex).getName();
+            int scoresIndex = findScoreSheetById(studentsList.get(studentIndex).getId());
+            if (scoresIndex == -1){
+                scoresList.add(new Scores(studentsList.get(studentIndex).getId(),0,0,0,0));
+            }
+            scoresIndex = findScoreSheetById(studentsList.get(studentIndex).getId());
+            scoresList.get(scoresIndex).setName(name);
+            studentScoreItem.add(scoresList.get(scoresIndex));
         }
         report.setStudentItem(studentScoreItem);
     }
@@ -64,10 +70,33 @@ public class ReportBuilder {
         report.setMedian(median);
     }
 
+    private int findScoreSheetById(String id) {
+        int index = -1;
+        for (int i = 0; i < scoresList.size(); i++) {
+            if (scoresList.get(i).getId() == id) {
+                index = i;
+                break;
+            }
+        }
+        return index;
+    }
 
-    public Report buildReport(List<String> studentIDs, ScoresCenter scoresCenter, Klass klass) {
-        this.scoresCenter = scoresCenter;
-        this.klass = klass;
+
+    private int findStudentById(String id) {
+        int index = -1;
+        for (int i = 0; i < studentsList.size(); i++) {
+            if (studentsList.get(i).getId() == id) {
+                index = i;
+                break;
+            }
+        }
+        return index;
+    }
+
+    public Report buildReport(List<String> studentIDs, List<Scores> scores, List<Student> students) {
+        this.scoresList = scores;
+        this.studentsList = students;
+
         buildStudentScoreItems(studentIDs);
         updateAverage();
         updateMedian();

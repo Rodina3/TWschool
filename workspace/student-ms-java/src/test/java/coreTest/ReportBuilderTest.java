@@ -27,7 +27,7 @@ public class ReportBuilderTest {
         List<String> studentIDs = new ArrayList<>();
         studentIDs.add("000");
 
-        Report report = reportBuilder.buildReport(studentIDs, scoresCenter, klass);
+        Report report = reportBuilder.buildReport(studentIDs, scoresCenter.getScores(), klass.getStudentList());
 
         assertThat(report.getStudentScoreItem().get(0).getName(), is("张三"));
         assertThat(report.getStudentScoreItem(), is(Arrays.asList(scores1)));
@@ -52,7 +52,7 @@ public class ReportBuilderTest {
         studentIDs.add("000");
         studentIDs.add("001");
 
-        Report report = reportBuilder.buildReport(studentIDs, scoresCenter, klass);
+        Report report = reportBuilder.buildReport(studentIDs, scoresCenter.getScores(), klass.getStudentList());
 
         assertThat(report.getStudentScoreItem().get(1).getName(), is("李四"));
         assertThat(report.getAverage() - 95 < 0.01, is(true));

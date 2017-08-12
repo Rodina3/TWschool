@@ -46,29 +46,16 @@ public class DataBaseService {
     }
 
     public Report buildReport() {
-        Klass klass = new Klass();
-        ScoresCenter scoresCenter = new ScoresCenter();
+
         ReportBuilder reportBuilder = new ReportBuilder();
         List<Student> studentsList = studentRepository.findAll();
         List<Scores> scoresList = scoresRepository.findAll();
-
-        for (int i = 0; i < studentsList.size(); i++) {
-            klass.addStudent(studentsList.get(i));
-            scoresCenter.addScoreSheet(new Scores(studentsList.get(i).getId(), 0, 0, 0, 0));
-        }
-
-        for (int i = 0; i < scoresList.size(); i++) {
-            int index = scoresCenter.findScoreSheetById(scoresList.get(i).getId());
-            scoresCenter.getScores().get(index).setGrade(scoresList.get(i));
-        }
-
         List<String> studentIDs = new ArrayList<>();
 
         for (int i = 0; i < studentsList.size(); i++) {
             studentIDs.add(studentsList.get(i).getId());
         }
-
-        return reportBuilder.buildReport(studentIDs, scoresCenter, klass);
+        return reportBuilder.buildReport(studentIDs, scoresList, studentsList);
     }
 
 }

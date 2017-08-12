@@ -45,7 +45,7 @@ public class Manager {
     }
 
     public Report buildReport(List<String> studentIds) {
-        return reportBuilder.buildReport(studentIds, scoresCenter, klass);
+        return reportBuilder.buildReport(studentIds, scoresCenter.getScores(), klass.getStudentList());
     }
 
     public Report buildAllReport() {
@@ -53,7 +53,7 @@ public class Manager {
         for (int i = 0; i < klass.getStudentList().size(); i++) {
             studentIds.add(klass.getStudentList().get(i).getId());
         }
-        return reportBuilder.buildReport(studentIds, scoresCenter, klass);
+        return reportBuilder.buildReport(studentIds, scoresCenter.getScores(), klass.getStudentList());
     }
 
 }

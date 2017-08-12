@@ -36,6 +36,7 @@ function showTableHeader() {
         "<td class='col-md-1'>学号</td> " +
         "<td class='col-md-4'>邮箱</td> " +
         "<td class='col-md-4'>电话</td>" +
+        // "<td class = 'col-md-1'>添加成绩</td>" +
         "</tr>";
     $("#student-inquire").html(markup);
 }
@@ -47,6 +48,7 @@ function showStudentItem(obj) {
         "<td class='col-md-1'>${id}</td> " +
         "<td class='col-md-4'>${email}</td> " +
         "<td class='col-md-4'>${phone}</td>" +
+        //"<td class='col-md-1'><a href='./ScorePage.html?id=${id}'>添加</a>" +
         "</tr>";
     $.template("studentTemplate", markup);
     $.tmpl("studentTemplate", obj).appendTo("#student-inquire");

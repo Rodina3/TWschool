@@ -20,28 +20,28 @@ import java.util.List;
 @EnableJpaRepositories("ms_student_score.repositories")
 public class DataBaseController {
     @Autowired
-    private DataBaseService service;
+    private DataBaseService dbService;
 
 
     @RequestMapping(value = "db/students", method = RequestMethod.POST)
     public Student addStudent(@RequestBody Student student) {
-        return service.addStudent(student);
+        return dbService.addStudent(student);
     }
 
     @RequestMapping(value = "db/students/{id}", method = RequestMethod.GET)
     public Student findStudentById(@PathVariable("id") String id) {
-        return service.findStudentById(id);
+        return dbService.findStudentById(id);
     }
 
     @RequestMapping(value = "db/students", method = RequestMethod.GET)
     public List<Student> findAllStudents() {
-        return service.findAllStudents();
+        return dbService.findAllStudents();
     }
 
 
     @RequestMapping(value = "db/students/scores", method = RequestMethod.PUT)
     public ResponseEntity<Scores> addStudentScores(@RequestBody Scores scores) {
-        Scores grade = service.addStudentScores(scores);
+        Scores grade = dbService.addStudentScores(scores);
         if (grade != null) {
             return new ResponseEntity<Scores>(grade, HttpStatus.OK);
         } else
@@ -50,6 +50,6 @@ public class DataBaseController {
 
     @RequestMapping(value = "db/report", method = RequestMethod.GET)
     public Report buildReport() {
-        return service.buildReport();
+        return dbService.buildReport();
     }
 }
