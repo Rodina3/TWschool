@@ -120,7 +120,7 @@ function showStudentItem(obj) {
 //
 // function onShow() {
 //     showTableHeader();
-//     var student = getStudentFromRemote("http://localhost:8080/students");
+//     var student = getStudentById("http://localhost:8080/students");
 //
 //     for (let i = 0; i < localStorage.length; i++) {
 //         var stuStr = localStorage.getItem('studentInfo' + i);

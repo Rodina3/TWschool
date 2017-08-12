@@ -7,7 +7,6 @@ $(document).ready(function () {
     const name = getURLParameter("name");
     $('#name').text(name);
     $('#id').text(id);
-
     getFromRemote("http://localhost:8080/db/students/scores/" + id);
 
     $("#student-score").validate({

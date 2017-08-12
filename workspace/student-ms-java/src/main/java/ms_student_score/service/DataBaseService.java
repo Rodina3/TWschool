@@ -64,4 +64,8 @@ public class DataBaseService {
     public Scores findStudentScoresById(String id) {
         return scoresRepository.findById(id);
     }
+
+    public List<Student> findStudentByName(String name) {
+        return studentRepository.findByName(name);
+    }
 }

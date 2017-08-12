@@ -33,6 +33,11 @@ public class DataBaseController {
         return dbService.findStudentById(id);
     }
 
+    @RequestMapping(value = "db/students/name/{name}", method = RequestMethod.GET)
+    public List<Student> findStudentByName(@PathVariable("name") String name) {
+        return dbService.findStudentByName(name);
+    }
+
     @RequestMapping(value = "db/students", method = RequestMethod.GET)
     public List<Student> findAllStudents() {
         return dbService.findAllStudents();
