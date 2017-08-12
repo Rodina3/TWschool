@@ -1,4 +1,4 @@
-import ms_student_score.controller.CommandController;
+import ms_student_score.controller.CommandRouter;
 
 import ms_student_score.view.Notice;
 import org.junit.After;
@@ -16,9 +16,9 @@ import static org.junit.Assert.assertThat;
  *  Created by rzhou on 27/07/2017.
  */
 
-public class customControllerTest {
+public class CommandRouterTest {
 
-    private CommandController commandManager = new CommandController();
+    private CommandRouter commandManager = new CommandRouter();
     private final ByteArrayOutputStream consoleLog = new ByteArrayOutputStream();
 
     @Before
@@ -97,7 +97,7 @@ public class customControllerTest {
         //when
         commandManager.commandMapping("1");
         consoleLog.reset();
-        commandManager.commandMapping("张三, 000, 89, 78, 90, 84");
+        commandManager.commandMapping("张三, 0, 89, 78, 90, 84");
 
         //then
         assertThat(consoleLog.toString(), is(addSuccess));
@@ -106,7 +106,7 @@ public class customControllerTest {
         String addSuceess2 = String.format(Notice.addSuccess,"李四")+ Notice.homePage;
         commandManager.commandMapping("1");
         consoleLog.reset();
-        commandManager.commandMapping("李四, 001, 90, 90, 90, 90");
+        commandManager.commandMapping("李四, 1, 90, 90, 90, 90");
         assertThat(consoleLog.toString(),is(addSuceess2));
     }
 
@@ -123,28 +123,27 @@ public class customControllerTest {
         assertThat(consoleLog.toString(), is(Notice.printFail));
     }
 
-//    @Test
-//    public void should_show_print_success_page_when_input_legal_print_request() throws Exception {
-//        //given
-//        commandManager.commandMapping("1");
-//        commandManager.commandMapping("张三, 000, 89, 78, 90, 84");
-//        commandManager.commandMapping("2");
-//
-//        String result = "\n成绩单\n"
-//                + "姓名|数学|语文|英语|编程|平均分|总分\n"
-//                + "========================\n"
-//                + "张三|89|78|90|84|85.25|341\n"
-//                + "========================\n"
-//                + "全班总平均分：85.250\n"
-//                +"全班总分中位数：341.000\n\n"
-//                + Notice.homePage;
-//        //when
-//        consoleLog.reset();
-//        commandManager.commandMapping("000");
-//
-//        //then
-//        assertThat(consoleLog.toString(), is(result));
-//    }
+    @Test
+    public void should_show_print_success_page_when_input_legal_print_request() throws Exception {
+        //given
+        commandManager.commandMapping("1");
+        commandManager.commandMapping("张三, 0, 89, 78, 90, 84");
+        commandManager.commandMapping("2");
 
+        String result = "\n成绩单\n"
+                + "姓名|数学|语文|英语|编程|平均分|总分\n"
+                + "========================\n"
+                + "张三|89|78|90|84|85.25|341\n"
+                + "========================\n"
+                + "全班总平均分：85.250\n"
+                +"全班总分中位数：341.000\n\n"
+                + Notice.homePage;
+        //when
+        consoleLog.reset();
+        commandManager.commandMapping("0");
+
+        //then
+        assertThat(consoleLog.toString(), is(result));
+    }
 
 }

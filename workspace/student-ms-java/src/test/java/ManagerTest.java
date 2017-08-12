@@ -54,6 +54,6 @@ public class ManagerTest {
         assertThat(manager.buildAllReport().getMedian() - report.getMedian() < 0.01, is(true));
         assertThat(manager.buildAllReport().getAverage() - report.getAverage() < 0.01, is(true));
 
-
     }
+
 }

@@ -3,6 +3,7 @@ package ms_student_score.core;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Created by rzhou on 08/08/2017.
@@ -85,7 +86,7 @@ public class ReportBuilder {
     private int findStudentById(String id) {
         int index = -1;
         for (int i = 0; i < studentsList.size(); i++) {
-            if (studentsList.get(i).getId() == id) {
+            if (Objects.equals(studentsList.get(i).getId(), id)) {
                 index = i;
                 break;
             }

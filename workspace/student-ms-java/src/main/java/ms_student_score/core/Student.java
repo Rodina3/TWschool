@@ -13,8 +13,8 @@ import java.util.Map;
 
 @Entity
 public class Student {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    //@Id
+   // @GeneratedValue(strategy = GenerationType.AUTO)
     private String id;
 
     private String name;

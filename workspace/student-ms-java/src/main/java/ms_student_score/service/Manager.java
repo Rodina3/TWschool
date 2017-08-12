@@ -16,8 +16,17 @@ public class Manager {
 
     public void addStudent(Student student) {
         klass.addStudent(student);
-        scoresCenter.addScoreSheet(new Scores(student.getId(),0,0,0,0));
+        scoresCenter.addScoreSheet(new Scores(student.getId(), 0, 0, 0, 0));
     }
+
+    public void addStudentScores(Scores scores) {
+        Student student = new Student();
+        student.setId(scores.getId());
+        student.setName(scores.getName());
+        klass.addStudent(student);
+        scoresCenter.addScoreSheet(scores);
+    }
+
 
     public Student getStudentById(String id) {
         int index = klass.findStudentById(id);

@@ -1,10 +1,10 @@
 package ms_student_score.controller;
 
 import ms_student_score.core.Report;
+import ms_student_score.core.Scores;
 import ms_student_score.service.Manager;
-import ms_student_score.core.Student;
+import ms_student_score.view.CommandView;
 import ms_student_score.view.CurrentStatus;
-import ms_student_score.view.View;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -14,7 +14,7 @@ import java.util.regex.Pattern;
 /**
  * Created by rzhou on 06/08/2017.
  */
-public class CommandController {
+public class CommandRouter {
     private Manager manager = new Manager();
     private CurrentStatus statusNow = CurrentStatus.HOME_PAGE;
 
@@ -44,7 +44,7 @@ public class CommandController {
     private boolean isLegalID(String str) {
 
         boolean flag = false;
-        if (str.length() != 0 && str.matches("\\d{3}")) {
+        if (str.length() != 0 && str.matches("\\d{1}")) {
             flag = true;
         }
         return flag;
@@ -65,7 +65,7 @@ public class CommandController {
         return flag;
     }
 
-    private Student parseAddCommand(String str) {
+    private Scores parseAddCommand(String str) {
         String[] studentInfo = str.split(", ");
         String name = studentInfo[0],
                 id = studentInfo[1];
@@ -73,8 +73,11 @@ public class CommandController {
                 chinese = Integer.parseInt(studentInfo[3]),
                 english = Integer.parseInt(studentInfo[4]),
                 coding = Integer.parseInt(studentInfo[5]);
-        //return new Student(name, id, math, chinese, english, coding);
-        return new Student();
+
+        Scores scores = new Scores(id, math, chinese, english, coding);
+        scores.setName(name);
+
+        return scores;
     }
 
     private List<String> parsePrintCommand(String str) {
@@ -90,11 +93,11 @@ public class CommandController {
                 switch (command) {
                     case "1":
                         statusNow = CurrentStatus.ADD_REQUEST_PAGE;
-                        View.showAddRequestPage();
+                        CommandView.showAddRequestPage();
                         break;
                     case "2":
                         statusNow = CurrentStatus.PRINT_REQUEST_PAGE;
-                        View.showPrintRequestPage();
+                        CommandView.showPrintRequestPage();
                         break;
 
                     case "3":
@@ -108,12 +111,12 @@ public class CommandController {
             case ADD_FAIL_PAGE:
                 if (isLegalAddRequest(command)) {
                     statusNow = CurrentStatus.HOME_PAGE;
-                    manager.addStudent(parseAddCommand(command));
-                    View.showAddSuccessPage(parseAddCommand(command));
-                    View.showHomePage();
+                    manager.addStudentScores(parseAddCommand(command));
+                    CommandView.showAddSuccessPage(parseAddCommand(command));
+                    CommandView.showHomePage();
                 } else {
                     statusNow = CurrentStatus.ADD_FAIL_PAGE;
-                    View.showAddFailPage();
+                    CommandView.showAddFailPage();
                 }
                 break;
             case PRINT_REQUEST_PAGE:
@@ -122,11 +125,11 @@ public class CommandController {
                     statusNow = CurrentStatus.HOME_PAGE;
 
                     Report report = manager.buildReport(parsePrintCommand(command));
-                    //View.showReportPage(report.toString());
-                    View.showHomePage();
+                    CommandView.showReportPage(report);
+                    CommandView.showHomePage();
                 } else {
                     statusNow = CurrentStatus.PRINT_FAIL_PAGE;
-                    View.showPrintFailPage();
+                    CommandView.showPrintFailPage();
                 }
                 break;
         }
